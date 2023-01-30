@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Leaf App</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="slogan">Let\'s Save\nThe\nPlanet</string>
+    <string name="sign_in">Sign In</string>
+    <string name="email">E-mail</string>
+    <string name="pass">Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="Sign_In_With_Google">Sign In With Google</string>
+    <string name="name">Name</string>
+    <string name="cancel">cancel</string>
+    <string name="already_have_an_account">already have an account?</string>
+</resources>
