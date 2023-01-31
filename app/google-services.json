@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "301158737557",
+    "project_id": "leaf-app-d8e95",
+    "storage_bucket": "leaf-app-d8e95.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:301158737557:android:d1a26f596381180f431d9c",
+        "android_client_info": {
+          "package_name": "com.example.leafapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "301158737557-iploi1abc838qmcf5cg2mnpniamrsutm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjfi9jxecsd20gGPmcxrlQIqHtyRbbUS0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "301158737557-iploi1abc838qmcf5cg2mnpniamrsutm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

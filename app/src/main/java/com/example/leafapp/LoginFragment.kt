@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import com.example.leafapp.databinding.FragmentLoginBinding
+import com.google.android.gms.auth.api.identity.BeginSignInRequest
 
 
 class LoginFragment : Fragment() {
@@ -32,6 +33,21 @@ class LoginFragment : Fragment() {
         {
             Navigation.findNavController(binding.root).navigate(R.id.action_loginFragment_to_homeFragment)
         }
+        //google sign in button
+        binding.googleSignInBtnId!!.setOnClickListener()
+        {
+           var signInRequest = BeginSignInRequest.builder()
+                .setGoogleIdTokenRequestOptions(
+                    BeginSignInRequest.GoogleIdTokenRequestOptions.builder()
+                    .setSupported(true)
+                    // Your server's client ID, not your Android client ID.
+                    .setServerClientId(getString(R.string.default_web_client_id))
+                    // Only show accounts previously used to sign in.
+                    .setFilterByAuthorizedAccounts(true)
+                    .build())
+                .build();
+        }
+
 
         return binding.root
     }
