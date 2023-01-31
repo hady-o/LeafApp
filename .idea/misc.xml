@@ -24,14 +24,15 @@
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/drawable/ic_home_fill0_wght500_grad200_opsz48.xml" value="0.175" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/drawable/ic_photo_camera_fill0_wght500_grad200_opsz48.xml" value="0.175" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/drawable/ic_psychiatry_fill0_wght500_grad200_opsz48.xml" value="0.175" />
+        <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/drawable/search_shape.xml" value="0.1365" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/drawable/square_shape.xml" value="0.175" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/activity_main.xml" value="0.20512820512820512" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_all.xml" value="0.375" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_care.xml" value="0.375" />
-        <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_home.xml" value="0.264" />
+        <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_home.xml" value="0.152" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_land_scaping.xml" value="0.375" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_login.xml" value="0.264" />
-        <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_profile.xml" value="0.1484375" />
+        <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_profile.xml" value="0.11200000000000002" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_sign_up.xml" value="0.2" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_splash.xml" value="0.20512820512820512" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_treatment.xml" value="0.35390625" />

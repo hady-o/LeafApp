@@ -19,7 +19,7 @@ class HomeFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val binding =  FragmentHomeBinding.inflate(layoutInflater)
-        //AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+       // AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         var tabLayoutAdapter = TabLayoutAdapter(parentFragmentManager)
         tabLayoutAdapter.addFragment(AllFragment(), "All")
         tabLayoutAdapter.addFragment(CareFragment(), "Care")
