@@ -27,13 +27,12 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.mikhaellopez.circularimageview.CircularImageView
-            android:id="@+id/imageView"
+            android:id="@+id/userImage"
             android:layout_width="@dimen/_40sdp"
             android:layout_height="@dimen/_40sdp"
             android:layout_margin="@dimen/_14sdp"
             android:src="@drawable/ic_loginvec"
             app:layout_constraintEnd_toEndOf="parent"
-
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
@@ -75,7 +74,7 @@
             app:tabMode="scrollable"
             app:tabMinWidth="@dimen/_1sdp"
             app:tabPadding="@dimen/_10sdp"
-           
+
             app:tabSelectedTextColor="@color/dark_green"
             app:tabTextColor="@color/black">
 
