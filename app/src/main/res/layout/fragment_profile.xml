@@ -65,6 +65,7 @@
             android:drawableStart="@drawable/ic_baseline_person_outline_24"
             android:drawablePadding="8dp"
             android:hint="@string/name"
+            android:editable="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -72,6 +73,7 @@
         <EditText
             android:id="@+id/emailEditText"
             style="@style/edit_text_style"
+            android:editable="false"
             android:layout_marginTop="@dimen/_12sdp"
             android:drawableStart="@drawable/ic_mail_fill0_wght400_grad0_opsz48"
             android:drawablePadding="8dp"
@@ -85,6 +87,7 @@
             android:id="@+id/passEditText"
             style="@style/edit_text_style"
             android:layout_marginTop="@dimen/_12sdp"
+            android:editable="false"
             android:drawableStart="@drawable/ic_baseline_lock_24"
             android:drawablePadding="8dp"
             android:hint="@string/pass"
