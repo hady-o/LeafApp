@@ -27,6 +27,16 @@ class SignUpFragment : Fragment() {
         {
             Navigation.findNavController(binding.root).navigate(R.id.action_signUpFragment_to_loginFragment2)
         }
+        //sign up button
+        binding.signUpBtnId.setOnClickListener()
+        {
+            signUp(binding.nameEditText,binding.emailEditText,binding.passEditText,binding.root,binding.progressBar)
+        }
+        //show pass button
+        binding.showBtn.setOnClickListener()
+        {
+            showPassword(binding.passEditText)
+        }
         //cancel button
         binding.cancelBtnId.setOnClickListener()
         {

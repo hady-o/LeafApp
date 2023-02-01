@@ -79,9 +79,20 @@
                 android:drawableStart="@drawable/ic_baseline_lock_24"
                 android:drawablePadding="8dp"
                 android:hint="@string/pass"
+                android:inputType="textPassword"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/emailEditText" />
+
+            <ImageView
+                android:id="@+id/showBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_remove_red_eye_24"
+                android:layout_marginEnd="@dimen/_10sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/passEditText"
+                app:layout_constraintEnd_toEndOf="@+id/passEditText"
+                app:layout_constraintTop_toTopOf="@+id/passEditText" />
 
             <LinearLayout
                 android:id="@+id/linearLayout2"
@@ -141,7 +152,17 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:indeterminateTint="@color/dark_yellow"
+            android:visibility="gone"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

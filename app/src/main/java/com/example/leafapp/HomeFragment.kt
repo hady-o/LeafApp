@@ -7,8 +7,11 @@ import android.view.ViewGroup
 import android.view.ViewGroup.MarginLayoutParams
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import com.bumptech.glide.Glide
 import com.example.leafapp.databinding.FragmentHomeBinding
 import com.example.leafapp.homefragments.*
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 
 
 class HomeFragment : Fragment() {
@@ -33,7 +36,15 @@ class HomeFragment : Fragment() {
         {
             Navigation.findNavController(binding.root).navigate(R.id.action_homeFragment_to_profileFragment)
         }
-
+        // set user data
+        var user =FirebaseAuth.getInstance().currentUser
+        binding.welcomeTextId.setText("Welcome back"+" "+user!!.displayName)
+        if(user.photoUrl!=null)
+        {
+            Glide.with(requireContext())
+                .load(user.photoUrl)
+                .into(binding.userImage)
+        }
 
         return binding.root
     }
