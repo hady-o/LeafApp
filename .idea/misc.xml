@@ -30,6 +30,7 @@
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/drawable/search_shape.xml" value="0.1365" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/drawable/square_shape.xml" value="0.175" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout-large-notlong/fragment_login.xml" value="0.264" />
+        <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout-large/fragment_sign_up.xml" value="0.6" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout-ldpi/fragment_login.xml" value="1.1875" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout-mdpi/fragment_login.xml" value="0.4" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout-normal-hdpi/fragment_login.xml" value="0.152" />
@@ -37,15 +38,17 @@
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout-normal-mdpi/fragment_login.xml" value="0.4" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout-normal/fragment_login.xml" value="0.176" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout-small/fragment_login.xml" value="1.0" />
-        <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout-xlarge/fragment_login.xml" value="0.35625" />
+        <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout-small/fragment_profile.xml" value="0.4" />
+        <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout-small/fragment_sign_up.xml" value="1.0" />
+        <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout-xlarge/fragment_login.xml" value="0.176" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/activity_main.xml" value="0.20512820512820512" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_all.xml" value="0.375" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_care.xml" value="0.375" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_home.xml" value="0.152" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_land_scaping.xml" value="0.375" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_login.xml" value="0.18532818532818532" />
-        <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_profile.xml" value="0.128" />
-        <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_sign_up.xml" value="0.4" />
+        <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_profile.xml" value="0.2375" />
+        <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_sign_up.xml" value="1.1875" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_splash.xml" value="0.20512820512820512" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_treatment.xml" value="0.35390625" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/home_action_bar.xml" value="0.264" />
