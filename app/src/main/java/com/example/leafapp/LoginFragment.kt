@@ -45,7 +45,7 @@ class LoginFragment : Fragment() {
             signIn(binding.emailEditText,binding.passEditText,binding.root, binding.progressBar)
         }
         //show pass button
-        binding.showBtn.setOnClickListener()
+        binding.showBtn!!.setOnClickListener()
         {
             showPassword(binding.passEditText)
         }

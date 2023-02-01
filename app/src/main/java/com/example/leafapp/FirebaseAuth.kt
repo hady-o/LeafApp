@@ -56,10 +56,10 @@ fun signUp(name: EditText, email: EditText, password: EditText, v:View,progressB
 }
 
 
-fun signIn(email: EditText, password: EditText,v:View,progressBar:ProgressBar) {
-    progressBar.setVisibility(View.VISIBLE)
-    val userEmail = email.text.toString()
-    val userPassword = password.text.toString()
+fun signIn(email: EditText?, password: EditText?, v:View, progressBar: ProgressBar?) {
+    progressBar!!.setVisibility(View.VISIBLE)
+    val userEmail = email!!.text.toString()
+    val userPassword = password!!.text.toString()
     if (userEmail.isEmpty() || userPassword.isEmpty()) {
         email.error = "Email is invalid"
         password.error = "password is invalid"
@@ -81,12 +81,12 @@ fun signIn(email: EditText, password: EditText,v:View,progressBar:ProgressBar) {
 
 }
 
-fun resetPassword(email: EditText,activity: Activity)
+fun resetPassword(email: EditText?, activity: Activity)
 {
-    var mail = email.text.toString()
+    var mail = email!!.text.toString()
 
     if (mail.isEmpty()||!Patterns.EMAIL_ADDRESS.matcher(mail).matches()) {
-        email.error = "Email is invalid"
+        email!! .error = "Email is invalid"
     } else {
         FirebaseAuth.getInstance().sendPasswordResetEmail(mail)
             .addOnCompleteListener { task ->
@@ -98,12 +98,12 @@ fun resetPassword(email: EditText,activity: Activity)
 }
 
 var isShow = true
-fun showPassword(pass: EditText) {
+fun showPassword(pass: EditText?) {
     if (isShow) {
-        pass.transformationMethod = null
+        pass!!.transformationMethod = null
         isShow = false
     } else {
-        pass.transformationMethod = PasswordTransformationMethod()
+        pass!!.transformationMethod = PasswordTransformationMethod()
         isShow = true
     }
 }
