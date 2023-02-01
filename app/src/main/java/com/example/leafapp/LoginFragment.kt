@@ -1,29 +1,16 @@
 package com.example.leafapp
 
-import android.R.attr
-import android.app.Activity
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.example.leafapp.databinding.FragmentLoginBinding
-import com.firebase.ui.auth.AuthUI
-import com.firebase.ui.auth.IdpResponse
-import com.google.android.gms.auth.api.identity.BeginSignInRequest
-import com.google.android.gms.auth.api.identity.SignInCredential
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
-import com.google.android.gms.common.api.ApiException
-import com.google.android.gms.tasks.OnCompleteListener
-import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.auth.GoogleAuthProvider
 
 
 class LoginFragment : Fragment() {
@@ -66,6 +53,11 @@ class LoginFragment : Fragment() {
         binding.googleSignInBtnId!!.setOnClickListener()
         {
 
+        }
+        //forgot password button
+        binding.forgotPassBtnId!!.setOnClickListener()
+        {
+           resetPassword(binding.emailEditText,requireActivity())
         }
 
 

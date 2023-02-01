@@ -1,5 +1,6 @@
 package com.example.leafapp
 
+import android.app.Activity
 import android.text.method.PasswordTransformationMethod
 import android.util.Patterns
 import android.view.View
@@ -78,6 +79,22 @@ fun signIn(email: EditText, password: EditText,v:View,progressBar:ProgressBar) {
         })
     }
 
+}
+
+fun resetPassword(email: EditText,activity: Activity)
+{
+    var mail = email.text.toString()
+
+    if (mail.isEmpty()||!Patterns.EMAIL_ADDRESS.matcher(mail).matches()) {
+        email.error = "Email is invalid"
+    } else {
+        FirebaseAuth.getInstance().sendPasswordResetEmail(mail)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    Toast.makeText(activity,"E-mail has been send",Toast.LENGTH_LONG).show()
+                }
+            }
+    }
 }
 
 var isShow = true
