@@ -1,0 +1,43 @@
+package com.example.leafapp.homemenus
+
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import com.example.leafapp.adapters.PlantAdapter
+import com.example.leafapp.databinding.FragmentHistoryBinding
+import com.example.leafapp.dataclass.PlantClass
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.EventListener
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.QuerySnapshot
+
+
+class HistoryFragment : Fragment() {
+    var plants: MutableList<PlantClass> = ArrayList<PlantClass>()
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        val binding = FragmentHistoryBinding.inflate(layoutInflater)
+        var adapter = PlantAdapter(plants)
+        binding.res.adapter = adapter
+
+        FirebaseFirestore.getInstance()
+            .collection("history")
+            .document(FirebaseAuth.getInstance().currentUser!!.uid)
+            .collection("photos")
+            .addSnapshotListener{
+
+                value,e->  plants.clear()
+                for (document in value!!) {
+                var plant = PlantClass(document.id,"n1","d1",document.getString("date").toString(),document.getString("photoUri").toString())
+                plants.add(plant)
+            }
+                adapter.notifyDataSetChanged()
+            }
+        return binding.root
+    }
+}

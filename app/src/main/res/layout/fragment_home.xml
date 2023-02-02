@@ -8,120 +8,47 @@
     tools:context=".HomeFragment">
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-
-        android:id="@+id/constraintLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/bar_shape"
+    <FrameLayout
+        android:id="@+id/frameId"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/_30sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/welcomeTextId"
-            style="@style/text_style_w25"
-            android:layout_margin="@dimen/_22sdp"
-            android:text="Welcome back Hadi"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
-        <com.mikhaellopez.circularimageview.CircularImageView
-            android:id="@+id/userImage"
-            android:layout_width="@dimen/_40sdp"
-            android:layout_height="@dimen/_40sdp"
-            android:layout_margin="@dimen/_14sdp"
-            android:src="@drawable/ic_loginvec"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/editText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/_22sdp"
-            android:background="@drawable/search_shape"
-            android:drawableStart="@drawable/ic_baseline_search_24"
-            android:drawablePadding="@dimen/_5sdp"
-            android:hint="plant or topic"
-            android:inputType="textCapWords|textPersonName"
-            android:paddingStart="@dimen/_10sdp"
-            android:paddingTop="@dimen/_7sdp"
-            android:paddingBottom="@dimen/_7sdp"
-
-            android:textSize="@dimen/_15sdp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/welcomeTextId" />
-
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/myTab"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:background="@android:color/transparent"
-            android:minHeight="?actionBarSize"
-            app:layout_constraintEnd_toEndOf="parent"
-
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText"
-            app:tabGravity="center"
-            app:tabIconTint="@null"
-
-            app:tabIndicatorColor="@color/dark_green"
-            app:tabIndicatorHeight="0dp"
-            app:tabMode="scrollable"
-            app:tabMinWidth="@dimen/_1sdp"
-            app:tabPadding="@dimen/_10sdp"
-
-            app:tabSelectedTextColor="@color/dark_green"
-            app:tabTextColor="@color/black">
-
-        </com.google.android.material.tabs.TabLayout>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewPager"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
-
-    </androidx.viewpager.widget.ViewPager>
+    </FrameLayout>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:backgroundTint="@color/dark_green"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.bottomappbar.BottomAppBar
             android:id="@+id/bottomBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            app:fabCradleRoundedCornerRadius="@dimen/_50sdp"
-
             android:background="@android:color/transparent"
-            android:backgroundTint="@color/dark_green">
+
+            android:backgroundTint="@color/dark_green"
+            app:fabCradleRoundedCornerRadius="@dimen/_50sdp">
 
             <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/navBarId"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/_4sdp"
                 android:background="@android:color/transparent"
                 app:elevation="0dp"
                 app:itemIconSize="@dimen/_25sdp"
-                android:layout_marginEnd="@dimen/_4sdp"
-
-                app:itemIconTint="@color/white"
+                app:itemIconTint="@color/dark_yellow"
                 app:itemTextColor="@color/white"
                 app:menu="@menu/user_menu" />
 

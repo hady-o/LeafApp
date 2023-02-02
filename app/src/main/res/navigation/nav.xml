@@ -50,10 +50,22 @@
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" >
         <action
-            android:id="@+id/action_profileFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-        <action
             android:id="@+id/action_profileFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.example.leafapp.homemenus.HistoryFragment"
+        android:label="HistoryFragment" />
+    <fragment
+        android:id="@+id/userHomeFragment"
+        android:name="com.example.leafapp.homemenus.UserHomeFragment"
+        android:label="UserHomeFragment" >
+        <action
+            android:id="@+id/action_userHomeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
     </fragment>
 </navigation>

@@ -2,7 +2,7 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/home"
+        android:id="@+id/homeMenuId"
         android:title="Home"
         app:showAsAction="ifRoom"
 
@@ -20,7 +20,7 @@
 
 
     <item
-        android:id="@+id/plantt"
+        android:id="@+id/plantMenuId"
         android:title="plant"
         app:showAsAction="ifRoom"
         android:icon="@drawable/ic_psychiatry_fill0_wght500_grad200_opsz48"/>
