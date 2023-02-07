@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/dark_green"
-        tools:context=".LoginFragment">
+        tools:context=".ui.auth.LoginFragment">
         <TextView
             android:id="@+id/textView"
             style="@style/text_style_w25"
@@ -29,6 +29,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/lin"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/_15sdp"

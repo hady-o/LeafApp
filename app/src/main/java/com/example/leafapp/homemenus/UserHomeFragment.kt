@@ -29,7 +29,10 @@ class UserHomeFragment : Fragment() {
         tabLayoutAdapter.addFragment(LandScapingFragment(), "Landscaping")
         binding.viewPager.adapter = tabLayoutAdapter
         binding.myTab.setupWithViewPager(binding.viewPager)
-
+        binding.editText.setOnClickListener()
+        {
+            Navigation.findNavController(binding.root).navigate(R.id.action_homeFragment_to_detalsFragment2)
+        }
         // set user profile button
         binding.userImage.setOnClickListener()
         {

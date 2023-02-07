@@ -1,4 +1,4 @@
-package com.example.leafapp
+package com.example.leafapp.ui
 
 import android.app.Activity
 import android.content.Intent
@@ -13,11 +13,10 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.bumptech.glide.Glide
+import com.example.leafapp.R
 import com.example.leafapp.databinding.FragmentProfileBinding
-import com.example.leafapp.dataclass.PlantClass
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.UserProfileChangeRequest
-import com.google.firebase.auth.ktx.userProfileChangeRequest
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import java.io.IOException

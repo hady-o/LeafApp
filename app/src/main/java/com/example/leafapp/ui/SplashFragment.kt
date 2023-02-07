@@ -1,6 +1,5 @@
-package com.example.leafapp
+package com.example.leafapp.ui
 
-import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -9,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import com.example.leafapp.R
 import com.example.leafapp.databinding.FragmentSplashBinding
 
 

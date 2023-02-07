@@ -41,7 +41,7 @@ fun signUp(name: EditText, email: EditText, password: EditText, v:View,progressB
                             .build()
                         user.updateProfile(profile).addOnCompleteListener {
                             progressBar.setVisibility(View.GONE)
-                            Navigation.findNavController(v).navigate(R.id.action_signUpFragment_to_loginFragment2)
+                            //Navigation.findNavController(v).navigate(R.id.action_signUpFragment_to_loginFragment2)
                         }
                     }
                 } else if (task.exception is FirebaseAuthUserCollisionException) {
@@ -53,6 +53,24 @@ fun signUp(name: EditText, email: EditText, password: EditText, v:View,progressB
             })
 
     }
+}
+
+fun validatSignUp(name: EditText, email: EditText, password: EditText):Boolean {
+    val userName = name.text.toString()
+    val userEmail = email.text.toString().trim { it <= ' ' }
+    val userPassword = password.text.toString().trim { it <= ' ' }
+    if (userPassword.isEmpty() || userName.isEmpty() || userEmail.isEmpty()) {
+        email.error = "Email is invalid"
+        password.error = "Password is invalid"
+        name.error = "Name is invalid"
+        return false
+
+    } else if (!Patterns.EMAIL_ADDRESS.matcher(userEmail).matches()) {
+        email.error = "Email is invalid"
+        email.requestFocus()
+        return false
+    }
+    else return true
 }
 
 
@@ -68,7 +86,7 @@ fun signIn(email: EditText?, password: EditText?, v:View, progressBar: ProgressB
         FirebaseAuth.getInstance().signInWithEmailAndPassword(userEmail, userPassword)
             .addOnCompleteListener(OnCompleteListener<AuthResult?> { task ->
             if(task.isSuccessful){
-                Navigation.findNavController(v).navigate(R.id.action_loginFragment_to_homeFragment)
+            //    Navigation.findNavController(v).navigate(R.id.action_loginFragment_to_homeFragment)
                 progressBar.setVisibility(View.GONE)
             }
             else
@@ -80,6 +98,7 @@ fun signIn(email: EditText?, password: EditText?, v:View, progressBar: ProgressB
     }
 
 }
+
 
 fun resetPassword(email: EditText?, activity: Activity)
 {

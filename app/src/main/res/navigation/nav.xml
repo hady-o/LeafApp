@@ -7,16 +7,18 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.example.leafapp.SplashFragment"
-        android:label="SplashFragment" >
+        android:name="com.example.leafapp.ui.SplashFragment"
+        android:label="SplashFragment"
+        tools:layout="@layout/fragment_splash">
         <action
             android:id="@+id/action_splashFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.example.leafapp.SignUpFragment"
-        android:label="SignUpFragment" >
+        android:name="com.example.leafapp.ui.auth.SignUpFragment"
+        android:label="SignUpFragment"
+        tools:layout="@layout/fragment_sign_up">
         <action
             android:id="@+id/action_signUpFragment_to_loginFragment2"
             app:destination="@id/loginFragment" />
@@ -26,8 +28,9 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.leafapp.LoginFragment"
-        android:label="LoginFragment" >
+        android:name="com.example.leafapp.ui.auth.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_loginFragment_to_signUpFragment2"
             app:destination="@id/signUpFragment" />
@@ -37,16 +40,19 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.leafapp.HomeFragment"
+        android:name="com.example.leafapp.ui.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_homeFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_detalsFragment2"
+            app:destination="@id/detalsFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.leafapp.ProfileFragment"
+        android:name="com.example.leafapp.ui.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" >
         <action
@@ -59,13 +65,27 @@
     <fragment
         android:id="@+id/historyFragment"
         android:name="com.example.leafapp.homemenus.HistoryFragment"
-        android:label="HistoryFragment" />
+        android:label="HistoryFragment"
+        tools:layout="@layout/fragment_history"/>
     <fragment
         android:id="@+id/userHomeFragment"
         android:name="com.example.leafapp.homemenus.UserHomeFragment"
-        android:label="UserHomeFragment" >
+        android:label="UserHomeFragment"
+        tools:layout="@layout/fragment_user_home">
         <action
             android:id="@+id/action_userHomeFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_userHomeFragment_to_detalsFragment"
+            app:destination="@id/detalsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detalsFragment"
+        android:name="com.example.leafapp.DetalsFragment"
+        android:label="fragment_detals"
+        tools:layout="@layout/fragment_detals" >
+        <action
+            android:id="@+id/action_detalsFragment_to_userHomeFragment"
+            app:destination="@id/userHomeFragment" />
     </fragment>
 </navigation>
