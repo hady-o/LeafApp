@@ -13,7 +13,7 @@ import com.google.firebase.storage.StorageReference
 import java.io.ByteArrayOutputStream
 
 
-fun savePhoto(image: Bitmap,date:String){
+fun savePhoto(image: Bitmap,date:String, classNaem:String){
     val mStorageRef: StorageReference = FirebaseStorage.getInstance()
         .getReference("history/" + System.currentTimeMillis() + ".jpg")
     if (image != null) {
@@ -26,17 +26,18 @@ fun savePhoto(image: Bitmap,date:String){
             it.addOnSuccessListener {
                 it.storage.downloadUrl.addOnSuccessListener()
                 {
-                    saveHistory(it,date)
+                    saveHistory(it,date,classNaem)
                 }
             }
         }
     }
 }
-fun saveHistory(uri:Uri,date:String){
+fun saveHistory(uri:Uri,date:String,className:String){
     val photo = hashMapOf(
         "photoUri" to uri,
         "date" to date,
         "userId" to FirebaseAuth.getInstance().currentUser!!.uid,
+        "className" to  className
     )
     Firebase.firestore.collection("history")
         .document(FirebaseAuth.getInstance().currentUser!!.uid)

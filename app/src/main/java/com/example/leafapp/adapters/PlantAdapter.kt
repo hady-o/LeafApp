@@ -28,6 +28,8 @@ class PlantAdapter(plants:List<PlantClass>) : RecyclerView.Adapter<PlantAdapter.
                     .load(this.photo)
                     .into(binding.plantImage)
                binding.plantDate.text=this.date
+               binding.plantNameId.text= this.name
+               binding.plantDisID.text = this.disease
             }
         }
     }

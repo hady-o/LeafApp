@@ -30,10 +30,16 @@ class HistoryFragment : Fragment() {
             .document(FirebaseAuth.getInstance().currentUser!!.uid)
             .collection("photos")
             .addSnapshotListener{
-
-                value,e->  plants.clear()
+                    value, _ ->  plants.clear()
                 for (document in value!!) {
-                var plant = PlantClass(document.id,"n1","d1",document.getString("date").toString(),document.getString("photoUri").toString())
+                    var tmp = document.getString("className").toString()
+                    var l = tmp.split("___")
+                    var plantName = l[0]
+                    var dseas = l[1].replace('_',' ')
+                var plant = PlantClass( document.id,plantName,dseas,
+                                        document.getString("date").toString(),
+                                        document.getString("photoUri").toString()
+                                        )
                 plants.add(plant)
             }
                 adapter.notifyDataSetChanged()

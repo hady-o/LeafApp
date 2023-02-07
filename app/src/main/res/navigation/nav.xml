@@ -47,8 +47,17 @@
             android:id="@+id/action_homeFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
         <action
+
             android:id="@+id/action_homeFragment_to_detalsFragment2"
             app:destination="@id/detalsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_resultAndTips2"
+            app:destination="@id/resultAndTips2" />
+
+
+
+
+
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
@@ -88,4 +97,14 @@
             android:id="@+id/action_detalsFragment_to_userHomeFragment"
             app:destination="@id/userHomeFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/resultAndTips2"
+        android:name="com.example.leafapp.ResultAndTips.ResultAndTips"
+        android:label="fragment_result_and_tips"
+        tools:layout="@layout/fragment_result_and_tips" >
+        <argument
+             android:name="my_image"
+            app:argType="android.graphics.Bitmap" />
+    </fragment>
+
 </navigation>

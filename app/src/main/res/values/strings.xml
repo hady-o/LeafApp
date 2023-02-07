@@ -14,4 +14,9 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="log_out">Log Out</string>
     <string name="myphotos">My Plants</string>
+    <string name="disclamer">*The result is auto diagnosed, please make sure your plant problem is the same as the symptom described/ above before taking any action</string>
+    <string name="over_view">Overview</string>
+    <string name="treatmet">Treatmet</string>
+    <string name="cause">Cause</string>
+    <string name="symptom">Symptom</string>
 </resources>
