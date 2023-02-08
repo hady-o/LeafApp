@@ -8,9 +8,9 @@ import android.view.ViewGroup
 import androidx.navigation.Navigation
 import com.bumptech.glide.Glide
 import com.example.leafapp.R
-import com.example.leafapp.databinding.FragmentHomeBinding
 import com.example.leafapp.databinding.FragmentUserHomeBinding
 import com.example.leafapp.homefragments.*
+import com.example.leafapp.homefragments.allFragment.AllFragment
 import com.google.firebase.auth.FirebaseAuth
 
 
@@ -29,6 +29,8 @@ class UserHomeFragment : Fragment() {
         tabLayoutAdapter.addFragment(LandScapingFragment(), "Landscaping")
         binding.viewPager.adapter = tabLayoutAdapter
         binding.myTab.setupWithViewPager(binding.viewPager)
+
+
         binding.editText.setOnClickListener()
         {
             Navigation.findNavController(binding.root).navigate(R.id.action_homeFragment_to_detalsFragment2)

@@ -68,13 +68,13 @@
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
                     app:cardCornerRadius="15dp">
-
+                    <!--                        android:src="@{post.photo}"-->
                     <ImageView
                         android:id="@+id/imageView3"
                         android:layout_width="match_parent"
                         android:layout_height="230dp"
                         android:scaleType="centerCrop"
-                        android:src="@{post.photo}"
+
                         app:cardCornerRadius="20dp"
                         app:srcCompat="@drawable/co"
                         android:contentDescription="@string/the_post_pictuer" />
@@ -101,7 +101,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         tools:text="123"
-                        android:text="@{post.likeCount}"
+                        android:text="@{post.getLikes()}"
                         android:textColor="@color/black" />
 
                     <ImageView
@@ -119,7 +119,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         tools:text="123"
-                        android:text="@{post.shareCount}"
+                        android:text="@{post.getShares()}"
                         android:textColor="@color/black" />
                 </LinearLayout>
             </LinearLayout>

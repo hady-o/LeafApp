@@ -106,5 +106,13 @@
              android:name="my_image"
             app:argType="android.graphics.Bitmap" />
     </fragment>
+    <fragment
+        android:id="@+id/allFragment"
+        android:name="com.example.leafapp.homefragments.allFragment.AllFragment"
+        android:label="AllFragment" >
+        <action
+            android:id="@+id/action_allFragment_to_detalsFragment"
+            app:destination="@id/detalsFragment" />
+    </fragment>
 
 </navigation>

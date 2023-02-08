@@ -8,7 +8,8 @@ plugins {
 
     // Save Arguments
     id 'androidx.navigation.safeargs.kotlin'
-
+    // for binding adapters
+    id 'kotlin-kapt'
 }
 
 android {

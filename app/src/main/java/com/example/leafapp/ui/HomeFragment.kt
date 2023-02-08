@@ -46,7 +46,7 @@ class HomeFragment : Fragment() {
     private val CAMERA_REQUEST = 1888
     private val MY_CAMERA_PERMISSION_CODE = 100
     var image: Bitmap? = null
-    public lateinit var binding: FragmentHomeBinding
+    lateinit var binding: FragmentHomeBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -71,8 +71,6 @@ class HomeFragment : Fragment() {
                 val cameraIntent = CropImage.activity().getIntent(this.requireContext())
 
                 startActivityForResult(cameraIntent, CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE)
-//                this.activity?.let { it1 -> CropImage.activity().start(it1) }
-//                startActivityForResult(CropImage.)
 
             }
         }
@@ -135,37 +133,11 @@ class HomeFragment : Fragment() {
                         this.requireActivity().contentResolver,
                         uri
                     )
-//                    val sdf = SimpleDateFormat("dd/M/yyyy")
-//                    val currentDate = sdf.format(Date())
-//                    //  binding.userImage.setImageBitmap()
-//                    savePhoto(bitmap!!, currentDate)
                     this.findNavController()
                         .navigate(HomeFragmentDirections.actionHomeFragmentToResultAndTips2(bitmap))
-
-
                 }
             }
         }
-
-        /*if (requestCode == CAMERA_REQUEST && resultCode == Activity.RESULT_OK) {
-            val photo = data!!.extras!!["data"] as Bitmap?
-            image = photo
-
-            this.findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToResultAndTips2(image!!))
-
-
-
- //           val sdf = SimpleDateFormat("dd/M/yyyy")
- //           val currentDate = sdf.format(Date())
- //         //  binding.userImage.setImageBitmap()
- //           Toast.makeText(requireContext(), data!!.extras!!["data"].toString(), Toast.LENGTH_LONG).show()
- //
- //           savePhoto(image!!,currentDate)
-
-        }
-        else{
-             Toast.makeText(this.context,"Fail",Toast.LENGTH_LONG).show()
-        }*/
     }
 
 

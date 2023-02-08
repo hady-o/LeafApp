@@ -5,12 +5,14 @@ class PostClass(
     var title: String,
     var likeCount: Int,
     var shareCount: Int,
-    var photo: String,
+    var photo: Int,
     var type: String,
     var topics: List<String>,
     var contents: List<String>
 ) {
 
+    fun getLikes (): String = likeCount.toString()
+    fun getShares (): String = shareCount.toString()
     fun likePressed(){
         likeCount+=1
     }
