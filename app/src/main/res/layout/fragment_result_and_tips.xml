@@ -19,6 +19,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+
+
             <ImageView
                 android:id="@+id/taken_img"
                 android:layout_width="match_parent"
@@ -28,7 +30,9 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:src="@tools:sample/backgrounds/scenic" />
+                tools:src="@tools:sample/backgrounds/scenic"
+                android:scaleType="centerCrop"
+                />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView"
@@ -105,6 +109,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:orientation="vertical"
+                android:padding="5dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -112,46 +117,44 @@
 
                 <TextView
 
-                    android:text="@string/over_view"
-                    style="@style/sub_hider_txt" />
+                    style="@style/sub_hider_txt"
+                    android:text="@string/over_view" />
 
                 <TextView
                     android:id="@+id/over_view"
-                    android:text="The over View Text "
-                    style="@style/content_txt" />
+                    style="@style/content_txt"
+                    android:text="The over View Text " />
 
                 <TextView
 
                     style="@style/sub_hider_txt"
                     android:text="@string/symptom" />
+
                 <TextView
                     android:id="@+id/syptom"
-                    android:text="The over View Text "
-                    style="@style/content_txt" />
+                    style="@style/content_txt"
+                    android:text="The over View Text " />
 
                 <TextView
 
                     style="@style/sub_hider_txt"
                     android:text="@string/cause" />
+
                 <TextView
                     android:id="@+id/Cause"
-                    android:text="The over View Text "
-                    style="@style/content_txt" />
+                    style="@style/content_txt"
+                    android:text="The over View Text " />
 
                 <TextView
 
                     style="@style/sub_hider_txt"
                     android:text="@string/treatmet" />
-                <TextView
-                    android:id="@+id/treatmet"
-                    android:text="The over View Text "
-                    style="@style/content_txt" />
 
                 <TextView
-                    android:id="@+id/pridection"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="The pridicton" />
+                    android:id="@+id/treatmet"
+                    style="@style/content_txt"
+                    android:text="The over View Text " />
+
             </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
