@@ -82,10 +82,12 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.5.1")
     // LiveData
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.5.1")
-//    kapt("com.google.dagger:hilt-android-compiler:2.44")
 
-    //lite
     implementation 'org.tensorflow:tensorflow-lite:2.3.0'
     //Image Cropper
     api 'com.theartofdev.edmodo:android-image-cropper:2.7.+'
+    // Fancy Toast
+    implementation 'io.github.shashank02051997:FancyToast:2.0.2'
+    //databinding
+    annotationProcessor "com.android.databinding:compiler:3.1.4"
 }

@@ -19,4 +19,7 @@
     <string name="treatmet">Treatmet</string>
     <string name="cause">Cause</string>
     <string name="symptom">Symptom</string>
+    <string name="like_button_image">Like button image</string>
+    <string name="share_button">Share Button</string>
+    <string name="the_post_pictuer">The Post Pictuer</string>
 </resources>
