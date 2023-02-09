@@ -36,7 +36,7 @@ class AllFragment : Fragment() {
         bunding.viewModel = viewModel
         viewModel.getAllPost()
         val adapter= PsAdapter(PsAdapter.PostListenerClass {
-            this.findNavController().navigate(UserHomeFragmentDirections.actionUserHomeFragmentToDetalsFragment())
+            this.findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDetalsFragment())
         })
         bunding.allRC.adapter = adapter
         return bunding.root
@@ -49,11 +49,5 @@ class AllFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        bunding.viewModel = viewModel
-        viewModel.getAllPost()
-        val adapter= PsAdapter(PsAdapter.PostListenerClass {
-            this.findNavController().navigate(UserHomeFragmentDirections.actionUserHomeFragmentToDetalsFragment())
-        })
-        bunding.allRC.adapter = adapter
     }
 }
