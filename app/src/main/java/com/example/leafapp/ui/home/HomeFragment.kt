@@ -42,10 +42,8 @@ class HomeFragment : Fragment() {
         binding = FragmentHomeBinding.inflate(layoutInflater)
         getFragment(UserHomeFragment())
         // AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-        PostDao.PostRoomDataBase.getInstance(requireContext()).dao.inserPosts(
-            PostClass("first one",5,4
-        ,",","care","","")
-        )
+//        PostDao.PostRoomDataBase.getInstance(requireContext()).dao.inserPosts(PostClass("first one",5,4,",","care","","",false))
+//        PostDao.PostRoomDataBase.getInstance(requireContext()).dao.inserPosts(PostClass("first one",5,4,",","treatment","","",false))
 
 
         // cam btn

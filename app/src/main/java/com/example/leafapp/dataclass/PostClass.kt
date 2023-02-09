@@ -17,33 +17,35 @@ data class PostClass(
     var photo: String,
     var type: String,
     var topics: String,
-    var contents: String
+    var contents: String,
+    var isLike: Boolean
 ) : Parcelable {
 //
+
     fun getLikes (): String = likeCount.toString()
     fun getShares (): String = shareCount.toString()
-//    fun likePressed(){
-//        likeCount+=1
-//    }
-//
-//    fun likeRelased(){
-//
-//        if(likeCount>0)
-//        {
-//            likeCount -=1
-//        }
-//    }
-//
-//    fun sharePressed(){
-//        shareCount+=1
-//    }
-//
-//    fun shareRelased(){
-//
-//        if(shareCount>0)
-//        {
-//            shareCount -=1
-//        }
-//    }
-//
+    fun likePressed(){
+        likeCount+=1
+    }
+
+    fun likeRelased(){
+
+        if(likeCount>0)
+        {
+            likeCount -=1
+        }
+    }
+
+    fun sharePressed(){
+        shareCount+=1
+    }
+
+    fun shareRelased(){
+
+        if(shareCount>0)
+        {
+            shareCount -=1
+        }
+    }
+
 }

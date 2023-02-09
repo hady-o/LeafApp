@@ -27,7 +27,8 @@ class PostsRepoImpl(val dataBase: PostDao.PostRoomDataBase,var context: Context)
                             document.getString("photo")!!,
                             document.getString("type")!!,
                             document.getString("topics")!!,
-                            document.getString("contents")!!
+                            document.getString("contents")!!,
+                            false
                         )
                         allPosts.add(p)
                         Toast.makeText(context,document.getString("title")!!,Toast.LENGTH_LONG).show()
