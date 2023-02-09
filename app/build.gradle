@@ -3,11 +3,9 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'com.google.gms.google-services'
-
-//    id("com.google.dagger.hilt.android")
-
     // Save Arguments
     id 'androidx.navigation.safeargs.kotlin'
+    id "kotlin-parcelize"
     // for binding adapters
     id 'kotlin-kapt'
 }

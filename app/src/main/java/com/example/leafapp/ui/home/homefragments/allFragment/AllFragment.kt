@@ -36,7 +36,7 @@ class AllFragment : Fragment() {
         bunding.viewModel = viewModel
         viewModel.getAllPost()
         val adapter= PsAdapter(PsAdapter.PostListenerClass {
-            this.findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDetalsFragment())
+            this.findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDetalsFragment(it))
         })
         bunding.allRC.adapter = adapter
         return bunding.root

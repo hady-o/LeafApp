@@ -99,6 +99,9 @@
         <action
             android:id="@+id/action_detalsFragment_to_userHomeFragment"
             app:destination="@id/userHomeFragment" />
+        <argument
+            android:name="post"
+            app:argType="com.example.leafapp.dataclass.PostClass" />
     </fragment>
     <fragment
         android:id="@+id/resultAndTips2"

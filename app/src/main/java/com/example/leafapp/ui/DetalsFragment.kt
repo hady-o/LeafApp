@@ -20,11 +20,14 @@ class DetalsFragment : Fragment() {
         val binding =  FragmentDetalsBinding.inflate(inflater)
 
         // binding.constraintLayout.background = requireContext().getDrawable(R.drawable.img)
-//        val args = arguments?.let {
-//            DetalsFragmentArgs.fromBundle(
-//                it
-//            )
-//        }
+        val args = arguments?.let {
+            DetalsFragmentArgs.fromBundle(
+                it
+            )
+        }
+        args?.let {
+            binding.post = it.post
+        }
         return binding.root
     }
 

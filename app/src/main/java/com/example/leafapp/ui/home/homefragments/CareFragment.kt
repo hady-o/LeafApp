@@ -12,6 +12,7 @@ import com.example.leafapp.adapters.PsAdapter
 import com.example.leafapp.bindRecyclerView
 import com.example.leafapp.databinding.FragmentAllBinding
 import com.example.leafapp.databinding.FragmentCareBinding
+import com.example.leafapp.ui.home.HomeFragmentDirections
 import com.example.leafapp.ui.home.homefragments.allFragment.AllFragmentDirections
 import com.example.leafapp.ui.home.homefragments.allFragment.AllFragmentViewModel
 
@@ -31,9 +32,9 @@ class CareFragment : Fragment() {
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
         val adapter= PsAdapter(PsAdapter.PostListenerClass {
-            this.findNavController().navigate(AllFragmentDirections.actionAllFragmentToDetalsFragment())
+            this.findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDetalsFragment(it))
         })
-        binding.allRC.adapter = adapter
+        binding.careRC.adapter = adapter
         return binding.root
     }
 
