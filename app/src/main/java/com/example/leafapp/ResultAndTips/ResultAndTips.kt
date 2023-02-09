@@ -43,12 +43,18 @@ class ResultAndTips : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(ResultAndTipsViewModel::class.java)
-        // TODO: Use the ViewModel
-
         viewModel.setImageBitmab(img, this.requireActivity().assets,this.requireActivity().contentResolver)
         binding.takenImg.setImageBitmap(img)
         binding.plantName.text = viewModel.plantName
         binding.desas.text= viewModel.dseas
+        if(viewModel.disasData != null){
+            binding.disease = viewModel.disasData
+            binding.fail.visibility= View.GONE
+        }
+        else{
+            binding.resLv.visibility = View.GONE
+
+        }
 
         if (viewModel.dseas.equals("healthy")){
             binding.statImg.setImageResource(R.drawable.good_plant)

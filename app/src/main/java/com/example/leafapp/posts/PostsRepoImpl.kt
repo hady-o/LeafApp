@@ -8,6 +8,7 @@ import com.example.leafapp.utils.await
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.shashank.sony.fancytoastlib.FancyToast
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -28,10 +29,11 @@ class PostsRepoImpl(val dataBase: PostDao.PostRoomDataBase,var context: Context)
                             document.getString("type")!!,
                             document.getString("topics")!!,
                             document.getString("contents")!!,
-                            false
+                            document.get("isLike")!!.toString().toBoolean()
                         )
                         allPosts.add(p)
-                        Toast.makeText(context,document.getString("title")!!,Toast.LENGTH_LONG).show()
+                        FancyToast.makeText(context,document.getString("title")!!,FancyToast.LENGTH_SHORT,FancyToast.SUCCESS,false).show()
+//                        FancyToast.makeText(context,)
                         dataBase.dao.inserPosts(p)
                     }
 
