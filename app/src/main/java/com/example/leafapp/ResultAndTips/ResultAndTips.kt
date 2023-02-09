@@ -20,6 +20,7 @@ class ResultAndTips : Fragment() {
     lateinit var binding: FragmentResultAndTipsBinding
 
     lateinit var img : Bitmap
+    var isSave: Boolean =  true
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -33,6 +34,7 @@ class ResultAndTips : Fragment() {
         }
         args?.let {
             img = it.myImage
+            isSave = it.saveImge
         }
 
         return binding.root
@@ -43,7 +45,7 @@ class ResultAndTips : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(ResultAndTipsViewModel::class.java)
-        viewModel.setImageBitmab(img, this.requireActivity().assets,this.requireActivity().contentResolver)
+        viewModel.setImageBitmab(img, this.requireActivity().assets,this.requireActivity().contentResolver, isSave)
         binding.takenImg.setImageBitmap(img)
         binding.plantName.text = viewModel.plantName
         binding.desas.text= viewModel.dseas

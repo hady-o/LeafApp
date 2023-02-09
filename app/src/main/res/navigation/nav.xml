@@ -75,7 +75,11 @@
         android:id="@+id/historyFragment"
         android:name="com.example.leafapp.ui.home.homemenus.HistoryFragment"
         android:label="HistoryFragment"
-        tools:layout="@layout/fragment_history"/>
+        tools:layout="@layout/fragment_history">
+        <action
+            android:id="@+id/action_historyFragment_to_resultAndTips2"
+            app:destination="@id/resultAndTips2" />
+    </fragment>
     <fragment
         android:id="@+id/userHomeFragment"
         android:name="com.example.leafapp.ui.home.homemenus.UserHomeFragment"
@@ -111,6 +115,9 @@
         <argument
              android:name="my_image"
             app:argType="android.graphics.Bitmap" />
+        <argument
+            android:name="saveImge"
+            app:argType="boolean" />
     </fragment>
     <fragment
         android:id="@+id/allFragment"

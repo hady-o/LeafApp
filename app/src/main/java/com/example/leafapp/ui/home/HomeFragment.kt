@@ -122,7 +122,7 @@ class HomeFragment : Fragment() {
                         uri
                     )
                     this.findNavController()
-                        .navigate(HomeFragmentDirections.actionHomeFragmentToResultAndTips2(bitmap))
+                        .navigate(HomeFragmentDirections.actionHomeFragmentToResultAndTips2(bitmap,true))
                 }
             }
         }

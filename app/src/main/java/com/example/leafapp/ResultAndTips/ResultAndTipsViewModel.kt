@@ -26,7 +26,7 @@ class ResultAndTipsViewModel : ViewModel() {
     var disasData : DiseaseClass? = null
 
 
-    fun setImageBitmab(imgUri: Bitmap?, assest: AssetManager, contentResolver: ContentResolver) {
+    fun setImageBitmab(imgUri: Bitmap?, assest: AssetManager, contentResolver: ContentResolver,isSave: Boolean) {
         imgBitMab = imgUri
         ImageClassifier.init(assest, "Models/MobileNetV2/MobileNetV2.tflite")
 
@@ -71,9 +71,13 @@ class ResultAndTipsViewModel : ViewModel() {
         var l = pridiction.split("___")
         plantName = l[0]
         dseas = l[1].replace('_', ' ')
-        // Saving The Photo to the fb
-        val sdf = SimpleDateFormat("dd/M/yyyy")
-        val currentDate = sdf.format(Date())
-        savePhoto(imgUri!!, currentDate, pridiction)
+        if(isSave)
+        {
+            // Saving The Photo to the fb
+            val sdf = SimpleDateFormat("dd/M/yyyy")
+            val currentDate = sdf.format(Date())
+            savePhoto(imgUri!!, currentDate, pridiction)
+        }
+
     }
 }
