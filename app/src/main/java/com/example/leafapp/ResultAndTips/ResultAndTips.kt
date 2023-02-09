@@ -8,9 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.leafapp.R
-import com.example.leafapp.databinding.FragmentHomeBinding
 import com.example.leafapp.databinding.FragmentResultAndTipsBinding
-import com.example.leafapp.homemenus.UserHomeFragment
 
 class ResultAndTips : Fragment() {
 

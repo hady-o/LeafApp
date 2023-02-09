@@ -13,7 +13,6 @@ import com.example.leafapp.R
 import com.example.leafapp.authentication.Resource
 import com.example.leafapp.databinding.FragmentSignUpBinding
 import com.example.leafapp.showPassword
-import com.example.leafapp.signUp
 import com.example.leafapp.validatSignUp
 
 

@@ -1,4 +1,4 @@
-package com.example.leafapp.homemenus
+package com.example.leafapp.ui.home.homemenus
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,9 +9,7 @@ import com.example.leafapp.adapters.PlantAdapter
 import com.example.leafapp.databinding.FragmentHistoryBinding
 import com.example.leafapp.dataclass.PlantClass
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.EventListener
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.QuerySnapshot
 
 
 class HistoryFragment : Fragment() {
@@ -30,7 +28,8 @@ class HistoryFragment : Fragment() {
             .document(FirebaseAuth.getInstance().currentUser!!.uid)
             .collection("photos")
             .addSnapshotListener{
-                    value, _ ->  plants.clear()
+                    value, _ ->
+                plants.clear()
                 for (document in value!!) {
                     var tmp = document.getString("className").toString()
                     var l = tmp.split("___")

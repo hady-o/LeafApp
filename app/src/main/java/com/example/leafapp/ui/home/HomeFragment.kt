@@ -1,8 +1,7 @@
-package com.example.leafapp.ui
+package com.example.leafapp.ui.home
 
 import android.Manifest
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
@@ -18,28 +17,15 @@ import androidx.fragment.app.Fragment
 
 import com.example.leafapp.R
 
-import androidx.fragment.app.FragmentManager
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
-import com.bumptech.glide.Glide
 
 import com.example.leafapp.databinding.FragmentHomeBinding
-import com.example.leafapp.homemenus.HistoryFragment
-import com.example.leafapp.homemenus.UserHomeFragment
+import com.example.leafapp.dataclass.PostClass
+import com.example.leafapp.posts.PostDao
+import com.example.leafapp.ui.home.homemenus.HistoryFragment
+import com.example.leafapp.ui.home.homemenus.UserHomeFragment
 
-import com.example.leafapp.savePhoto
-
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.storage.FirebaseStorage
-import com.google.firebase.storage.StorageReference
 import com.theartofdev.edmodo.cropper.CropImage
-import kotlinx.coroutines.CoroutineStart
-import org.checkerframework.common.returnsreceiver.qual.This
-import java.io.ByteArrayOutputStream
-import java.security.spec.PSSParameterSpec.DEFAULT
-
-import java.text.SimpleDateFormat
-import java.util.*
 
 
 class HomeFragment : Fragment() {
@@ -56,6 +42,10 @@ class HomeFragment : Fragment() {
         binding = FragmentHomeBinding.inflate(layoutInflater)
         getFragment(UserHomeFragment())
         // AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        PostDao.PostRoomDataBase.getInstance(requireContext()).dao.inserPosts(
+            PostClass("first one",5,4
+        ,",","care","","")
+        )
 
 
         // cam btn

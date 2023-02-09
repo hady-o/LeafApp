@@ -40,7 +40,7 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.leafapp.ui.HomeFragment"
+        android:name="com.example.leafapp.ui.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -53,9 +53,9 @@
         <action
             android:id="@+id/action_homeFragment_to_resultAndTips2"
             app:destination="@id/resultAndTips2" />
-
-
-
+        <action
+            android:id="@+id/action_homeFragment_to_detalsFragment"
+            app:destination="@id/detalsFragment" />
 
 
     </fragment>
@@ -73,12 +73,12 @@
     </fragment>
     <fragment
         android:id="@+id/historyFragment"
-        android:name="com.example.leafapp.homemenus.HistoryFragment"
+        android:name="com.example.leafapp.ui.home.homemenus.HistoryFragment"
         android:label="HistoryFragment"
         tools:layout="@layout/fragment_history"/>
     <fragment
         android:id="@+id/userHomeFragment"
-        android:name="com.example.leafapp.homemenus.UserHomeFragment"
+        android:name="com.example.leafapp.ui.home.homemenus.UserHomeFragment"
         android:label="UserHomeFragment"
         tools:layout="@layout/fragment_user_home">
         <action
@@ -90,9 +90,12 @@
     </fragment>
     <fragment
         android:id="@+id/detalsFragment"
-        android:name="com.example.leafapp.DetalsFragment"
+        android:name="com.example.leafapp.ui.DetalsFragment"
         android:label="fragment_detals"
         tools:layout="@layout/fragment_detals" >
+<!--        <argument-->
+<!--            android:name="my_post"-->
+<!--            app:argType="com.example.leafapp.dataclass.PostClass" />-->
         <action
             android:id="@+id/action_detalsFragment_to_userHomeFragment"
             app:destination="@id/userHomeFragment" />
@@ -108,7 +111,7 @@
     </fragment>
     <fragment
         android:id="@+id/allFragment"
-        android:name="com.example.leafapp.homefragments.allFragment.AllFragment"
+        android:name="com.example.leafapp.ui.home.homefragments.allFragment.AllFragment"
         android:label="AllFragment" >
         <action
             android:id="@+id/action_allFragment_to_detalsFragment"

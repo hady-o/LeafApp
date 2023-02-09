@@ -1,4 +1,4 @@
-package com.example.leafapp.homefragments
+package com.example.leafapp.ui.home.homefragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

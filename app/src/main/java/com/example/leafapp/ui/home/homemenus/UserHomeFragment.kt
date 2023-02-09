@@ -1,4 +1,4 @@
-package com.example.leafapp.homemenus
+package com.example.leafapp.ui.home.homemenus
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,8 +9,11 @@ import androidx.navigation.Navigation
 import com.bumptech.glide.Glide
 import com.example.leafapp.R
 import com.example.leafapp.databinding.FragmentUserHomeBinding
-import com.example.leafapp.homefragments.*
-import com.example.leafapp.homefragments.allFragment.AllFragment
+import com.example.leafapp.ui.home.homefragments.CareFragment
+import com.example.leafapp.ui.home.homefragments.allFragment.AllFragment
+import com.example.leafapp.ui.home.homefragments.LandScapingFragment
+import com.example.leafapp.ui.home.homefragments.TabLayoutAdapter
+import com.example.leafapp.ui.home.homefragments.TreatmentFragment
 import com.google.firebase.auth.FirebaseAuth
 
 

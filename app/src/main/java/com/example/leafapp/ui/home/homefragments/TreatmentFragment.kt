@@ -1,4 +1,4 @@
-package com.example.leafapp.homefragments
+package com.example.leafapp.ui.home.homefragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import com.example.leafapp.R
 
 
-class CareFragment : Fragment() {
+class TreatmentFragment : Fragment() {
 
 
     override fun onCreateView(
@@ -16,8 +16,7 @@ class CareFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_care, container, false)
+        return inflater.inflate(R.layout.fragment_treatment, container, false)
     }
-
 
 }

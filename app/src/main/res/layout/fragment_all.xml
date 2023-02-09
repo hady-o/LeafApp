@@ -5,16 +5,17 @@
 
     <data>
         <variable
-            name="allFragmentViewModel"
-            type="com.example.leafapp.homefragments.allFragment.AllFragmentViewModel" />
+            name="viewModel"
+            type="com.example.leafapp.ui.home.homefragments.allFragment.AllFragmentViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".homefragments.allFragment.AllFragment">
 
-        <!--            listData="@{allFragmentViewModel.ll}"-->
+        tools:context=".ui.home.homefragments.allFragment.AllFragment">
+
+
 
         <androidx.recyclerview.widget.RecyclerView
 
@@ -23,7 +24,8 @@
             android:layout_height="match_parent"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="0dp"
-
+            app:listData="@{viewModel.allPosts}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/post_card" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

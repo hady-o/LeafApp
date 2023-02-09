@@ -3,11 +3,8 @@ package com.example.leafapp.ui.auth
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
-import androidx.fragment.app.activityViewModels
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.collectAsState
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.*
@@ -17,16 +14,10 @@ import com.example.leafapp.authentication.Resource
 import com.example.leafapp.databinding.FragmentLoginBinding
 import com.example.leafapp.resetPassword
 import com.example.leafapp.showPassword
-import com.example.leafapp.signIn
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
-import com.google.firebase.auth.FirebaseAuth
-import dagger.hilt.EntryPoint
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.flow.flowOn
-import kotlinx.coroutines.flow.observeOn
 
 @AndroidEntryPoint
 class LoginFragment : Fragment() {
