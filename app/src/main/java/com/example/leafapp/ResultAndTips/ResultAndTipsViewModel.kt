@@ -5,10 +5,13 @@ import android.content.res.AssetManager
 import android.graphics.Bitmap
 import androidx.lifecycle.ViewModel
 import com.example.leafapp.dataclass.DiseaseClass
+import com.example.leafapp.savePhoto
 import org.apache.commons.csv.CSVFormat
 import org.apache.commons.csv.CSVParser
 import java.io.BufferedReader
 import java.io.InputStreamReader
+import java.text.SimpleDateFormat
+import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.collections.HashMap
 
@@ -69,11 +72,8 @@ class ResultAndTipsViewModel : ViewModel() {
         plantName = l[0]
         dseas = l[1].replace('_', ' ')
         // Saving The Photo to the fb
-/*        val sdf = SimpleDateFormat("dd/M/yyyy")
+        val sdf = SimpleDateFormat("dd/M/yyyy")
         val currentDate = sdf.format(Date())
-        savePhoto(imgUri!!, currentDate, pridiction)*/
+        savePhoto(imgUri!!, currentDate, pridiction)
     }
-
-
-
 }
