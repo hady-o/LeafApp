@@ -1,54 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_marginTop="@dimen/_10sdp"
-    android:layout_marginStart="@dimen/_10sdp"
-    android:layout_marginEnd="@dimen/_10sdp"
-    android:layout_width="match_parent"
-    android:background="@drawable/square_shape"
-    android:layout_height="wrap_content">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <ImageView
-        android:id="@+id/plantImage"
-        android:layout_width="@dimen/_60sdp"
+    <data>
+        <variable
+            name="plant"
+            type="com.example.leafapp.dataclass.PlantClass" />
+        <variable
+            name="click"
+            type="com.example.leafapp.adapters.PlantAdapter.HistoryListenerClass" />
+    </data>
 
-        android:layout_height="@dimen/_60sdp"
-        android:layout_margin="@dimen/_10sdp"
-        android:src="@drawable/ic_loginvec"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_width="match_parent"
+        android:background="@drawable/square_shape"
+        android:layout_height="wrap_content"
+        android:onClick="@{()->click.onClick(plant)}"
+        >
 
-    <TextView
-        android:id="@+id/plantNameId"
-        style="@style/text_style_g25"
-        android:layout_marginTop="@dimen/_15sdp"
-        android:layout_marginStart="@dimen/_15sdp"
-        android:text="Plant Name"
+        <ImageView
+            android:id="@+id/plantImage"
+            android:layout_width="@dimen/_60sdp"
+            loadImage="@{plant.photo}"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_margin="@dimen/_10sdp"
+            android:src="@drawable/ic_loginvec"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        app:layout_constraintStart_toEndOf="@+id/plantImage"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/plantNameId"
+            style="@style/text_style_g25"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:text="@{plant.name}"
+            tools:text="Plant Name"
 
-    <TextView
-        android:id="@+id/plantDisID"
-        style="@style/text_style_b20"
-        android:layout_marginStart="@dimen/_20sdp"
-        android:layout_marginTop="@dimen/_7sdp"
-        android:text="Plant Disease"
-        app:layout_constraintStart_toEndOf="@+id/plantImage"
-        app:layout_constraintTop_toBottomOf="@+id/plantNameId" />
+            app:layout_constraintStart_toEndOf="@+id/plantImage"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/plantDate"
-        style="@style/text_style_g12"
-        android:layout_margin="@dimen/_15sdp"
-        android:text="Plant Date"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toEndOf="@+id/plantDisID"
-        app:layout_constraintTop_toBottomOf="@+id/plantDisID" />
+        <TextView
+            android:id="@+id/plantDisID"
+            style="@style/text_style_b20"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:text="@{plant.disease}"
+            tools:text="Plant Disease"
+            app:layout_constraintStart_toEndOf="@+id/plantImage"
+            app:layout_constraintTop_toBottomOf="@+id/plantNameId" />
+
+        <TextView
+            android:id="@+id/plantDate"
+            style="@style/text_style_g12"
+            android:layout_margin="@dimen/_15sdp"
+            android:text="@{plant.date}"
+            tools:text="Plant Date"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.503"
+            app:layout_constraintStart_toEndOf="@+id/plantDisID"
+            app:layout_constraintTop_toBottomOf="@+id/plantDisID" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

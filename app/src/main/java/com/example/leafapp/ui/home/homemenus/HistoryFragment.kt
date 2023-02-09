@@ -10,6 +10,7 @@ import com.example.leafapp.databinding.FragmentHistoryBinding
 import com.example.leafapp.dataclass.PlantClass
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.shashank.sony.fancytoastlib.FancyToast
 
 
 class HistoryFragment : Fragment() {
@@ -20,29 +21,38 @@ class HistoryFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val binding = FragmentHistoryBinding.inflate(layoutInflater)
-        var adapter = PlantAdapter(plants)
-        binding.res.adapter = adapter
+        val adapter = PlantAdapter(PlantAdapter.HistoryListenerClass {
+            FancyToast.makeText(
+                this.requireContext(),
+                "This planet Name is ${it.name}",
+                FancyToast.LENGTH_SHORT,
+                FancyToast.SUCCESS,
+                true
+            ).show()
+        })
 
         FirebaseFirestore.getInstance()
             .collection("history")
             .document(FirebaseAuth.getInstance().currentUser!!.uid)
             .collection("photos")
-            .addSnapshotListener{
-                    value, _ ->
+            .addSnapshotListener { value, _ ->
                 plants.clear()
                 for (document in value!!) {
                     var tmp = document.getString("className").toString()
                     var l = tmp.split("___")
                     var plantName = l[0]
-                    var dseas = l[1].replace('_',' ')
-                var plant = PlantClass( document.id,plantName,dseas,
-                                        document.getString("date").toString(),
-                                        document.getString("photoUri").toString()
-                                        )
-                plants.add(plant)
+                    var dseas = l[1].replace('_', ' ')
+                    var plant = PlantClass(
+                        document.id, plantName, dseas,
+                        document.getString("date").toString(),
+                        document.getString("photoUri").toString()
+                    )
+                    plants.add(plant)
+                }
+                adapter.submitList(plants)
             }
-                adapter.notifyDataSetChanged()
-            }
+
+        binding.res.adapter = adapter
         return binding.root
     }
 }
