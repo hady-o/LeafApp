@@ -26,6 +26,7 @@ fun savePhoto(image: Bitmap,date:String, classNaem:String){
             it.addOnSuccessListener {
                 it.storage.downloadUrl.addOnSuccessListener()
                 {
+
                     saveHistory(it,date,classNaem)
                 }
             }

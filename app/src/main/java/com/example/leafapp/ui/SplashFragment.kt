@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.example.leafapp.R
 import com.example.leafapp.databinding.FragmentSplashBinding
+import com.example.leafapp.ui.home.homemenus.position
 
 
 class SplashFragment : Fragment() {
@@ -20,7 +21,7 @@ class SplashFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val binding =  FragmentSplashBinding.inflate(layoutInflater)
-
+        position = 0
         Handler(Looper.getMainLooper()).postDelayed({
            Navigation.findNavController(binding.root).navigate(R.id.action_splashFragment_to_loginFragment)
         }, 3000)

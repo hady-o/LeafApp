@@ -1,4 +1,4 @@
-package com.example.leafapp.ui.home.homefragments.allFragment
+package com.example.leafapp.ui.home
 
 import android.app.Application
 import androidx.lifecycle.*

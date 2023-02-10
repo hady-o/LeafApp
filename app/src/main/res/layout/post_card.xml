@@ -78,7 +78,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="230dp"
                         android:scaleType="centerCrop"
-
+                        loadImage="@{post.photo}"
                         app:cardCornerRadius="20dp"
                         app:srcCompat="@drawable/co"
                         android:contentDescription="@string/the_post_pictuer" />

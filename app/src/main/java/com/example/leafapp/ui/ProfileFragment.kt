@@ -55,6 +55,9 @@ class ProfileFragment : Fragment() {
             FirebaseAuth.getInstance().signOut()
             Navigation.findNavController(binding.root).navigate(R.id.action_profileFragment_to_loginFragment)
         }
+        binding.searchBtn.setOnClickListener(){
+            Navigation.findNavController(binding.root).navigate(R.id.action_profileFragment_to_homeFragment)
+        }
         //edit profile button
 
         binding.EditBtn.setOnClickListener()

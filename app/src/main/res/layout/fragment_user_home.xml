@@ -1,98 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    >
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <data>
+        <variable
+            name="vie"
+            type="com.example.leafapp.ui.home.AllFragmentViewModel" />
+    </data>
 
-        android:id="@+id/constraintLayout"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/bar_shape"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/welcomeTextId"
-            style="@style/text_style_w25"
-            android:layout_margin="@dimen/_22sdp"
-            android:text="Welcome back Hadi"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
 
-        <com.mikhaellopez.circularimageview.CircularImageView
-            android:id="@+id/userImage"
-            android:layout_width="@dimen/_40sdp"
-            android:layout_height="@dimen/_40sdp"
-            android:layout_margin="@dimen/_14sdp"
-            android:src="@drawable/ic_loginvec"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/editText"
+            android:id="@+id/constraintLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/_22sdp"
-            android:background="@drawable/search_shape"
-            android:drawableStart="@drawable/ic_baseline_search_24"
-            android:drawablePadding="@dimen/_5sdp"
-            android:hint="plant or topic"
-            android:inputType="textCapWords|textPersonName"
-            android:paddingStart="@dimen/_10sdp"
-            android:paddingTop="@dimen/_7sdp"
-            android:paddingBottom="@dimen/_7sdp"
-
-            android:textSize="@dimen/_15sdp"
+            android:background="@drawable/bar_shape"
+            android:paddingBottom="@dimen/_10sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/welcomeTextId" />
+            app:layout_constraintTop_toTopOf="parent">
 
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/myTab"
+            <TextView
+                android:id="@+id/welcomeTextId"
+                style="@style/text_style_w25"
+                android:layout_margin="@dimen/_22sdp"
+                android:text="Welcome back Hadi"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/userImage"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_margin="@dimen/_14sdp"
+                android:src="@drawable/ic_loginvec"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_22sdp"
+                android:background="@drawable/search_shape"
+                android:drawableStart="@drawable/ic_baseline_search_24"
+                android:drawablePadding="@dimen/_5sdp"
+                android:hint="plant or topic"
+                android:inputType="textCapWords|textPersonName"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingTop="@dimen/_7sdp"
+                android:paddingBottom="@dimen/_7sdp"
+
+                android:textSize="@dimen/_15sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/welcomeTextId" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editText">
+
+                <Button
+                    android:id="@+id/all"
+                    style="@style/second_btn_style_5"
+                    android:text="@string/all"
+                    app:backgroundTint="@null"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editText2" />
+
+                <Button
+                    android:id="@+id/care"
+                    style="@style/second_btn_style_5"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:text="@string/care"
+                    app:backgroundTint="@null"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editText2" />
+
+                <Button
+                    android:id="@+id/treatment"
+                    style="@style/second_btn_style_5"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:text="@string/treatmet"
+                    app:backgroundTint="@null"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editText2" />
+
+                <Button
+                    android:id="@+id/landscape"
+                    app:backgroundTint="@null"
+                    style="@style/second_btn_style_5"
+                    android:layout_gravity="end"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:text="@string/landscape" />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+
+            android:id="@+id/all_RC"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:background="@android:color/transparent"
-            android:minHeight="?actionBarSize"
-            app:layout_constraintEnd_toEndOf="parent"
-
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText"
-            app:tabGravity="center"
-            app:tabIconTint="@null"
-
-            app:tabIndicatorColor="@color/dark_green"
-            app:tabIndicatorHeight="0dp"
-            app:tabMode="scrollable"
-            app:tabMinWidth="@dimen/_1sdp"
-            app:tabPadding="@dimen/_10sdp"
-
-            app:tabSelectedTextColor="@color/dark_green"
-            app:tabTextColor="@color/black">
-
-        </com.google.android.material.tabs.TabLayout>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewPager"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
-
-
-
-    </androidx.viewpager.widget.ViewPager>
-</LinearLayout>
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp"
+            listData="@{vie.allPosts}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/post_card" />
+    </LinearLayout>
+</layout>
 

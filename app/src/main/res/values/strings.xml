@@ -22,4 +22,7 @@
     <string name="like_button_image">Like button image</string>
     <string name="share_button">Share Button</string>
     <string name="the_post_pictuer">The Post Pictuer</string>
+    <string name="all">All</string>
+    <string name="care">care</string>
+    <string name="landscape">landscape</string>
 </resources>

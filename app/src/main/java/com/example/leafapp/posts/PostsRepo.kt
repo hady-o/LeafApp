@@ -7,6 +7,7 @@ interface PostsRepo {
 
     suspend fun refreshData()
     fun addPost(post: PostClass)
+    fun updateLikes(id:String,likes:Int)
 
 
 }

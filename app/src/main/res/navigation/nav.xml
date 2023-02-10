@@ -106,6 +106,9 @@
         <argument
             android:name="post"
             app:argType="com.example.leafapp.dataclass.PostClass" />
+        <action
+            android:id="@+id/action_detalsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/resultAndTips2"
@@ -118,14 +121,9 @@
         <argument
             android:name="saveImge"
             app:argType="boolean" />
-    </fragment>
-    <fragment
-        android:id="@+id/allFragment"
-        android:name="com.example.leafapp.ui.home.homefragments.allFragment.AllFragment"
-        android:label="AllFragment" >
         <action
-            android:id="@+id/action_allFragment_to_detalsFragment"
-            app:destination="@id/detalsFragment" />
+            android:id="@+id/action_resultAndTips2_to_historyFragment"
+            app:destination="@id/historyFragment" />
     </fragment>
 
 </navigation>

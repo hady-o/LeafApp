@@ -5,19 +5,23 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.example.leafapp.R
+import com.example.leafapp.adapters.PsAdapter
 import com.example.leafapp.databinding.FragmentUserHomeBinding
-import com.example.leafapp.ui.home.homefragments.CareFragment
-import com.example.leafapp.ui.home.homefragments.allFragment.AllFragment
-import com.example.leafapp.ui.home.homefragments.LandScapingFragment
-import com.example.leafapp.ui.home.homefragments.TabLayoutAdapter
-import com.example.leafapp.ui.home.homefragments.TreatmentFragment
+import com.example.leafapp.ui.home.AllFragmentViewModel
+import com.example.leafapp.ui.home.HomeFragmentDirections
+import com.example.leafapp.ui.home.homemenus.position
 import com.google.firebase.auth.FirebaseAuth
 
 
 class UserHomeFragment : Fragment() {
+    private val viewModel: AllFragmentViewModel by lazy {
+        ViewModelProvider(this).get(AllFragmentViewModel::class.java)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,14 +29,19 @@ class UserHomeFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val binding =  FragmentUserHomeBinding.inflate(layoutInflater)
-        var tabLayoutAdapter = TabLayoutAdapter(parentFragmentManager)
-        tabLayoutAdapter.addFragment(AllFragment(), "All")
-        tabLayoutAdapter.addFragment(CareFragment(), "Care")
-        tabLayoutAdapter.addFragment(TreatmentFragment(), "Treatment")
-        tabLayoutAdapter.addFragment(LandScapingFragment(), "Landscaping")
-        binding.viewPager.adapter = tabLayoutAdapter
-        binding.myTab.setupWithViewPager(binding.viewPager)
+        binding.all.background= resources.getDrawable(R.drawable.button_shape5g)
+        binding.lifecycleOwner = this
+        binding.vie=viewModel
+        viewModel.getAllPost()
+        viewModel.allPosts.observe(viewLifecycleOwner){
 
+        }
+        val adapter= PsAdapter(PsAdapter.PostListenerClass {
+            this.findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDetalsFragment(it))
+        })
+
+        binding.allRC.adapter = adapter
+        binding.allRC.layoutManager!!.scrollToPosition(position)
 
         binding.editText.setOnClickListener()
         {
@@ -52,8 +61,42 @@ class UserHomeFragment : Fragment() {
                 .load(user.photoUrl)
                 .into(binding.userImage)
         }
+        binding.all.setOnClickListener(){
+            viewModel.getAllPost()
+            binding.all.background= resources.getDrawable(R.drawable.button_shape5g)
+            binding.care.background= resources.getDrawable(R.drawable.button_shape5)
+            binding.treatment.background= resources.getDrawable(R.drawable.button_shape5)
+            binding.landscape.background= resources.getDrawable(R.drawable.button_shape5)
+        }
+        binding.care.setOnClickListener(){
+            viewModel.getPost("care")
+            binding.all.background= resources.getDrawable(R.drawable.button_shape5)
+            binding.care.background= resources.getDrawable(R.drawable.button_shape5g)
+            binding.treatment.background= resources.getDrawable(R.drawable.button_shape5)
+            binding.landscape.background= resources.getDrawable(R.drawable.button_shape5)
+        }
+        binding.treatment.setOnClickListener(){
+            viewModel.getPost("treatment")
+            binding.all.background= resources.getDrawable(R.drawable.button_shape5)
+            binding.care.background= resources.getDrawable(R.drawable.button_shape5)
+            binding.treatment.background= resources.getDrawable(R.drawable.button_shape5g)
+            binding.landscape.background= resources.getDrawable(R.drawable.button_shape5)
+        }
+        binding.landscape.setOnClickListener(){
+            viewModel.getPost("landscape")
+            binding.all.background= resources.getDrawable(R.drawable.button_shape5)
+            binding.care.background= resources.getDrawable(R.drawable.button_shape5)
+            binding.treatment.background= resources.getDrawable(R.drawable.button_shape5)
+            binding.landscape.background= resources.getDrawable(R.drawable.button_shape5g)
+        }
 
         return binding.root
     }
+    override fun onResume() {
+        super.onResume()
+
+    }
+
+
 
 }

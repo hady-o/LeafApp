@@ -8,6 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.leafapp.R
 import com.example.leafapp.databinding.PostCardBinding
 import com.example.leafapp.dataclass.PostClass
+import com.example.leafapp.posts.PostDao
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class PsAdapter(val clickListener: PostListenerClass) :
     ListAdapter<PostClass, PsAdapter.ViewHolder>(PostDiffCallBack()) {
@@ -42,13 +45,22 @@ class PsAdapter(val clickListener: PostListenerClass) :
             binding.executePendingBindings()
             binding.likeImBtn.setOnClickListener {
                 if (!post!!.isLike) {
-                    post.likePressed()
-                    binding.likeCouter.text = post!!.getLikes()
+                   // post.likePressed()
+                    PostDao.PostRoomDataBase.getInstance(it.context).dao
+                        .updatePost(post.title,post.likeCount+1)
+                    Firebase.firestore.collection("Posts")
+                        .document(post.doc).update("likes",post.likeCount+1)
+                    post.likeCount=post.likeCount+1
+                    binding.likeCouter.text = post!!.likeCount.toString()
                     binding.likeImBtn.setImageResource(R.drawable.ic_baseline_favorite_24)
                     post.isLike = true
                 } else {
-                    post.likeRelased()
-                    binding.likeCouter.text = post.getLikes()
+                    PostDao.PostRoomDataBase.getInstance(it.context).dao
+                        .updatePost(post.title,post.likeCount+1)
+                    Firebase.firestore.collection("Posts")
+                        .document(post.doc).update("likes",post.likeCount+1)
+                    binding.likeCouter.text = post.likeCount.toString()
+                    post.likeCount=post.likeCount-1
                     binding.likeImBtn.setImageResource(R.drawable.ic_sharp_favorite_border_24)
                     post.isLike = false
                 }
@@ -68,6 +80,7 @@ class PsAdapter(val clickListener: PostListenerClass) :
     }
 
     class PostListenerClass(val clickListener: (post: PostClass) -> Unit) {
+
         fun onClick(post: PostClass) = clickListener(post)
     }
 

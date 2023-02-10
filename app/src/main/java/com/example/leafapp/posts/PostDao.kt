@@ -19,10 +19,13 @@ interface PostDao {
     @Query("SELECT * from PostClass where type = :typee")
     fun getSomePosts(typee:String): List<PostClass>
 
+    @Query("update PostClass SET likeCount=:likes WHERE title = :titlee")
+    fun updatePost(titlee:String,likes:Int)
 
 
 
-    @Database(entities = [PostClass::class], version = 2, exportSchema = false)
+
+    @Database(entities = [PostClass::class], version = 1, exportSchema = false)
     abstract class PostRoomDataBase: RoomDatabase() {
         abstract val dao : PostDao
 

@@ -29,11 +29,12 @@ class PostsRepoImpl(val dataBase: PostDao.PostRoomDataBase,var context: Context)
                             document.getString("type")!!,
                             document.getString("topics")!!,
                             document.getString("contents")!!,
-                            document.get("isLike")!!.toString().toBoolean()
+                            false,
+                            document.id
                         )
                         allPosts.add(p)
-                        FancyToast.makeText(context,document.getString("title")!!,FancyToast.LENGTH_SHORT,FancyToast.SUCCESS,false).show()
-//                        FancyToast.makeText(context,)
+//                        FancyToast.makeText(context,document.getString("title")!!,FancyToast.LENGTH_SHORT,FancyToast.SUCCESS,false).show()
+////                        FancyToast.makeText(context,)
                         dataBase.dao.inserPosts(p)
                     }
 
@@ -47,5 +48,10 @@ class PostsRepoImpl(val dataBase: PostDao.PostRoomDataBase,var context: Context)
     override fun addPost(post: PostClass) {
         Firebase.firestore.collection("Posts")
             .add(post)
+    }
+
+    override fun updateLikes(id:String,likes:Int) {
+        Firebase.firestore.collection("Posts")
+            .document(id).update("likes",likes+1)
     }
 }

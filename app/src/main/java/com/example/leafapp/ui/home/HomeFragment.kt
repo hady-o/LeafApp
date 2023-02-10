@@ -14,14 +14,13 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat.checkSelfPermission
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 
 import com.example.leafapp.R
 
 import androidx.navigation.fragment.findNavController
 
 import com.example.leafapp.databinding.FragmentHomeBinding
-import com.example.leafapp.dataclass.PostClass
-import com.example.leafapp.posts.PostDao
 import com.example.leafapp.ui.home.homemenus.HistoryFragment
 import com.example.leafapp.ui.home.homemenus.UserHomeFragment
 
@@ -33,7 +32,9 @@ class HomeFragment : Fragment() {
     private val MY_CAMERA_PERMISSION_CODE = 100
     var image: Bitmap? = null
     lateinit var binding: FragmentHomeBinding
-
+    private val viewModel: AllFragmentViewModel by lazy {
+        ViewModelProvider(this).get(AllFragmentViewModel::class.java)
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -128,6 +129,13 @@ class HomeFragment : Fragment() {
         }
     }
 
+
+
+    override fun onResume() {
+        super.onResume()
+
+        Toast.makeText(requireContext(),"home resume",Toast.LENGTH_LONG).show()
+    }
 
 }
 

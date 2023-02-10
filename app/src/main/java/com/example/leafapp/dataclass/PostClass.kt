@@ -18,7 +18,8 @@ data class PostClass(
     var type: String,
     var topics: String,
     var contents: String,
-    var isLike: Boolean
+    var isLike: Boolean,
+    var doc: String,
 ) : Parcelable {
 //
 
