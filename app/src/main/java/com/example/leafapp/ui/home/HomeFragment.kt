@@ -21,6 +21,7 @@ import com.example.leafapp.R
 import androidx.navigation.fragment.findNavController
 
 import com.example.leafapp.databinding.FragmentHomeBinding
+import com.example.leafapp.posts.PostDao
 import com.example.leafapp.ui.home.homemenus.HistoryFragment
 import com.example.leafapp.ui.home.homemenus.UserHomeFragment
 
@@ -46,7 +47,6 @@ class HomeFragment : Fragment() {
 //        PostDao.PostRoomDataBase.getInstance(requireContext()).dao.inserPosts(PostClass("first one",5,4,",","care","","",false))
 //        PostDao.PostRoomDataBase.getInstance(requireContext()).dao.inserPosts(PostClass("first one",5,4,",","treatment","","",false))
 
-
         // cam btn
         binding.camBtn.setOnClickListener()
         {
@@ -58,7 +58,6 @@ class HomeFragment : Fragment() {
                 requestPermissions(arrayOf(Manifest.permission.CAMERA), MY_CAMERA_PERMISSION_CODE)
             } else {
                 val cameraIntent = CropImage.activity().getIntent(this.requireContext())
-
                 startActivityForResult(cameraIntent, CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE)
 
             }
@@ -100,8 +99,8 @@ class HomeFragment : Fragment() {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 Toast.makeText(requireContext(), "camera permission granted", Toast.LENGTH_LONG)
                     .show()
-                val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-                startActivityForResult(cameraIntent, CAMERA_REQUEST)
+                val cameraIntent = CropImage.activity().getIntent(this.requireContext())
+                startActivityForResult(cameraIntent, CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE)
             } else {
                 Toast.makeText(requireContext(), "camera permission denied", Toast.LENGTH_LONG)
                     .show()
