@@ -59,13 +59,13 @@ class DetalsFragment : Fragment() {
             tmpContent = try {
                 contents[i]
             } catch (e: Exception) {
-                " "
+                " \n"
             }
 
             tmpTopic = try{
                 topics[i]
             }catch (e:Exception){
-                " "
+                "\n "
             }
             val tpicTV = TextView(requireContext())
             tpicTV.text = tmpTopic
