@@ -63,7 +63,7 @@ class ProfileFragment : Fragment() {
         binding.EditBtn.setOnClickListener()
         {
             if(!editMode) {
-                binding.EditBtn.text = "Save"
+                binding.EditBtn.text = getString(R.string.save)
                 editMode = true
                 binding.passEditText.setVisibility(View.VISIBLE)
                 //change user image
@@ -79,7 +79,7 @@ class ProfileFragment : Fragment() {
             {
                 updateProfile()
                 binding.passEditText.setVisibility(View.GONE)
-                binding.EditBtn.text = "Edit"
+                binding.EditBtn.text = getString(R.string.edit)
                 editMode = false
                 //change user image
                 binding.userImage.isClickable=false

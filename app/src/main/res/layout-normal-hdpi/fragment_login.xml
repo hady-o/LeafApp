@@ -65,7 +65,7 @@
             android:id="@+id/view"
             android:layout_width="@dimen/_80sdp"
             android:layout_height="@dimen/_2sdp"
-            android:layout_marginLeft="@dimen/_35sdp"
+            android:layout_marginStart="@dimen/_35sdp"
             android:layout_marginTop="@dimen/_30sdp"
             android:background="@color/black"
             app:layout_constraintStart_toStartOf="parent"
@@ -85,7 +85,7 @@
             android:layout_width="@dimen/_80sdp"
             android:layout_height="@dimen/_2sdp"
             android:layout_marginTop="@dimen/_30sdp"
-            android:layout_marginRight="@dimen/_35sdp"
+            android:layout_marginEnd="@dimen/_35sdp"
             android:background="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/googleSignInBtnId" />
@@ -135,7 +135,7 @@
             <TextView
                 android:id="@+id/forgotPassBtnId"
                 style="@style/text_style_g12"
-                android:text="Forgotten password?"
+                android:text="@string/forgotten_password"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/button3"
                 app:layout_constraintStart_toStartOf="parent"
@@ -165,14 +165,14 @@
             <TextView
 
                 style="@style/text_style_g12"
-                android:text="Don't have an account?"
+                android:text="@string/don_t_have_an_account"
                 android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/signUpBtnId"
                 style="@style/text_style_g12"
                 android:paddingStart="5dp"
-                android:text="Sign Up" />
+                android:text="@string/sign_up" />
 
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

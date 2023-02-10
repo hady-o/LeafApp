@@ -31,7 +31,7 @@ class SignUpFragment : Fragment() {
         //sign in button
         binding.signIntBtnIdInBtnId.setOnClickListener()
         {
-           // Navigation.findNavController(binding.root).navigate(R.id.action_signUpFragment_to_loginFragment2)
+            Navigation.findNavController(binding.root).navigate(R.id.action_signUpFragment_to_loginFragment2)
         }
         //sign up button
         binding.signUpBtnId.setOnClickListener()

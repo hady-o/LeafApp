@@ -92,7 +92,6 @@ class LoginFragment : Fragment() {
                     binding.progressBar.setVisibility(View.GONE)}
                 is Resource.Load ->{binding.progressBar.setVisibility(View.VISIBLE)}
                 is Resource.Success -> {
-                    Toast.makeText(requireContext()," data",Toast.LENGTH_LONG).show()
                     Navigation.findNavController(requireView()).navigate(R.id.action_loginFragment_to_homeFragment)
                 }
 

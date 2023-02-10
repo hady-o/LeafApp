@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/homeMenuId"
-        android:title="Home"
+        android:title="@string/home"
         app:showAsAction="ifRoom"
 
         android:icon="@drawable/ic_home_fill0_wght500_grad200_opsz48"/>
@@ -21,7 +21,7 @@
 
     <item
         android:id="@+id/plantMenuId"
-        android:title="plant"
+        android:title="@string/myphotos"
         app:showAsAction="ifRoom"
         android:icon="@drawable/ic_psychiatry_fill0_wght500_grad200_opsz48"/>
 

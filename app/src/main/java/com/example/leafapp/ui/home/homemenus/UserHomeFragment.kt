@@ -54,7 +54,7 @@ class UserHomeFragment : Fragment() {
         }
         // set user data
         var user = FirebaseAuth.getInstance().currentUser
-        binding.welcomeTextId.text = "Welcome back"+" "+user!!.displayName
+        binding.welcomeTextId.text = getString(R.string.welcome_back)+" "+user!!.displayName
         if(user.photoUrl!=null)
         {
             Glide.with(requireContext())

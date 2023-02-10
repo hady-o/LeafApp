@@ -165,7 +165,7 @@
                     android:id="@+id/EditBtn"
                     style="@style/primary_btn_style"
                     android:layout_marginStart="@dimen/_15sdp"
-                    android:text="Edit"
+                    android:text="@string/edit"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/editText2" />

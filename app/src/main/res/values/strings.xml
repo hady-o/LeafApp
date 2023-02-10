@@ -25,4 +25,11 @@
     <string name="all">All</string>
     <string name="care">care</string>
     <string name="landscape">landscape</string>
+    <string name="forgotten_password">Forgotten password?</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="plant_or_topic">plant or topic</string>
+    <string name="welcome_back">Welcome back</string>
+    <string name="home">Home</string>
+    <string name="edit">Edit</string>
+    <string name="save">Save</string>
 </resources>
