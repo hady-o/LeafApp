@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface PostDao {
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun inserPosts(post : PostClass)
 
 
@@ -25,7 +25,7 @@ interface PostDao {
 
 
 
-    @Database(entities = [PostClass::class], version = 1, exportSchema = false)
+    @Database(entities = [PostClass::class], version = 2, exportSchema = false)
     abstract class PostRoomDataBase: RoomDatabase() {
         abstract val dao : PostDao
 
