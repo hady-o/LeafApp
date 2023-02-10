@@ -51,10 +51,22 @@ class DetalsFragment : Fragment() {
             }
         }
 
-        for (i in 0 until topics.size){
-            var tmpTopic = topics[i]
-            var tmpContent = contents[i]
+        for (i in 0 until topics.size) {
 
+            var tmpTopic = "topics[i]"
+            var tmpContent = "contents[i]"
+
+            tmpContent = try {
+                contents[i]
+            } catch (e: Exception) {
+                " "
+            }
+
+            tmpTopic = try{
+                topics[i]
+            }catch (e:Exception){
+                " "
+            }
             val tpicTV = TextView(requireContext())
             tpicTV.text = tmpTopic
             tpicTV.setTextAppearance(R.style.sub_hider_txt)
