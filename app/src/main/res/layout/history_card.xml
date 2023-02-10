@@ -7,9 +7,7 @@
         <variable
             name="plant"
             type="com.example.leafapp.dataclass.PlantClass" />
-        <variable
-            name="click"
-            type="com.example.leafapp.adapters.PlantAdapter.HistoryListenerClass" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -18,9 +16,7 @@
         android:layout_marginEnd="@dimen/_10sdp"
         android:layout_width="match_parent"
         android:background="@drawable/square_shape"
-        android:layout_height="wrap_content"
-        android:onClick="@{()->click.onClick(plant)}"
-        >
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/plantImage"

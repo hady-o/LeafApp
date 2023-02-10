@@ -1,3 +1,5 @@
 package com.example.leafapp.ui.home.homemenus
 
-public var position : Int =0
+object CurrItem {
+    public var pos: Int = 0
+}

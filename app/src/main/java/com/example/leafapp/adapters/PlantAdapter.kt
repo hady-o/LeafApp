@@ -43,7 +43,7 @@ class PlantAdapter(val clickListener: HistoryListenerClass) :
             plant: PlantClass?, clickListener: HistoryListenerClass
         ) {
             binding.plant = plant
-            binding.click = clickListener
+
 
         }
     }

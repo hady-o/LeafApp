@@ -14,7 +14,7 @@ import com.example.leafapp.adapters.PsAdapter
 import com.example.leafapp.databinding.FragmentUserHomeBinding
 import com.example.leafapp.ui.home.AllFragmentViewModel
 import com.example.leafapp.ui.home.HomeFragmentDirections
-import com.example.leafapp.ui.home.homemenus.position
+//import com.example.leafapp.ui.home.homemenus.position
 import com.google.firebase.auth.FirebaseAuth
 
 
@@ -41,7 +41,7 @@ class UserHomeFragment : Fragment() {
         })
 
         binding.allRC.adapter = adapter
-        binding.allRC.layoutManager!!.scrollToPosition(position)
+        binding.allRC.layoutManager!!.scrollToPosition(CurrItem.pos)
 
         binding.editText.setOnClickListener()
         {

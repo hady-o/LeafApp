@@ -24,6 +24,10 @@ class PsAdapter(val clickListener: PostListenerClass) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         var post = getItem(position)!!
         holder.astroidBind(post, clickListener)
+        holder.itemView.setOnClickListener{
+            clickListener.onClick(post)
+            com.example.leafapp.ui.home.homemenus.CurrItem.pos = position
+        }
     }
 
 
@@ -41,7 +45,7 @@ class PsAdapter(val clickListener: PostListenerClass) :
             post: PostClass?, clickListener: PostListenerClass
         ) {
             binding.post = post
-            binding.click = clickListener
+
             binding.executePendingBindings()
             binding.likeImBtn.setOnClickListener {
                 if (!post!!.isLike) {

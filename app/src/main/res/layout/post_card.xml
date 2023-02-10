@@ -7,15 +7,13 @@
         <variable
             name="post"
             type="com.example.leafapp.dataclass.PostClass" />
-        <variable
-            name="click"
-            type="com.example.leafapp.adapters.PsAdapter.PostListenerClass" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="@{()->click.onClick(post)}">
+        >
 
 
         <androidx.cardview.widget.CardView
