@@ -1,5 +1,6 @@
 package com.example.leafapp
 
+import android.graphics.Bitmap
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -19,4 +20,14 @@ fun loadImage(imgView: ImageView,data:String){
     Glide.with(imgView.context)
         .load(data)
         .into(imgView)
+}
+
+@BindingAdapter("setBitmapImage")
+fun setBitmapImage(imgView: ImageView, data:Bitmap?){
+    if(data == null){
+        imgView.setImageResource(R.drawable.good_plant)
+    }
+    else {
+        imgView.setImageBitmap(data)
+    }
 }

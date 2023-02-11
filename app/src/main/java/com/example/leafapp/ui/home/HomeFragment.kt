@@ -36,6 +36,7 @@ class HomeFragment : Fragment() {
     private val viewModel: AllFragmentViewModel by lazy {
         ViewModelProvider(this).get(AllFragmentViewModel::class.java)
     }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -116,18 +117,18 @@ class HomeFragment : Fragment() {
             if (resultCode == AppCompatActivity.RESULT_OK) {
                 if (result != null) {
                     val uri = result.uri //path of image in phone
-
-                    val bitmap = MediaStore.Images.Media.getBitmap(
-                        this.requireActivity().contentResolver,
-                        uri
-                    )
                     this.findNavController()
-                        .navigate(HomeFragmentDirections.actionHomeFragmentToResultAndTips2(bitmap,true))
+                        .navigate(
+                            HomeFragmentDirections.actionHomeFragmentToResultAndTips2(
+                                uri.toString(),
+                                true,
+                                null
+                            )
+                        )
                 }
             }
         }
     }
-
 
 
     override fun onResume() {

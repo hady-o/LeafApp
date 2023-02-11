@@ -112,18 +112,22 @@
     </fragment>
     <fragment
         android:id="@+id/resultAndTips2"
-        android:name="com.example.leafapp.ResultAndTips.ResultAndTips"
+        android:name="com.example.leafapp.ResultFragment.ResultAndTips"
         android:label="fragment_result_and_tips"
         tools:layout="@layout/fragment_result_and_tips" >
         <argument
              android:name="my_image"
-            app:argType="android.graphics.Bitmap" />
+            app:argType="string" />
         <argument
             android:name="saveImge"
             app:argType="boolean" />
         <action
             android:id="@+id/action_resultAndTips2_to_historyFragment"
             app:destination="@id/historyFragment" />
+        <argument
+            android:name="prediction"
+            app:argType="string"
+            app:nullable="true" />
     </fragment>
 
 </navigation>

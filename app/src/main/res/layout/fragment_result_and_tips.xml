@@ -7,12 +7,13 @@
         <variable
             name="disease"
             type="com.example.leafapp.dataclass.DiseaseClass" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ResultAndTips.ResultAndTips">
+        tools:context=".ResultFragment.ResultAndTips">
 
 
 
@@ -198,7 +199,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/_20sdp"
-            android:src="@drawable/ic_arrow_back_black"
+            android:src="@drawable/ic_arrow_back_fill0_wght500_grad200_opsz48"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

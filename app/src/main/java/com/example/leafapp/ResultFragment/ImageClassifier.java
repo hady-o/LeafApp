@@ -1,4 +1,4 @@
-package com.example.leafapp.ResultAndTips;
+package com.example.leafapp.ResultFragment;
 
 import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;

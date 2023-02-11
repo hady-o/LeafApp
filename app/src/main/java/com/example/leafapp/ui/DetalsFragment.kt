@@ -12,9 +12,8 @@ import androidx.annotation.RequiresApi
 import androidx.navigation.Navigation
 import com.bumptech.glide.Glide
 import com.example.leafapp.R
-import com.example.leafapp.ResultAndTips.ResultAndTipsArgs
 import com.example.leafapp.databinding.FragmentDetalsBinding
-import com.example.leafapp.databinding.FragmentLoginBinding
+
 
 class DetalsFragment : Fragment() {
 
