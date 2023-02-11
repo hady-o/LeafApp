@@ -30,9 +30,9 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/_12sdp"
+            android:layout_marginStart="@dimen/_12sdp"
             android:layout_marginTop="@dimen/_140sdp"
-            android:layout_marginRight="@dimen/_12sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
             android:layout_marginBottom="@dimen/_12sdp"
             android:background="@drawable/square_shape"
             app:layout_constraintEnd_toEndOf="parent"

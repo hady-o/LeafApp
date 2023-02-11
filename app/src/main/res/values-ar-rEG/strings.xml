@@ -1,36 +1,43 @@
-
 <resources>
-        <string name="app_name">Leaf App</string>
-        <!-- TODO: Remove or change this placeholder text -->
-      <string name="slogan">لننقذ النباتات</string>
-        <string name="sign_in">تسجيل الدخول</string>
-        <string name="email">البريد</string>
-        <string name="pass">كلمة المرور</string>
-        <string name="sign_up">انشاء حساب</string>
-        <string name="Sign_In_With_Google">تسجيل الدخول باستخدام جوجل</string>
-        <string name="name">الاسم</string>
-        <string name="cancel">الغاء</string>
-        <string name="already_have_an_account">لديك حساب؟</string>
-        <!-- TODO: Remove or change this placeholder text -->
-        <string name="hello_blank_fragment">Hello blank fragment</string>
-        <string name="log_out">تسجيل الخروج</string>
-        <string name="myphotos">نباتاتى</string>
-        <string name="disclamer">*The result is auto diagnosed, please make sure your plant problem is the same as the symptom described/ above before taking any action</string>
-        <string name="over_view">Overview</string>
-        <string name="treatmet">علاج</string>
-        <string name="cause">Cause</string>
-        <string name="symptom">Symptom</string>
-        <string name="like_button_image">Like button image</string>
-        <string name="share_button">Share Button</string>
-        <string name="the_post_pictuer">The Post Pictuer</string>
-        <string name="all">الكل</string>
-        <string name="care">الرعاية</string>
-        <string name="landscape">منظر جمالي</string>
+  <string name="app_name">Leaf App</string>
+  <!-- TODO: Remove or change this placeholder text -->
+  <string name="slogan">فلننقذ النباتات</string>
+  <string name="sign_in">تسجيل الدخول</string>
+  <string name="email">البريد الإلكتروني</string>
+  <string name="pass">كلمة المرور</string>
+  <string name="sign_up">إنشاء حساب</string>
+  <string name="Sign_In_With_Google">تسجيل الدخول باستخدام جوجل</string>
+  <string name="name">الاسم</string>
+  <string name="cancel">إلغاء</string>
+  <string name="already_have_an_account">لديك حساب؟</string>
+  <!-- TODO: Remove or change this placeholder text -->
+  <string name="hello_blank_fragment">مرحباً! صفحة خالية</string>
+  <string name="log_out">تسجيل الخروج</string>
+  <string name="my_plants">نباتاتى</string>
+  <string name="disclaimer">*The result is auto diagnosed, please make sure your plant problem is the same as the symptom described/ above before taking any action</string>
+  <string name="overview">نظرة عامة</string>
+  <string name="treatment">علاج</string>
+  <string name="cause">Cause</string>
+  <string name="symptom">Symptom</string>
+  <string name="like_button">زر الإعجاب</string>
+  <string name="share_button">زر النشر</string>
+  <string name="the_post_picture">صورة المنشور</string>
+  <string name="all">الكل</string>
+  <string name="care">الرعاية</string>
+  <string name="landscape">منظر جمالي</string>
   <string name="forgotten_password">نسيت كلمة المرور؟</string>
   <string name="don_t_have_an_account">ليس لديك حساب؟</string>
-  <string name="plant_or_topic">نبات او موضوع</string>
-  <string name="welcome_back">مرحبا</string>
+  <string name="plant_or_topic">نبات أو موضوع</string>
+  <string name="welcome_back">مرحباً</string>
   <string name="home">الرئيسية</string>
   <string name="edit">تعديل</string>
   <string name="save">حفظ</string>
+  <string name="profile_title">نستطيع إحداث فارق سوياً</string>
+  <string name="next">التالي</string>
+  <string name="skip">تخطّ</string>
+  <string name="onBoarding1_txt">أدخل صورة النبات</string>
+  <string name="first_screen_description">يمكنك إدخال صورة محفوظة للنبات أو التقاط صورة النبات بنفسك لكي تتأكد من حالة النبات الصحية </string>
+  <string name="onBoarding2_txt">دليل لعلاج النباتات</string>
+  <string name="second_screen_description">ستعرف نوع المرض وكيفية علاجه عند التأكد من مرض النبات</string>
+  <string name="back_btn">زر الرجوع</string>
 </resources>

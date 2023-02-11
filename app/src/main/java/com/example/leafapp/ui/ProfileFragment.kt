@@ -36,8 +36,8 @@ class ProfileFragment : Fragment() {
         // Inflate the layout for this fragment
         binding =FragmentProfileBinding.inflate(layoutInflater)
         //set slogan colored text
-        val surName = getColoredSpanned("deference", "#6BDBAB")
-        binding.slogan.text = Html.fromHtml("To gather we can<br>make"+" "+surName)
+        val surName = getColoredSpanned("difference", "#6BDBAB")
+        binding.slogan.text = Html.fromHtml("Together we can<br>make $surName")
         //user data
         var user = FirebaseAuth.getInstance().currentUser
 
@@ -55,7 +55,7 @@ class ProfileFragment : Fragment() {
             FirebaseAuth.getInstance().signOut()
             Navigation.findNavController(binding.root).navigate(R.id.action_profileFragment_to_loginFragment)
         }
-        binding.searchBtn.setOnClickListener(){
+        binding.searchBtn?.setOnClickListener(){
             Navigation.findNavController(binding.root).navigate(R.id.action_profileFragment_to_homeFragment)
         }
         //edit profile button
@@ -93,6 +93,8 @@ class ProfileFragment : Fragment() {
 
         return binding.root
     }
+
+
     // text color
     private fun getColoredSpanned(text: String, color: String): String? {
         return "<font color=$color>$text</font>"

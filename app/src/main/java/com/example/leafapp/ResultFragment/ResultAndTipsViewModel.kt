@@ -21,7 +21,7 @@ import java.util.*
 import kotlin.collections.HashMap
 
 class ResultAndTipsViewModel : ViewModel() {
-    //    private var imgBitMab: Bitmap? = null
+    //    private var imgbitmap: Bitmap? = null
     private lateinit var pridiction: String
     lateinit var context: Context
     lateinit var activity: Activity
@@ -31,24 +31,24 @@ class ResultAndTipsViewModel : ViewModel() {
         get() = _plantNameLD
 
     private val _diseasNamaLD = MutableLiveData<String>()
-    val diseasNaemLD: LiveData<String>
+    val diseaseNameLD: LiveData<String>
         get() = _diseasNamaLD
 
-    var disasData: DiseaseClass? = null
+    var diseaseData: DiseaseClass? = null
 
-    fun setImageBitmab(
+    fun setBitmap(
         imageBitmap: Bitmap?,
-        assest: AssetManager,
+        asset: AssetManager,
         isSave: Boolean,
-        pridction: String?
+        prediction: String?
     ) {
         viewModelScope.launch {
             ImageClassifier.init(
-                assest,
+                asset,
                 "Models/MobileNetV2/MobileNetV2.tflite"
             )
 
-            if (pridction == null) {
+            if (prediction == null) {
                 var res =
                     ImageClassifier.predict(
                         imageBitmap
@@ -67,9 +67,9 @@ class ResultAndTipsViewModel : ViewModel() {
                 }
                 pridiction = ImageClassifier.labes[idx]
             } else {
-                pridiction = pridction
+                pridiction = prediction
             }
-            disasData = DiseasesData.lookUp[pridiction]
+            diseaseData = DiseasesData.lookUp[pridiction]
 
             var l = pridiction.split("___")
             _plantNameLD.value = l[0]

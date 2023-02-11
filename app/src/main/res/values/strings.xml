@@ -1,27 +1,27 @@
 <resources>
     <string name="app_name">Leaf App</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="slogan">Let\'s Save\nThe\nPlanet</string>
+    <string name="slogan">Let\'s Save\nThe\nPlants</string>
     <string name="sign_in">Sign In</string>
     <string name="email">E-mail</string>
     <string name="pass">Password</string>
     <string name="sign_up">Sign Up</string>
-    <string name="Sign_In_With_Google">Sign In With Google</string>
+    <string name="Sign_In_With_Google">Sign in with Google</string>
     <string name="name">Name</string>
-    <string name="cancel">cancel</string>
+    <string name="cancel">Cancel</string>
     <string name="already_have_an_account">already have an account?</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="log_out">Log Out</string>
-    <string name="myphotos">My Plants</string>
-    <string name="disclamer">*The result is auto diagnosed, please make sure your plant problem is the same as the symptom described/ above before taking any action</string>
-    <string name="over_view">Overview</string>
-    <string name="treatmet">Treatmet</string>
+    <string name="my_plants">My Plants</string>
+    <string name="disclaimer">*The result is auto diagnosed, please make sure your plant problem is the same as the symptom described/ above before taking any action</string>
+    <string name="overview">Overview</string>
+    <string name="treatment">treatment</string>
     <string name="cause">Cause</string>
     <string name="symptom">Symptom</string>
-    <string name="like_button_image">Like button image</string>
+    <string name="like_button">Like button image</string>
     <string name="share_button">Share Button</string>
-    <string name="the_post_pictuer">The Post Pictuer</string>
+    <string name="the_post_picture">The Post picture</string>
     <string name="all">All</string>
     <string name="care">care</string>
     <string name="landscape">landscape</string>
@@ -32,4 +32,12 @@
     <string name="home">Home</string>
     <string name="edit">Edit</string>
     <string name="save">Save</string>
+    <string name="profile_title">Together we can\nmake difference</string>
+    <string name="next">Next</string>
+    <string name="skip">Skip</string>
+    <string name="onBoarding1_txt">Enter the plant image</string>
+    <string name="first_screen_description">You can capture images of plants by yourself or just pick a saved image of the required plant to check its health condition.</string>
+    <string name="onBoarding2_txt">Guide to cure plants</string>
+    <string name="second_screen_description">If the plant is diseased, you will know the disease type and will be provided with essential tips to know how to cure your plant</string>
+    <string name="back_btn">Back button</string>
 </resources>

@@ -44,7 +44,7 @@
                     app:cardCornerRadius="15dp">
 
                     <TextView
-                        android:id="@+id/psot_type"
+                        android:id="@+id/post_type"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="#2B438C6D"
@@ -56,7 +56,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <TextView
-                    android:id="@+id/post_titel"
+                    android:id="@+id/post_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
@@ -79,7 +79,7 @@
                         loadImage="@{post.photo}"
                         app:cardCornerRadius="20dp"
                         app:srcCompat="@drawable/co"
-                        android:contentDescription="@string/the_post_pictuer" />
+                        android:contentDescription="@string/the_post_picture" />
                 </androidx.cardview.widget.CardView>
 
                 <LinearLayout
@@ -93,12 +93,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:contentDescription="@string/share_button"
+                        android:contentDescription="@string/like_button"
                         app:srcCompat="@drawable/ic_sharp_favorite_border_24"
                         tools:ignore="RedundantDescriptionCheck" />
 
                     <TextView
-                        android:id="@+id/like_couter"
+                        android:id="@+id/like_counter"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -111,12 +111,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:contentDescription="@string/like_button_image"
+                        android:contentDescription="@string/share_button"
                         app:srcCompat="@drawable/ic_baseline_share_24"
                         tools:ignore="RedundantDescriptionCheck" />
 
                     <TextView
-                        android:id="@+id/share_couter"
+                        android:id="@+id/share_counter"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"

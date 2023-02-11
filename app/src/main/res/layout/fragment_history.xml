@@ -25,7 +25,7 @@
             android:id="@+id/welcomeTextId"
             style="@style/text_style_w25"
             android:layout_margin="@dimen/_22sdp"
-            android:text="@string/myphotos"
+            android:text="@string/my_plants"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -39,6 +39,7 @@
             android:drawableStart="@drawable/ic_baseline_search_24"
             android:drawablePadding="@dimen/_5sdp"
             android:hint="@string/plant_or_topic"
+            android:textColor="@color/dark_green"
             android:inputType="textCapWords|textPersonName"
             android:paddingStart="@dimen/_10sdp"
             android:paddingTop="@dimen/_7sdp"

@@ -9,8 +9,8 @@ import java.io.InputStreamReader
 
 object DiseasesData {
    public val lookUp: HashMap<String, DiseaseClass?> = hashMapOf("key" to null)
-   fun loadData(assest: AssetManager){
-       val inputStream = InputStreamReader(assest.open("Data/DiseasesDescription.csv"))
+   fun loadData(asset: AssetManager){
+       val inputStream = InputStreamReader(asset.open("Data/DiseasesDescription.csv"))
        val reader = BufferedReader(inputStream)
        val csvPars = CSVParser.parse(
            reader,

@@ -22,8 +22,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_18sdp"
-            android:layout_marginRight="@dimen/_18sdp"
-            android:layout_marginLeft="@dimen/_18sdp"
+            android:layout_marginEnd="@dimen/_18sdp"
+            android:layout_marginStart="@dimen/_18sdp"
             android:background="@drawable/square_shape"
 
             android:orientation="vertical"
@@ -61,7 +61,7 @@
                 style="@style/text_style_g12"
                 android:layout_marginTop="@dimen/_5sdp"
                 android:layout_gravity="center"
-                android:text="To gather we can\nmake deference"
+                android:text="@string/profile_title"
                 android:textSize="@dimen/_16sdp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -89,8 +89,8 @@
             android:id="@+id/constraintLayout2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_18sdp"
-            android:layout_marginRight="@dimen/_18sdp"
+            android:layout_marginStart="@dimen/_18sdp"
+            android:layout_marginEnd="@dimen/_18sdp"
             android:background="@drawable/square_shape"
             android:orientation="vertical"
 

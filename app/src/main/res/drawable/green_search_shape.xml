@@ -6,7 +6,7 @@
     <padding
         android:top="@dimen/_5sdp"
         android:bottom="@dimen/_5sdp"
-        android:left="@dimen/_5sdp"
-        android:right="@dimen/_5sdp"/>
+        android:start="@dimen/_5sdp"
+        android:end="@dimen/_5sdp"/>
     <corners android:radius="30dp"/>
 </shape>

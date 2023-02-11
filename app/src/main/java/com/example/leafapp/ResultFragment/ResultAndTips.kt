@@ -22,7 +22,7 @@ class ResultAndTips : Fragment() {
 
     lateinit var img: String
     var isSave: Boolean = true
-    var pridction: String? = null
+    var prediction: String? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -37,11 +37,11 @@ class ResultAndTips : Fragment() {
         args?.let {
             img = it.myImage
             isSave = it.saveImge
-            pridction = it.prediction
+            prediction = it.prediction
         }
 
 
-        binding.backhBtn.setOnClickListener() {
+        binding.backBtn.setOnClickListener() {
             Navigation.findNavController(binding.root).navigateUp()
         }
         return binding.root
@@ -68,27 +68,27 @@ class ResultAndTips : Fragment() {
                 .into(binding.takenImg)
         }
 
-        viewModel.setImageBitmab(image, this.requireActivity().assets, isSave,pridction)
+        viewModel.setBitmap(image, this.requireActivity().assets, isSave,prediction)
         viewModel.plantNameLD.observe(viewLifecycleOwner) {
             it?.let {
                 binding.plantName.text = it
             }
         }
 
-        viewModel.diseasNaemLD.observe(viewLifecycleOwner) {
+        viewModel.diseaseNameLD.observe(viewLifecycleOwner) {
             it?.let {
-                binding.desas.text = it
+                binding.diseaseText.text = it
             }
         }
 
-        if (viewModel.disasData != null) {
-            binding.disease = viewModel.disasData
+        if (viewModel.diseaseData != null) {
+            binding.disease = viewModel.diseaseData
             binding.fail.visibility = View.GONE
         } else {
             binding.resLv.visibility = View.GONE
         }
 
-        if (viewModel.diseasNaemLD.value.equals("healthy")) {
+        if (viewModel.diseaseNameLD.value.equals("healthy")) {
             binding.statImg.setImageResource(R.drawable.good_plant)
         }
     }

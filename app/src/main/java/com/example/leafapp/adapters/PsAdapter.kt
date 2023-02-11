@@ -23,7 +23,7 @@ class PsAdapter(val clickListener: PostListenerClass) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         var post = getItem(position)!!
-        holder.astroidBind(post, clickListener)
+        holder.postBind(post, clickListener)
         holder.itemView.setOnClickListener{
             clickListener.onClick(post)
             com.example.leafapp.ui.home.homemenus.CurrItem.pos = position
@@ -41,7 +41,7 @@ class PsAdapter(val clickListener: PostListenerClass) :
             }
         }
 
-        fun astroidBind(
+        fun postBind(
             post: PostClass?, clickListener: PostListenerClass
         ) {
             binding.post = post
@@ -55,7 +55,7 @@ class PsAdapter(val clickListener: PostListenerClass) :
                     Firebase.firestore.collection("Posts")
                         .document(post.doc).update("likes",post.likeCount+1)
                     post.likeCount=post.likeCount+1
-                    binding.likeCouter.text = post!!.likeCount.toString()
+                    binding.likeCounter.text = post!!.likeCount.toString()
                     binding.likeImBtn.setImageResource(R.drawable.ic_baseline_favorite_24)
                     post.isLike = true
                 } else {
@@ -63,7 +63,7 @@ class PsAdapter(val clickListener: PostListenerClass) :
                         .updatePost(post.title,post.likeCount+1)
                     Firebase.firestore.collection("Posts")
                         .document(post.doc).update("likes",post.likeCount+1)
-                    binding.likeCouter.text = post.likeCount.toString()
+                    binding.likeCounter.text = post.likeCount.toString()
                     post.likeCount=post.likeCount-1
                     binding.likeImBtn.setImageResource(R.drawable.ic_sharp_favorite_border_24)
                     post.isLike = false

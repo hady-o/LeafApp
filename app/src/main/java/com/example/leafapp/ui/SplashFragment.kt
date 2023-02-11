@@ -15,18 +15,22 @@ import com.example.leafapp.databinding.FragmentSplashBinding
 
 class SplashFragment : Fragment() {
 
+    private lateinit var binding: FragmentSplashBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val binding =  FragmentSplashBinding.inflate(layoutInflater)
+        binding =  FragmentSplashBinding.inflate(layoutInflater)
 //        position = 0
         Handler(Looper.getMainLooper()).postDelayed({
-           Navigation.findNavController(binding.root).navigate(R.id.action_splashFragment_to_loginFragment)
+           navigateFromSplash()
         }, 3000)
 
         return binding.root
     }
 
+    private fun navigateFromSplash(){
+        Navigation.findNavController(binding.root).navigate(R.id.action_splashFragment_to_viewPagerFragment)
+    }
 }

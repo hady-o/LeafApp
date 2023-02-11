@@ -38,7 +38,7 @@
                     android:layout_marginStart="15dp"
                     android:layout_marginTop="30dp"
                     android:layout_marginEnd="15dp"
-                    android:text="No Data For That Plants yet"
+                    android:text="No data for these plants yet"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"
@@ -101,13 +101,13 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_margin="10dp"
-                                    tools:text="Appl"
+                                    tools:text="Apple"
                                     android:textColor="#D88204"
                                     android:textSize="25sp"
                                     android:textStyle="bold" />
 
                                 <TextView
-                                    android:id="@+id/desas"
+                                    android:id="@+id/disease_text"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_margin="10dp"
@@ -122,7 +122,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="10dp"
-                            android:text="@string/disclamer"
+                            android:text="@string/disclaimer"
                             android:textSize="10sp" />
 
                     </LinearLayout>
@@ -144,14 +144,14 @@
                     <TextView
 
                         style="@style/sub_hider_txt"
-                        android:text="@string/over_view"
+                        android:text="@string/overview"
                         android:textColor="@color/black" />
 
                     <TextView
-                        android:id="@+id/over_view"
+                        android:id="@+id/overview"
                         style="@style/content_txt"
                         android:text="@{disease.howItStared}"
-                        tools:text="The over View Text " />
+                        tools:text="Text overview" />
 
                     <TextView
 
@@ -160,13 +160,12 @@
                         android:textColor="@color/black" />
 
                     <TextView
-                        android:id="@+id/syptom"
+                        android:id="@+id/symptom"
                         style="@style/content_txt"
                         android:text="@{disease.symptoms}"
-                        tools:text="The over View Text " />
+                        tools:text="Text overview" />
 
                     <TextView
-
                         style="@style/sub_hider_txt"
                         android:text="@string/cause"
                         android:textColor="@color/black" />
@@ -175,19 +174,19 @@
                         android:id="@+id/Cause"
                         style="@style/content_txt"
                         android:text="@{disease.cause}"
-                        tools:text="The over View Text " />
+                        tools:text="Text overview" />
 
                     <TextView
 
                         style="@style/sub_hider_txt"
-                        android:text="@string/treatmet"
+                        android:text="@string/treatment"
                         android:textColor="@color/black" />
 
                     <TextView
-                        android:id="@+id/treatmet"
+                        android:id="@+id/treatment"
                         style="@style/content_txt"
                         android:text="@{disease.tips}"
-                        tools:text="The over View Text " />
+                        tools:text="Text overview" />
 
                 </LinearLayout>
 
@@ -195,11 +194,12 @@
 
         </ScrollView>
         <ImageView
-            android:id="@+id/backhBtn"
+            android:id="@+id/backBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/_20sdp"
             android:src="@drawable/ic_arrow_back_fill0_wght500_grad200_opsz48"
+            android:contentDescription="@string/back_btn"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
