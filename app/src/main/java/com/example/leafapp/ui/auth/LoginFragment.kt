@@ -60,10 +60,10 @@ class LoginFragment : Fragment() {
 
         }
         //show pass button
-        binding.showBtn!!.setOnClickListener()
-        {
-            showPassword(binding.passEditText)
-        }
+//        binding.showBtn!!.setOnClickListener()
+//        {
+//            showPassword(binding.passEditText)
+//        }
         //google sign in button
         binding.googleSignInBtnId!!.setOnClickListener()
         {
@@ -74,15 +74,8 @@ class LoginFragment : Fragment() {
         {
             resetPassword(binding.emailEditText, requireActivity())
         }
-
-
-
-
         return binding.root
-
     }
-
-
     override fun onStart() {
         super.onStart()
         viewModel.loginState!!.observe(viewLifecycleOwner) {
@@ -94,9 +87,7 @@ class LoginFragment : Fragment() {
                 is Resource.Success -> {
                     Navigation.findNavController(requireView()).navigate(R.id.action_loginFragment_to_homeFragment)
                 }
-
             }
         }
     }
-
-    }
+}

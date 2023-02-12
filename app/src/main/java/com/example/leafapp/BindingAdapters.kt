@@ -17,9 +17,11 @@ fun bindRecyclerView(recyclerView: RecyclerView, data: List<PostClass>) {
 
 @BindingAdapter("loadImage")
 fun loadImage(imgView: ImageView,data:String){
-    Glide.with(imgView.context)
-        .load(data)
-        .into(imgView)
+
+        Glide.with(imgView.context)
+            .load(data)
+            .into(imgView)
+
 }
 
 @BindingAdapter("setBitmapImage")

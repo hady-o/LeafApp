@@ -40,10 +40,8 @@ class ProfileFragment : Fragment() {
         binding.slogan.text = Html.fromHtml("Together we can<br>make $surName")
         //user data
         var user = FirebaseAuth.getInstance().currentUser
-
-        binding.nameEditText.setText(user!!.displayName.toString())
-        binding.emailEditText.setText(user!!.email.toString())
-        if(user.photoUrl!=null)
+        binding.user = user
+        if(user!!.photoUrl!=null)
         {
             Glide.with(requireContext())
                 .load(user.photoUrl)
