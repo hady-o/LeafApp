@@ -45,29 +45,11 @@ class PsAdapter(val clickListener: PostListenerClass) :
             post: PostClass?, clickListener: PostListenerClass
         ) {
             binding.post = post
-
             binding.executePendingBindings()
+//            Firebase.firestore.collection("postInfo")
+//                .document().collection("info")
+//                .add(info)
             binding.likeImBtn.setOnClickListener {
-                if (!post!!.isLike) {
-                   // post.likePressed()
-                    PostDao.PostRoomDataBase.getInstance(it.context).dao
-                        .updatePost(post.title,post.likeCount+1)
-                    Firebase.firestore.collection("Posts")
-                        .document(post.doc).update("likes",post.likeCount+1)
-                    post.likeCount=post.likeCount+1
-                    binding.likeCounter.text = post!!.likeCount.toString()
-                    binding.likeImBtn.setImageResource(R.drawable.ic_baseline_favorite_24)
-                    post.isLike = true
-                } else {
-                    PostDao.PostRoomDataBase.getInstance(it.context).dao
-                        .updatePost(post.title,post.likeCount+1)
-                    Firebase.firestore.collection("Posts")
-                        .document(post.doc).update("likes",post.likeCount+1)
-                    binding.likeCounter.text = post.likeCount.toString()
-                    post.likeCount=post.likeCount-1
-                    binding.likeImBtn.setImageResource(R.drawable.ic_sharp_favorite_border_24)
-                    post.isLike = false
-                }
             }
         }
     }

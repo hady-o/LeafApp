@@ -123,19 +123,35 @@
                 android:layout_weight="1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-            <EditText
-                android:id="@+id/passEditText"
-                style="@style/edit_text_style"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_15sdp"
-                android:drawableStart="@drawable/ic_baseline_lock_24"
-                android:drawablePadding="@dimen/_8sdp"
-                android:layout_weight="1"
-                android:hint="@string/pass"
-                android:inputType="textPassword"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/emailEditText" />
+                android:layout_weight="1">
+
+                <EditText
+                    android:id="@+id/passEditText"
+                    style="@style/edit_text_style"
+                    android:drawableStart="@drawable/ic_baseline_lock_24"
+                    android:drawablePadding="8dp"
+                    android:hint="@string/pass"
+                    android:inputType="textPassword"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/showBtn"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginEnd="@dimen/_10sdp"-->
+<!--                    android:src="@drawable/ic_baseline_remove_red_eye_24"-->
+<!--                    app:layout_constraintBottom_toBottomOf="@+id/passEditText"-->
+<!--                    app:layout_constraintEnd_toEndOf="@+id/passEditText"-->
+<!--                    app:layout_constraintTop_toTopOf="@+id/passEditText" />-->
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 
             <LinearLayout

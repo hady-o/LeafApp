@@ -1,4 +1,4 @@
-package com.example.leafapp.ResultFragment
+package com.example.leafapp.ui.ResultFragment
 
 import android.app.Activity
 import android.content.Context
@@ -12,13 +12,8 @@ import com.example.leafapp.DiseasesData
 import com.example.leafapp.dataclass.DiseaseClass
 import com.example.leafapp.savePhoto
 import kotlinx.coroutines.launch
-import org.apache.commons.csv.CSVFormat
-import org.apache.commons.csv.CSVParser
-import java.io.BufferedReader
-import java.io.InputStreamReader
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.collections.HashMap
 
 class ResultAndTipsViewModel : ViewModel() {
     //    private var imgbitmap: Bitmap? = null

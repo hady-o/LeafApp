@@ -12,41 +12,9 @@ import java.net.URI
 data class PostClass(
     @PrimaryKey
     var title: String,
-    var likeCount: Int,
-    var shareCount: Int,
     var photo: String,
     var type: String,
     var topics: String,
     var contents: String,
-    var isLike: Boolean,
     var doc: String,
-) : Parcelable {
-//
-
-    fun getLikes (): String = likeCount.toString()
-    fun getShares (): String = shareCount.toString()
-    fun likePressed(){
-        likeCount+=1
-    }
-
-    fun likeRelased(){
-
-        if(likeCount>0)
-        {
-            likeCount -=1
-        }
-    }
-
-    fun sharePressed(){
-        shareCount+=1
-    }
-
-    fun shareRelased(){
-
-        if(shareCount>0)
-        {
-            shareCount -=1
-        }
-    }
-
-}
+) : Parcelable

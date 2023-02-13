@@ -103,7 +103,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         tools:text="123"
-                        android:text="@{post.getLikes()}"
+
                         android:textColor="@color/black" />
 
                     <ImageView
@@ -121,7 +121,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         tools:text="123"
-                        android:text="@{post.getShares()}"
+
                         android:textColor="@color/black" />
                 </LinearLayout>
             </LinearLayout>

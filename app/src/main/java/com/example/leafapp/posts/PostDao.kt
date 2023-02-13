@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface PostDao {
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun inserPosts(post : PostClass)
 
 
@@ -19,8 +19,8 @@ interface PostDao {
     @Query("SELECT * from PostClass where type = :typee")
     fun getSomePosts(typee:String): List<PostClass>
 
-    @Query("update PostClass SET likeCount=:likes WHERE title = :titlee")
-    fun updatePost(titlee:String,likes:Int)
+//    @Query("update PostClass SET likeCount=:likes WHERE title = :titlee")
+//    fun updatePost(titlee:String,likes:Int)
 
 
 

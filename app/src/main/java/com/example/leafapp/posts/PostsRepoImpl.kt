@@ -23,13 +23,10 @@ class PostsRepoImpl(val dataBase: PostDao.PostRoomDataBase,var context: Context)
                     {
                         var p =PostClass(
                             document.getString("title")!!,
-                            document.get("likeCount").toString().toInt(),
-                            document.get("shareCount").toString().toInt(),
                             document.getString("photo")!!,
                             document.getString("type")!!,
-                            document.getString("topics")!!,
-                            document.getString("contents")!!,
-                            false,
+                            "",
+                            "",
                             document.id
                         )
                         allPosts.add(p)
@@ -45,13 +42,21 @@ class PostsRepoImpl(val dataBase: PostDao.PostRoomDataBase,var context: Context)
     }
 
 
-    override fun addPost(post: PostClass) {
+    override suspend fun addPost(post: PostClass) {
         Firebase.firestore.collection("Posts")
-            .add(post)
+            .add(post).addOnCompleteListener(){
+                val info = hashMapOf(
+                    "likes" to 0,
+                    "shares" to 0,
+                )
+                Firebase.firestore.collection("postInfo")
+                    .document(it.getResult().id).set(info)
+            }
     }
 
-    override fun updateLikes(id:String,likes:Int) {
-        Firebase.firestore.collection("Posts")
-            .document(id).update("likes",likes+1)
+
+    override suspend fun updateLikes(id:String,likes:Int) {
+        Firebase.firestore.collection("postInfo")
+            .document(id).update("likes",likes)
     }
 }

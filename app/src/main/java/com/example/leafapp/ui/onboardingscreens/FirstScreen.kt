@@ -1,4 +1,4 @@
-package com.example.leafapp.onboardingscreens
+package com.example.leafapp.ui.onboardingscreens
 
 import android.content.Context
 import android.os.Bundle

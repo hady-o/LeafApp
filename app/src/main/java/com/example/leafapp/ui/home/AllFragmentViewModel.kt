@@ -39,4 +39,9 @@ class AllFragmentViewModel(application: Application) : AndroidViewModel(applicat
             _allPosts.value = database.dao.getSomePosts(type)
         }
     }
+    fun addPost(p:PostClass){
+        viewModelScope.launch {
+            repo.addPost(p)
+        }
+    }
 }

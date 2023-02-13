@@ -6,8 +6,8 @@ import com.google.firebase.auth.FirebaseUser
 interface PostsRepo {
 
     suspend fun refreshData()
-    fun addPost(post: PostClass)
-    fun updateLikes(id:String,likes:Int)
+    suspend fun addPost(post: PostClass)
+    suspend fun updateLikes(id:String,likes:Int)
 
 
 }

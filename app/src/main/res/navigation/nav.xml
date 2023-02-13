@@ -115,7 +115,7 @@
     </fragment>
     <fragment
         android:id="@+id/resultAndTips2"
-        android:name="com.example.leafapp.ResultFragment.ResultAndTips"
+        android:name="com.example.leafapp.ui.ResultFragment.ResultAndTips"
         android:label="fragment_result_and_tips"
         tools:layout="@layout/fragment_result_and_tips" >
         <argument
@@ -134,7 +134,7 @@
     </fragment>
     <fragment
         android:id="@+id/viewPagerFragment"
-        android:name="com.example.leafapp.onboardingscreens.ViewPagerFragment"
+        android:name="com.example.leafapp.ui.onboardingscreens.ViewPagerFragment"
         android:label="ViewPagerFragment" >
         <action
             android:id="@+id/action_viewPagerFragment_to_loginFragment"

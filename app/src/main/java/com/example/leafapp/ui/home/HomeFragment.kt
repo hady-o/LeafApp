@@ -47,8 +47,6 @@ class HomeFragment : Fragment() {
         // AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 //        PostDao.PostRoomDataBase.getInstance(requireContext()).dao.inserPosts(PostClass("first one",5,4,",","care","","",false))
 //        PostDao.PostRoomDataBase.getInstance(requireContext()).dao.inserPosts(PostClass("first one",5,4,",","treatment","","",false))
-
-        // cam btn
         binding.camBtn.setOnClickListener()
         {
             if (checkSelfPermission(

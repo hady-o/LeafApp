@@ -9,7 +9,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".onboardingscreens.SecondScreen"
+    tools:context=".ui.onboardingscreens.SecondScreen"
     android:background="@color/dark_green">
 
     <ImageView

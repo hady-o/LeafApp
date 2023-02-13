@@ -1,4 +1,4 @@
-package com.example.leafapp.ResultFragment
+package com.example.leafapp.ui.ResultFragment
 
 import android.graphics.BitmapFactory
 import android.net.Uri

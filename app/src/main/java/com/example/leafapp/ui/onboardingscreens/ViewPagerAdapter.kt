@@ -1,4 +1,4 @@
-package com.example.leafapp.onboardingscreens
+package com.example.leafapp.ui.onboardingscreens
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
