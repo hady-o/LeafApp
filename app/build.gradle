@@ -86,14 +86,28 @@ dependencies {
     implementation 'org.tensorflow:tensorflow-lite:2.3.0'
     //Image Cropper
     api 'com.theartofdev.edmodo:android-image-cropper:2.7.+'
+
     // Fancy Toast
     implementation 'io.github.shashank02051997:FancyToast:2.0.2'
+
     //databinding
     annotationProcessor "com.android.databinding:compiler:3.1.4"
+
+    // Room
     implementation("androidx.room:room-ktx:2.3.0-alpha01")
     implementation "androidx.room:room-runtime:2.3.0-alpha01"
     kapt "androidx.room:room-compiler:2.3.0-alpha01"
 
     // csv reader
     implementation 'org.apache.commons:commons-csv:1.5'
+
+    // other Markdown parser
+    final def markwon_version = '4.6.2'
+    implementation"io.noties.markwon:core:$markwon_version"
+    implementation"io.noties.markwon:editor:$markwon_version"
+    implementation"io.noties.markwon:ext-tables:$markwon_version"
+    implementation"io.noties.markwon:image-glide:$markwon_version"
+    implementation"io.noties.markwon:image:$markwon_version"
+    implementation"io.noties.markwon:html:$markwon_version"
+
 }

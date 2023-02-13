@@ -26,8 +26,8 @@ class PostsRepoImpl(val dataBase: PostDao.PostRoomDataBase,var context: Context)
                             document.getString("photo")!!,
                             document.getString("type")!!,
                             "",
-                            "",
-                            document.id
+                            document.getString("contents")!!,
+                            document.getString("doc")!!
                         )
                         allPosts.add(p)
 //                        FancyToast.makeText(context,document.getString("title")!!,FancyToast.LENGTH_SHORT,FancyToast.SUCCESS,false).show()

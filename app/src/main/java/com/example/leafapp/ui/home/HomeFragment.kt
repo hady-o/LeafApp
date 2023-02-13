@@ -24,6 +24,8 @@ import com.example.leafapp.databinding.FragmentHomeBinding
 import com.example.leafapp.posts.PostDao
 import com.example.leafapp.ui.home.homemenus.HistoryFragment
 import com.example.leafapp.ui.home.homemenus.UserHomeFragment
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 import com.theartofdev.edmodo.cropper.CropImage
 
@@ -61,12 +63,7 @@ class HomeFragment : Fragment() {
 
             }
         }
-
-
-
-
-
-
+        
         binding.navBarId.setOnItemSelectedListener() {
 
             if (it.itemId == R.id.homeMenuId) {
