@@ -9,6 +9,13 @@ import android.util.Log;
 import org.tensorflow.lite.DataType;
 import org.tensorflow.lite.Interpreter;
 import org.tensorflow.lite.Tensor;
+import org.tensorflow.lite.support.common.ops.CastOp;
+import org.tensorflow.lite.support.common.ops.NormalizeOp;
+import org.tensorflow.lite.support.image.ImageProcessor;
+import org.tensorflow.lite.support.image.TensorImage;
+import org.tensorflow.lite.support.image.ops.ResizeOp;
+import org.tensorflow.lite.support.tensorbuffer.TensorBuffer;
+
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -18,114 +25,84 @@ import java.nio.channels.FileChannel;
 import java.util.Arrays;
 import java.util.Objects;
 
-public class ImageClassifier {
-    static int INPUT_SIZE = 256;
-    static  int PIXEL_SIZE = 3;
 
-    static AssetManager assetManager;
-    static String modelPath = "";
-    static Interpreter interpreter;
-    public static String[] labes = {
-            "Alstonia Scholaris___diseased",
-            "Alstonia Scholaris___healthy",
-            "Apple___Apple_scab",
-            "Apple___Black_rot",
-            "Apple___Cedar_apple_rust",
-            "Apple___healthy",
-            "Arjun___diseased",
-            "Arjun___healthy",
-            "Bael___diseased",
-            "Basil___healthy",
-            "Blueberry___healthy",
-            "Cherry_(including_sour)___healthy",
-            "Cherry_(including_sour)___Powdery_mildew",
-            "Chinar ___diseased",
-            "Chinar ___healthy",
-            "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot",
-            "Corn_(maize)___Common_rust_",
-            "Corn_(maize)___healthy",
-            "Corn_(maize)___Northern_Leaf_Blight",
-            "Gauva___diseased",
-            "Gauva___healthy",
-            "Grape___Black_rot",
-            "Grape___Esca_(Black_Measles)",
-            "Grape___healthy",
-            "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)",
-            "Jamun___diseased",
-            "Jamun___healthy",
-            "Jatropha___diseased",
-            "Jatropha___healthy",
-            "Lemon___diseased",
-            "Lemon___healthy",
-            "Mango ___healthy",
-            "Mango___diseased",
-            "Orange___Haunglongbing_(Citrus_greening)",
-            "Peach___Bacterial_spot",
-            "Peach___healthy",
-            "Pepper,_bell___Bacterial_spot",
-            "Pepper,_bell___healthy",
-            "Pomegranate___diseased",
-            "Pomegranate___healthy",
-            "PongamiaPinnata___diseased",
-            "PongamiaPinnata___healthy",
-            "Potato___Early_blight",
-            "Potato___healthy",
-            "Potato___Late_blight",
-            "Raspberry___healthy",
-            "Soybean___healthy",
-            "Squash___Powdery_mildew",
-            "Strawberry___healthy",
-            "Strawberry___Leaf_scorch",
-            "Tomato___Bacterial_spot",
-            "Tomato___Early_blight",
-            "Tomato___healthy",
-            "Tomato___Late_blight",
-            "Tomato___Leaf_Mold",
-            "Tomato___Septoria_leaf_spot",
-            "Tomato___Spider_mites Two-spotted_spider_mite",
-            "Tomato___Target_Spot",
-            "Tomato___Tomato_mosaic_virus",
-            "Tomato___Tomato_Yellow_Leaf_Curl_Virus"
-    };
-    public static float[] predict(Bitmap image) {
-        ByteBuffer inpBuffer = preProcessImage(image);
+public class ImageClassifier {
+    int INPUT_SIZE = 256;
+    int PIXEL_SIZE = 3;
+    int CAPACTY = 4;
+
+
+    String modelPath = "";
+    Interpreter interpreter;
+
+    ImageClassifier(AssetManager assetManager, String modelPath) {
+        this.modelPath = modelPath;
+        this.interpreter = createInterpreter(assetManager, modelPath);
+    }
+
+    public int predictIsPlant(Bitmap image) {
+        ByteBuffer inpBuffer = processes(image);
         Tensor outTensor = interpreter.getOutputTensor(0);
         int[] outShape = outTensor.shape();
         DataType outType = outTensor.dataType();
-        Log.d("datatype is", "predict: "+ outType);
-        float[][] out = new float[1][60];
-        interpreter.run(inpBuffer, out);
+        Log.d("datatype is", "predict: " + outType);
+        float[][] out = new float[outShape[0]][outShape[1]];
+
+        TensorBuffer probabilityBuffer =
+                TensorBuffer.createFixedSize(new int[] {1,2102},DataType.UINT8);
+        interpreter.run(inpBuffer, probabilityBuffer.getBuffer());
         Log.d("output is ", "predict: " + Arrays.toString(out[0]));
-        float[] outputList = out[0];
-        float max =0f;
+        float[] outputList = probabilityBuffer.getFloatArray();
+        float max = 0f;
         int idx = 0;
-        for (int i = 0 ;i<60;i++){
-            if(i ==0 )
-            {
+        for (int i = 0; i < outputList.length; i++) {
+            if (i == 0) {
                 max = outputList[i];
-            }else{
-                if(max <= outputList[i]){
+            } else {
+                if (max <= outputList[i]) {
                     max = outputList[i];
                     idx = i;
                 }
             }
         }
-        return outputList;
-//        if(out[0][0]>= out[0][1]){
-//            return "Cat";
-//        }
-//        return "Dog";
-//        return Arrays.toString(out[0]);
-//        return "Not found";
+        Log.d("The Max index is ","Her is "+ idx);
+        return idx;
     }
 
-    private static ByteBuffer preProcessImage(Bitmap bitmap) {
+
+    public float[] predict(Bitmap image) {
+        ByteBuffer inpBuffer = preProcessImage(image);
+        Tensor outTensor = interpreter.getOutputTensor(0);
+        int[] outShape = outTensor.shape();
+        DataType outType = outTensor.dataType();
+        Log.d("datatype is", "predict: " + outType);
+        float[][] out = new float[outShape[0]][outShape[1]];
+        interpreter.run(inpBuffer,out);
+        Log.d("output is ", "predict: " + Arrays.toString(out[0]));
+        float[] outputList = out[0];
+        /*float max = 0f;
+        int idx = 0;
+        for (int i = 0; i < 60; i++) {
+            if (i == 0) {
+                max = outputList[i];
+            } else {
+                if (max <= outputList[i]) {
+                    max = outputList[i];
+                    idx = i;
+                }
+            }
+        }*/
+        return outputList;
+    }
+
+
+    private ByteBuffer preProcessImage(Bitmap bitmap) {
         Bitmap bitmapp = Bitmap.createScaledBitmap(bitmap, INPUT_SIZE, INPUT_SIZE, true);
-        ByteBuffer input = ByteBuffer.allocateDirect(INPUT_SIZE * INPUT_SIZE * PIXEL_SIZE * 4).order(ByteOrder.nativeOrder());
+        ByteBuffer input = ByteBuffer.allocateDirect(INPUT_SIZE * INPUT_SIZE * PIXEL_SIZE * CAPACTY).order(ByteOrder.nativeOrder());
+
         for (int y = 0; y < INPUT_SIZE; y++) {
             for (int x = 0; x < INPUT_SIZE; x++) {
                 int px = bitmapp.getPixel(x, y);
-
                 // Get channel values from the pixel value.
                 int r = Color.red(px);
                 int g = Color.green(px);
@@ -139,20 +116,15 @@ public class ImageClassifier {
         return input;
     }
 
-    public static void init(AssetManager assetManager, String model_path){
-        ImageClassifier.assetManager = assetManager;
-        ImageClassifier.modelPath = model_path;
-        interpreter = createInterpreter(assetManager, model_path);
-    }
 
-    static Interpreter createInterpreter(AssetManager assetManager, String model_path){
-        Interpreter.Options options= new Interpreter.Options();
+    Interpreter createInterpreter(AssetManager assetManager, String model_path) {
+        Interpreter.Options options = new Interpreter.Options();
         options.setNumThreads(5);
         options.setUseNNAPI(true);
         return new Interpreter(Objects.requireNonNull(loadModelFile(assetManager, model_path)), options);
     }
 
-    private static ByteBuffer loadModelFile(AssetManager assetManager, String modelPath) {
+    private ByteBuffer loadModelFile(AssetManager assetManager, String modelPath) {
         AssetFileDescriptor fileDescriptor = null;
         try {
             fileDescriptor = assetManager.openFd(modelPath);
@@ -166,4 +138,28 @@ public class ImageClassifier {
         }
         return null;
     }
+
+    ByteBuffer processes(Bitmap bitmap) {
+        // Initialization code
+        // Create an ImageProcessor with all ops required. For more ops, please
+        // refer to the ImageProcessor Architecture section in this README.
+        ImageProcessor imageProcessor = new ImageProcessor.Builder()
+                .add(new ResizeOp(INPUT_SIZE,INPUT_SIZE, ResizeOp.ResizeMethod.BILINEAR))
+//                .add(new NormalizeOp(0, 255))
+                .add(new CastOp(DataType.UINT8))
+                .build();
+
+        // Create a TensorImage object. This creates the tensor of the corresponding
+        // tensor type (uint8 in this case) that the TensorFlow Lite interpreter needs.
+        TensorImage tensorImage = new TensorImage(DataType.UINT8);
+
+        // Analysis code for every frame
+        // Preprocess the image
+        Bitmap bitmapp = Bitmap.createScaledBitmap(bitmap, 200, 200, false);
+        tensorImage.load(bitmapp);
+        tensorImage = imageProcessor.process(tensorImage);
+
+        return tensorImage.getBuffer();
+    }
+
 }

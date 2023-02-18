@@ -23,6 +23,10 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    /*aaptOptions {
+        noCompress "tflite"
+    }
+*/
     buildTypes {
         release {
             minifyEnabled false
@@ -82,8 +86,11 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.5.1")
     // LiveData
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.5.1")
-
+    // tensorflow
     implementation 'org.tensorflow:tensorflow-lite:2.3.0'
+    // The GPU delegate library is optional. Depend on it as needed.
+    implementation 'org.tensorflow:tensorflow-lite-gpu:0.0.0-nightly-SNAPSHOT'
+    implementation 'org.tensorflow:tensorflow-lite-support:0.0.0-nightly-SNAPSHOT'
     //Image Cropper
     api 'com.theartofdev.edmodo:android-image-cropper:2.7.+'
 

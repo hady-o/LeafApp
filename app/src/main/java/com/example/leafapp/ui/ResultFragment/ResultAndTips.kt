@@ -68,29 +68,56 @@ class ResultAndTips : Fragment() {
                 .into(binding.takenImg)
         }
 
-        viewModel.setBitmap(image, this.requireActivity().assets, isSave,prediction)
-        viewModel.plantNameLD.observe(viewLifecycleOwner) {
-            it?.let {
-                binding.plantName.text = it
-            }
-        }
+        if (viewModel.isPlant(image, this.requireActivity().assets)) {
+            binding.noPlant.visibility = View.GONE
+            binding.plant.visibility = View.VISIBLE
 
-        viewModel.diseaseNameLD.observe(viewLifecycleOwner) {
-            it?.let {
-                binding.diseaseText.text = it
+            viewModel.setBitmap(image, this.requireActivity().assets, isSave, prediction)
+            viewModel.plantNameLD.observe(viewLifecycleOwner) {
+                it?.let {
+                    binding.plantName.text = it
+                }
             }
-        }
 
-        if (viewModel.diseaseData != null) {
-            binding.disease = viewModel.diseaseData
-            binding.fail.visibility = View.GONE
+            viewModel.diseaseNameLD.observe(viewLifecycleOwner) {
+                it?.let {
+                    binding.diseaseText.text = it
+                }
+            }
+            if (viewModel.diseaseData != null) {
+                binding.disease = viewModel.diseaseData
+                binding.fail.visibility = View.GONE
+            } else {
+                binding.resLv.visibility = View.GONE
+            }
+
+            if (viewModel.diseaseNameLD.value.equals("healthy")) {
+                binding.statImg.setImageResource(R.drawable.good_plant)
+            }
+
+            if (viewModel.diseaseData != null) {
+                binding.disease = viewModel.diseaseData
+                binding.fail.visibility = View.GONE
+            } else {
+                binding.resLv.visibility = View.GONE
+            }
+
+            if (viewModel.diseaseNameLD.value.equals("healthy")) {
+                binding.statImg.setImageResource(R.drawable.good_plant)
+            }
         } else {
+
+            binding.noPlant.visibility = View.VISIBLE
+            binding.plant.visibility = View.GONE
+            binding.fail.visibility = View.VISIBLE
             binding.resLv.visibility = View.GONE
+
+
+
         }
 
-        if (viewModel.diseaseNameLD.value.equals("healthy")) {
-            binding.statImg.setImageResource(R.drawable.good_plant)
-        }
+
+
     }
 
 }
