@@ -1,7 +1,11 @@
 package com.example.leafapp.ui.auth
 
+import android.app.Activity
+import android.app.Activity.PERFORMANCE_HINT_SERVICE
 import android.app.Activity.RESULT_OK
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,16 +21,21 @@ import com.example.leafapp.resetPassword
 import com.example.leafapp.showPassword
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.FirebaseAuthUIActivityResultContract
+import com.firebase.ui.auth.IdpResponse
 import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.firebase.FirebaseNetworkException
 import com.google.firebase.auth.ActionCodeSettings
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.PhoneAuthOptions
+import com.shashank.sony.fancytoastlib.FancyToast
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class LoginFragment : Fragment() {
-    private val LOGINCODE = 1001
+    val SIGN_IN_RESULT_CODE =1001
     private lateinit var client: GoogleSignInClient
     private val viewModel by viewModels<AuthViewModel>()
     lateinit var binding : FragmentLoginBinding
@@ -39,12 +48,11 @@ class LoginFragment : Fragment() {
 
         binding = FragmentLoginBinding.inflate(layoutInflater)
 
-        val options = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(getString(R.string.Sign_In_With_Google))
-            .requestEmail()
-            .build()
-        client = GoogleSignIn.getClient(requireActivity(), options)
+        val providers = arrayListOf(
+            AuthUI.IdpConfig.PhoneBuilder().build()
+            )
 
+// Create and launch sign-in intent
 
 
         // buttons clicks
@@ -70,29 +78,15 @@ class LoginFragment : Fragment() {
 //            showPassword(binding.passEditText)
 //        }
         //google sign in button
-         val signInLauncher = registerForActivityResult(
-            FirebaseAuthUIActivityResultContract()
-        ) { res ->
-
-        }
-
         binding.googleSignInBtnId!!.setOnClickListener()
         {
-
-
-            val providers = listOf(
-                AuthUI.IdpConfig.EmailBuilder()
-                    .enableEmailLinkSignIn()
-                    .build()
+            startActivityForResult(
+                    AuthUI.getInstance().createSignInIntentBuilder().setAvailableProviders(providers)
+                        .build(),
+            SIGN_IN_RESULT_CODE
             )
-            val signInIntent = AuthUI.getInstance()
-                .createSignInIntentBuilder()
-                .setAvailableProviders(providers)
-                .build()
-            signInLauncher.launch(signInIntent)
-
-
         }
+
         //forgot password button
         binding.forgotPassBtnId!!.setOnClickListener()
         {
@@ -105,7 +99,17 @@ class LoginFragment : Fragment() {
         viewModel.loginState!!.observe(viewLifecycleOwner) {
             when(it)
             {
-                is Resource.Fail -> {Toast.makeText(requireContext(),"invalid data",Toast.LENGTH_LONG).show()
+                is Resource.Fail -> {if(it.ex is FirebaseNetworkException)
+                {
+                    FancyToast.makeText(requireContext(),"cheek yor internet connection",
+                        FancyToast.LENGTH_LONG,
+                        FancyToast.ERROR,true).show()
+                }
+                else
+                    FancyToast.makeText(requireContext(),"invalid username or password",
+                        FancyToast.LENGTH_LONG,
+                        FancyToast.ERROR,true).show()
+
                     binding.progressBar.setVisibility(View.GONE)}
                 is Resource.Load ->{binding.progressBar.setVisibility(View.VISIBLE)}
                 is Resource.Success -> {
@@ -114,18 +118,17 @@ class LoginFragment : Fragment() {
             }
         }
     }
-    private fun onSignInResult(result: FirebaseAuthUIAuthenticationResult) {
-        val response = result.idpResponse
-        if (result.resultCode == RESULT_OK) {
-            // Successfully signed in
-            Navigation.findNavController(requireView()).navigate(R.id.action_loginFragment_to_homeFragment)
-            // ...
-        } else {
-            // Sign in failed. If response is null the user canceled the
-            // sign-in flow using the back button. Otherwise check
-            // response.getError().getErrorCode() and handle the error.
-            // ...
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == SIGN_IN_RESULT_CODE) {
+            val response = IdpResponse.fromResultIntent(data)
+            if (resultCode == Activity.RESULT_OK) {
+                Navigation.findNavController(requireView()).navigate(R.id.action_loginFragment_to_homeFragment)
+                FancyToast.makeText(requireContext(),"you can complete yor data via profile screen",
+                    FancyToast.LENGTH_LONG,
+                    FancyToast.INFO,true).show()
+            } else {
+            }
         }
     }
-
 }

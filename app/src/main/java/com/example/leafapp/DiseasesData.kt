@@ -93,8 +93,6 @@ object DiseasesData {
                 lookUp[it[0]] = tmp
             }
         }
-
-
     }
 
 
