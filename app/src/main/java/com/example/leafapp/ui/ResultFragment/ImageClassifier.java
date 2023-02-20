@@ -27,17 +27,16 @@ import java.util.Objects;
 
 
 public class ImageClassifier {
-    int INPUT_SIZE = 256;
-    int PIXEL_SIZE = 3;
-    int CAPACTY = 4;
+    private int INPUT_SIZE = 256;
+    private final int PIXEL_SIZE = 3;
+    private final int CAPACTY = 4;
+    private String modelPath = "";
+    private Interpreter interpreter;
 
-
-    String modelPath = "";
-    Interpreter interpreter;
-
-    ImageClassifier(AssetManager assetManager, String modelPath) {
+    ImageClassifier(AssetManager assetManager, String modelPath,int inputSize) {
         this.modelPath = modelPath;
         this.interpreter = createInterpreter(assetManager, modelPath);
+        this.INPUT_SIZE = inputSize;
     }
 
     public int predictIsPlant(Bitmap image) {

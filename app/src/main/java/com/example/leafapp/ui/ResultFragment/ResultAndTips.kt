@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
 import androidx.navigation.Navigation
 import com.bumptech.glide.Glide
 import com.example.leafapp.R
@@ -28,94 +29,75 @@ class ResultAndTips : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentResultAndTipsBinding.inflate(layoutInflater)
-
-        val args = arguments?.let {
-            ResultAndTipsArgs.fromBundle(
-                it
-            )
-        }
+        viewModel = ViewModelProvider(this)[ResultAndTipsViewModel::class.java]
+        viewModel.context = requireContext()
+        viewModel.resources = resources
+        viewModel.activity = requireActivity()
+        val args = arguments?.let { ResultAndTipsArgs.fromBundle(it) }
         args?.let {
             img = it.myImage
             isSave = it.saveImge
             prediction = it.prediction
         }
 
-
         binding.backBtn.setOnClickListener() {
             Navigation.findNavController(binding.root).navigateUp()
         }
+
+        viewModel.diseaseNameLD.observe(viewLifecycleOwner, Observer {
+            binding.diseaseText.text = it
+            if (it.equals("healthy")) {
+                binding.statImg.setImageResource(R.drawable.good_plant)
+            }
+        })
+
+        viewModel.plantNameLD.observe(viewLifecycleOwner, Observer {
+            if(it != null){
+                binding.plantName.text = it
+                binding.noPlant.visibility = View.GONE
+            }
+        })
+
+        viewModel.diseasData.observe(viewLifecycleOwner, Observer {
+            if (it != null) {
+                binding.disease = it
+                binding.fail.visibility = View.GONE
+            } else {
+                binding.resLv.visibility = View.GONE
+            }
+        })
         return binding.root
-
-
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(ResultAndTipsViewModel::class.java)
-        viewModel.context = requireContext()
-        viewModel.resources = resources
-        viewModel.activity = requireActivity()
+
         var image = BitmapFactory.decodeResource(resources, android.R.drawable.ic_menu_camera)
+
+        // Means that the person scan the image for the fires time
         if (isSave) {
             image = MediaStore.Images.Media.getBitmap(
                 this.requireActivity().contentResolver,
                 Uri.parse(img)
             )
             binding.takenImg.setImageBitmap(image)
-        } else {
+            if (viewModel.isPlant(image)) {
+                binding.noPlant.visibility = View.GONE
+                viewModel.predictImage(image, isSave, prediction)
+
+
+            } else {
+                binding.plant.visibility = View.GONE
+                binding.resLv.visibility = View.GONE
+            }
+        }
+        // Means the person just chcking the image from the history fragment
+        else {
             Glide.with(requireContext())
                 .load(img)
                 .into(binding.takenImg)
+            prediction?.let { viewModel.getDiseaseData(it) }
         }
-
-        if (viewModel.isPlant(image, this.requireActivity().assets)) {
-            binding.noPlant.visibility = View.GONE
-            binding.plant.visibility = View.VISIBLE
-
-            viewModel.setBitmap(image, this.requireActivity().assets, isSave, prediction)
-            viewModel.plantNameLD.observe(viewLifecycleOwner) {
-                it?.let {
-                    binding.plantName.text = it
-                }
-            }
-
-            viewModel.diseaseNameLD.observe(viewLifecycleOwner) {
-                it?.let {
-                    binding.diseaseText.text = it
-                }
-            }
-            if (viewModel.diseaseData != null) {
-                binding.disease = viewModel.diseaseData
-                binding.fail.visibility = View.GONE
-            } else {
-                binding.resLv.visibility = View.GONE
-            }
-
-            if (viewModel.diseaseNameLD.value.equals("healthy")) {
-                binding.statImg.setImageResource(R.drawable.good_plant)
-            }
-
-            if (viewModel.diseaseData != null) {
-                binding.disease = viewModel.diseaseData
-                binding.fail.visibility = View.GONE
-            } else {
-                binding.resLv.visibility = View.GONE
-            }
-
-            if (viewModel.diseaseNameLD.value.equals("healthy")) {
-                binding.statImg.setImageResource(R.drawable.good_plant)
-            }
-        } else {
-
-            binding.noPlant.visibility = View.VISIBLE
-            binding.plant.visibility = View.GONE
-            binding.fail.visibility = View.VISIBLE
-            binding.resLv.visibility = View.GONE
-
-
-
-        }
-
 
 
     }

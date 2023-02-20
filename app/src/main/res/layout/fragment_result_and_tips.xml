@@ -8,12 +8,16 @@
             name="disease"
             type="com.example.leafapp.dataclass.DiseaseClass" />
 
+        <!--<variable
+            name="view_model"
+            type="com.example.leafapp.ui.ResultFragment.ResultAndTipsViewModel" />-->
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.ResultFragment.ResultAndTips">
+        >
 
 
 
@@ -106,8 +110,7 @@
                         android:id="@+id/plant"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:visibility="gone">
+                        android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -135,7 +138,9 @@
                                     android:textColor="#D88204"
                                     android:textSize="25sp"
                                     android:textStyle="bold"
-                                    tools:text="Apple" />
+                                    tools:text="Apple"
+
+                                    />
 
                                 <TextView
                                     android:id="@+id/disease_text"
@@ -144,7 +149,9 @@
                                     android:layout_margin="10dp"
                                     android:textColor="#603A03"
                                     android:textSize="15sp"
-                                    tools:text="Black Root." />
+                                    tools:text="Black Root."
+
+                                    />
                             </LinearLayout>
                         </LinearLayout>
 
