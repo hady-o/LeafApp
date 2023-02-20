@@ -84,7 +84,7 @@
                     android:layout_marginTop="@dimen/_15sdp"
                     android:layout_weight=".5"
                     android:drawableStart="@drawable/ic_google"
-                    android:text="@string/Sign_In_With_Google"
+                    android:text="Sign In With phone number "
                     app:backgroundTint="@null"
 
                     app:layout_constraintEnd_toEndOf="parent"

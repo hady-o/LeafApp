@@ -81,7 +81,7 @@ class LoginFragment : Fragment() {
         binding.googleSignInBtnId!!.setOnClickListener()
         {
             startActivityForResult(
-                    AuthUI.getInstance().createSignInIntentBuilder().setAvailableProviders(providers)
+                    AuthUI.getInstance().createSignInIntentBuilder().setTheme(R.style.Theme_LeafApp).setAvailableProviders(providers)
                         .build(),
             SIGN_IN_RESULT_CODE
             )
