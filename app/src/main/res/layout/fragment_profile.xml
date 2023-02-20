@@ -33,7 +33,7 @@
                 android:layout_marginEnd="@dimen/_18sdp"
                 android:layout_marginStart="@dimen/_18sdp"
                 android:background="@drawable/square_shape"
-
+                android:layout_weight="0.5"
                 android:orientation="vertical"
 
                 android:paddingBottom="@dimen/_15sdp"
@@ -45,6 +45,7 @@
                     android:layout_width="wrap_content"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content">
 
                     <ImageView
@@ -61,6 +62,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:layout_gravity="center"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:src="@drawable/ic_logo_out" />
@@ -69,6 +71,7 @@
                     android:id="@+id/slogan"
                     style="@style/text_style_g12"
                     android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_weight="1"
                     android:layout_gravity="center"
                     android:text="@string/profile_title"
                     android:textSize="@dimen/_16sdp"
@@ -81,11 +84,11 @@
 
             <com.mikhaellopez.circularimageview.CircularImageView
                 android:id="@+id/userImage"
-                android:layout_width="@dimen/_120sdp"
-                android:layout_height="@dimen/_120sdp"
-                android:layout_marginTop="-10dp"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_marginTop="-15dp"
                 android:layout_gravity="center_horizontal"
-
+                android:layout_weight="1"
                 android:clickable="false"
                 android:src="@drawable/ic_baseline_account_circle_24"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -93,22 +96,28 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
             <LinearLayout
                 android:id="@+id/constraintLayout2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp"
                 android:layout_marginStart="@dimen/_18sdp"
                 android:layout_marginEnd="@dimen/_18sdp"
                 android:background="@drawable/square_shape"
                 android:orientation="vertical"
-
-                android:paddingTop="@dimen/_50sdp"
+                android:layout_weight="1"
+                android:paddingTop="@dimen/_30sdp"
                 android:paddingBottom="@dimen/_10sdp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/userImage">
+
+
 
 
                 <EditText
@@ -117,6 +126,7 @@
                     android:drawableStart="@drawable/ic_baseline_person_outline_24"
                     android:drawablePadding="8dp"
                     android:enabled="false"
+
                     android:text="@{user.displayName}"
                     android:hint="@string/name"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -131,6 +141,7 @@
                     android:drawablePadding="8dp"
                     android:editable="false"
                     android:text="@{user.email}"
+
                     android:enabled="false"
                     android:hint="@string/email"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -158,6 +169,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="@dimen/_15sdp"
+
                     android:orientation="horizontal"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -182,10 +194,8 @@
                         app:layout_constraintTop_toBottomOf="@+id/editText2" />
                 </LinearLayout>
 
-
-            </LinearLayout>
-
-
+        </LinearLayout>
+            </ScrollView>
         </LinearLayout>
 
         <ProgressBar
