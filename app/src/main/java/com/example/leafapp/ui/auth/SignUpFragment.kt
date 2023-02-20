@@ -14,6 +14,9 @@ import com.example.leafapp.authentication.Resource
 import com.example.leafapp.databinding.FragmentSignUpBinding
 import com.example.leafapp.showPassword
 import com.example.leafapp.validatSignUp
+import com.google.firebase.FirebaseNetworkException
+import com.google.firebase.auth.FirebaseAuthUserCollisionException
+import com.shashank.sony.fancytoastlib.FancyToast
 
 
 class SignUpFragment : Fragment() {
@@ -36,7 +39,7 @@ class SignUpFragment : Fragment() {
         //sign up button
         binding.signUpBtnId.setOnClickListener()
         {
-            if (validatSignUp(binding.nameEditText,binding.emailEditText,binding.passEditText))
+            if (validatSignUp(binding.nameEditText,binding.emailEditText,binding.passEditText,requireActivity()))
             {
                     viewModel.signUp(binding.nameEditText.text.toString(),
                     binding.emailEditText.text.toString(),
@@ -65,11 +68,21 @@ class SignUpFragment : Fragment() {
             when(it)
             {
                 is Resource.Fail -> {
-                    Toast.makeText(requireContext(),"invalid data", Toast.LENGTH_LONG).show()
+                    if(it.ex is FirebaseAuthUserCollisionException)
+                    {
+                        FancyToast.makeText(requireContext(),"E-mail is already exist",
+                            FancyToast.LENGTH_LONG,
+                            FancyToast.ERROR,true).show()
+                    }else if(it.ex is FirebaseNetworkException)
+                    {
+                        FancyToast.makeText(requireContext(),"cheek yor internet connection",FancyToast.LENGTH_LONG,FancyToast.ERROR,true).show()
+                    }
+                    else
+                        FancyToast.makeText(requireContext(),"invalid username or password",FancyToast.LENGTH_LONG,FancyToast.ERROR,true).show()
+
                     binding.progressBar.setVisibility(View.GONE)}
                 is Resource.Load ->{binding.progressBar.setVisibility(View.VISIBLE)}
                 is Resource.Success -> {
-                    Toast.makeText(requireContext()," data", Toast.LENGTH_LONG).show()
                     Navigation.findNavController(requireView()).navigate(R.id.action_signUpFragment_to_loginFragment2)
                 }
 

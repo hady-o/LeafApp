@@ -1,6 +1,7 @@
 package com.example.leafapp
 
 import android.app.Activity
+import android.media.MediaCodec
 import android.text.method.PasswordTransformationMethod
 import android.util.Patterns
 import android.view.View
@@ -13,90 +14,39 @@ import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.auth.UserProfileChangeRequest
+import com.shashank.sony.fancytoastlib.FancyToast
 
-
-fun signUp(name: EditText, email: EditText, password: EditText, v:View,progressBar:ProgressBar) {
-    progressBar.setVisibility(View.VISIBLE)
+fun validatSignUp(name: EditText, email: EditText, password: EditText,activity: Activity):Boolean {
     val userName = name.text.toString()
     val userEmail = email.text.toString().trim { it <= ' ' }
     val userPassword = password.text.toString().trim { it <= ' ' }
-    if (userPassword.isEmpty() || userName.isEmpty() || userEmail.isEmpty()) {
-        email.error = "Email is invalid"
-        password.error = "Password is invalid"
-        name.error = "Name is invalid"
-        progressBar.setVisibility(View.GONE)
-    } else if (!Patterns.EMAIL_ADDRESS.matcher(userEmail).matches()) {
-        email.error = "Email is invalid"
-        email.requestFocus()
-        progressBar.setVisibility(View.GONE)
-    } else {
-        FirebaseAuth.getInstance().createUserWithEmailAndPassword(userEmail, userPassword)
-            .addOnCompleteListener(OnCompleteListener<AuthResult?> { task ->
-                if (task.isSuccessful) {
-                    val user = FirebaseAuth.getInstance().getCurrentUser()
-                    if (user != null) {
-                        //set user Desplay name
-                        val profile = UserProfileChangeRequest.Builder()
-                            .setDisplayName(userName)
-                            .build()
-                        user.updateProfile(profile).addOnCompleteListener {
-                            progressBar.setVisibility(View.GONE)
-                            //Navigation.findNavController(v).navigate(R.id.action_signUpFragment_to_loginFragment2)
-                        }
-                    }
-                } else if (task.exception is FirebaseAuthUserCollisionException) {
-                    email.error = "this Email is already exist"
-                    progressBar.setVisibility(View.GONE)
-                } else {
-                    progressBar.setVisibility(View.GONE)
-                }
-            })
+    val passwordPattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\\S+$).{8,}$"
+    val passwordMatcher = Regex(passwordPattern)
 
-    }
-}
-
-fun validatSignUp(name: EditText, email: EditText, password: EditText):Boolean {
-    val userName = name.text.toString()
-    val userEmail = email.text.toString().trim { it <= ' ' }
-    val userPassword = password.text.toString().trim { it <= ' ' }
-    if (userPassword.isEmpty() || userName.isEmpty() || userEmail.isEmpty()) {
-        email.error = "Email is invalid"
-        password.error = "Password is invalid"
+    if (userName.isEmpty()) {
         name.error = "Name is invalid"
         return false
-
-    } else if (!Patterns.EMAIL_ADDRESS.matcher(userEmail).matches()) {
+    }
+    else  if (userEmail.isEmpty()) {
         email.error = "Email is invalid"
+        return false
+    }
+    else  if (userPassword.isEmpty()) {
+        password.error = "Password is invalid"
+        return false
+    }
+    else if (!Patterns.EMAIL_ADDRESS.matcher(userEmail).matches()) {
+        email.error = "Email must be like something@example.com"
+        email.requestFocus()
+        return false
+    }
+    else if (passwordMatcher.find(userPassword)==null) {
+        password.error = "pass must contains at least 1 digit,1 lower and upper letter and 8 character"
+        FancyToast.makeText(activity,"pass must contains at least 1 digit,1 lower and upper letter and 8 character",FancyToast.LENGTH_LONG,FancyToast.ERROR,true).show()
         email.requestFocus()
         return false
     }
     else return true
-}
-
-
-fun signIn(email: EditText?, password: EditText?, v:View, progressBar: ProgressBar?) {
-    progressBar!!.setVisibility(View.VISIBLE)
-    val userEmail = email!!.text.toString()
-    val userPassword = password!!.text.toString()
-    if (userEmail.isEmpty() || userPassword.isEmpty()) {
-        email.error = "Email is invalid"
-        password.error = "password is invalid"
-        progressBar.setVisibility(View.GONE)
-    } else {
-        FirebaseAuth.getInstance().signInWithEmailAndPassword(userEmail, userPassword)
-            .addOnCompleteListener(OnCompleteListener<AuthResult?> { task ->
-            if(task.isSuccessful){
-            //    Navigation.findNavController(v).navigate(R.id.action_loginFragment_to_homeFragment)
-                progressBar.setVisibility(View.GONE)
-            }
-            else
-            {
-                progressBar.setVisibility(View.GONE)
-                Toast.makeText(v.context,"invalid data",Toast.LENGTH_LONG).show()
-            }
-        })
-    }
-
 }
 
 
