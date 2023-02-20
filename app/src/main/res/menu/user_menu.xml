@@ -37,7 +37,7 @@
         android:id="@+id/menuId"
         android:title=""
         app:showAsAction="ifRoom"
-        android:icon="@drawable/ic_baseline_menu_24"/>
+        android:icon="@drawable/ic_baseline_settings_24"/>
 
 
 

@@ -9,7 +9,9 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
+import com.example.leafapp.Constants
 import com.example.leafapp.R
+import com.example.leafapp.SharedPref
 import com.example.leafapp.adapters.PsAdapter
 import com.example.leafapp.databinding.FragmentUserHomeBinding
 import com.example.leafapp.ui.home.AllFragmentViewModel
@@ -50,6 +52,7 @@ class UserHomeFragment : Fragment() {
         // set user profile button
         binding.userImage.setOnClickListener()
         {
+            SharedPref.fromWhere=Constants.HOME
             Navigation.findNavController(binding.root).navigate(R.id.action_homeFragment_to_profileFragment)
         }
         // set user data

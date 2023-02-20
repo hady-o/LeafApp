@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.example.leafapp.R
+import com.example.leafapp.SharedPref
 import com.example.leafapp.databinding.FragmentSplashBinding
 
 
@@ -31,6 +32,18 @@ class SplashFragment : Fragment() {
     }
 
     private fun navigateFromSplash(){
-        Navigation.findNavController(binding.root).navigate(R.id.action_splashFragment_to_viewPagerFragment)
+        when{
+            SharedPref.isLanguageSelected && SharedPref.isBoardingFinished -> {
+                Navigation.findNavController(binding.root)
+                    .navigate(R.id.action_splashFragment_to_loginFragment)
+            }
+            SharedPref.isLanguageSelected -> {
+                        Navigation.findNavController(binding.root)
+                    .navigate(R.id.action_splashFragment_to_viewPagerFragment)
+            }
+            else ->{
+                Navigation.findNavController(binding.root).navigate(R.id.action_splashFragment_to_languageFragment)
+            }
+        }
     }
 }

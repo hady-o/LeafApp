@@ -115,12 +115,12 @@ class LoginFragment : Fragment() {
             {
                 is Resource.Fail -> {if(it.ex is FirebaseNetworkException)
                 {
-                    FancyToast.makeText(requireContext(),"cheek yor internet connection",
+                    FancyToast.makeText(requireContext(),getString(R.string.check_your_internet_connection),
                         FancyToast.LENGTH_LONG,
                         FancyToast.ERROR,true).show()
                 }
                 else
-                    FancyToast.makeText(requireContext(),"invalid username or password",
+                    FancyToast.makeText(requireContext(),getString(R.string.invalid_credentials),
                         FancyToast.LENGTH_LONG,
                         FancyToast.ERROR,true).show()
 
@@ -138,7 +138,7 @@ class LoginFragment : Fragment() {
             val response = IdpResponse.fromResultIntent(data)
             if (resultCode == Activity.RESULT_OK) {
                 Navigation.findNavController(requireView()).navigate(R.id.action_loginFragment_to_homeFragment)
-                FancyToast.makeText(requireContext(),"you can complete yor data via profile screen",
+                FancyToast.makeText(requireContext(),getString(R.string.complete_profile),
                     FancyToast.LENGTH_LONG,
                     FancyToast.INFO,true).show()
             } else {

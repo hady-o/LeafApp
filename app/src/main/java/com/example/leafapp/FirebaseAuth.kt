@@ -60,7 +60,7 @@ fun resetPassword(email: EditText?, activity: Activity)
         FirebaseAuth.getInstance().sendPasswordResetEmail(mail)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    Toast.makeText(activity,"E-mail has been send",Toast.LENGTH_LONG).show()
+                    Toast.makeText(activity,"E-mail has been sent",Toast.LENGTH_LONG).show()
                 }
             }
     }

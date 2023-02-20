@@ -35,7 +35,8 @@ class ViewPagerFragment : Fragment() {
     private fun setOnBoarding(){
         val fragmentList = arrayListOf<Fragment>(
             FirstScreen(),
-            SecondScreen()
+            SecondScreen(),
+            ThirdScreen()
         )
 
         adapter = ViewPagerAdapter(

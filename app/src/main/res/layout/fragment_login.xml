@@ -152,6 +152,7 @@
                     android:drawableStart="@drawable/ic_mail_fill0_wght400_grad0_opsz48"
                     android:drawablePadding="@dimen/_8sdp"
                     android:hint="@string/email"
+                    android:textCursorDrawable="@drawable/color_cursor"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -163,6 +164,7 @@
                     android:drawableStart="@drawable/ic_baseline_lock_24"
                     android:drawablePadding="8dp"
                     android:hint="@string/pass"
+                    android:textCursorDrawable="@drawable/color_cursor"
                     android:inputType="textPassword"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"

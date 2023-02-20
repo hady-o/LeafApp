@@ -10,6 +10,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.example.leafapp.R
+import com.example.leafapp.SharedPref
 import com.example.leafapp.databinding.FragmentFirstScreenBinding
 
 
@@ -35,10 +36,7 @@ class FirstScreen : Fragment() {
     }
 
     private fun onBoardingFinished(){
-        val sharedPref = requireActivity().getSharedPreferences("onBoarding", Context.MODE_PRIVATE)
-        val editor = sharedPref.edit()
-        editor.putBoolean("Finished", true)
-        editor.apply()
+        SharedPref.isBoardingFinished=true
     }
 
 }

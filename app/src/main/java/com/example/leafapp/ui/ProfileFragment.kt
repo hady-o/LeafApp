@@ -13,7 +13,9 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.bumptech.glide.Glide
+import com.example.leafapp.Constants
 import com.example.leafapp.R
+import com.example.leafapp.SharedPref
 import com.example.leafapp.databinding.FragmentProfileBinding
 import com.firebase.ui.auth.AuthUI
 import com.google.firebase.auth.FirebaseAuth
@@ -37,8 +39,14 @@ class ProfileFragment : Fragment() {
         // Inflate the layout for this fragment
         binding =FragmentProfileBinding.inflate(layoutInflater)
         //set slogan colored text
-        val surName = getColoredSpanned("difference", "#6BDBAB")
-        binding.slogan.text = Html.fromHtml("Together we can<br>make $surName")
+        if(SharedPref.language.equals(Constants.ENGLISH,true)){
+            val surName = getColoredSpanned("difference", "#6BDBAB")
+            binding.slogan.text = Html.fromHtml("Together we can<br>make $surName")
+        }else{
+            val surName = getColoredSpanned("فارق", "#6BDBAB")
+            binding.slogan.text = Html.fromHtml("نستطيع إحداث $surName سويا")
+        }
+
         //user data
         var user = FirebaseAuth.getInstance().currentUser
         binding.user = user
@@ -55,8 +63,11 @@ class ProfileFragment : Fragment() {
             AuthUI.getInstance().signOut(requireContext())
             Navigation.findNavController(binding.root).navigate(R.id.action_profileFragment_to_loginFragment)
         }
-        binding.searchBtn?.setOnClickListener(){
-            Navigation.findNavController(binding.root).navigate(R.id.action_profileFragment_to_homeFragment)
+        binding.backBtn.setOnClickListener(){
+            if(SharedPref.fromWhere.equals(Constants.HOME,true))
+                Navigation.findNavController(binding.root).navigate(R.id.action_profileFragment_to_homeFragment)
+            else if(SharedPref.fromWhere.equals(Constants.SETTINGS,true))
+                Navigation.findNavController(binding.root).navigate(R.id.action_profileFragment_to_settingsFragment)
         }
         //edit profile button
 
@@ -101,7 +112,7 @@ class ProfileFragment : Fragment() {
     }
 
 
-    fun showImages() {
+    private fun showImages() {
         val intent = Intent()
         intent.type = "image/*"
         intent.action = Intent.ACTION_GET_CONTENT
@@ -159,7 +170,7 @@ class ProfileFragment : Fragment() {
 
                 }.addOnFailureListener()
                 {
-                    Toast.makeText(requireContext(),"Invalid Password",Toast.LENGTH_LONG).show()
+                    Toast.makeText(requireContext(),getString(R.string.invalid_pass),Toast.LENGTH_LONG).show()
                 }
         }
         if(image_uri==null && user!!.displayName!!.equals(binding.nameEditText.text))

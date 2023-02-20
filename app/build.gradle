@@ -105,6 +105,10 @@ dependencies {
     implementation "androidx.room:room-runtime:2.3.0-alpha01"
     kapt "androidx.room:room-compiler:2.3.0-alpha01"
 
+    //SharedPref Library
+    implementation "com.chibatching.kotpref:kotpref:$version_kotpref"
+    implementation "com.chibatching.kotpref:initializer:$version_kotpref"
+
     // csv reader
     implementation 'org.apache.commons:commons-csv:1.5'
 

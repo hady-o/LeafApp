@@ -14,7 +14,9 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="log_out">Log Out</string>
     <string name="my_plants">My Plants</string>
-    <string name="disclaimer">*The result is auto diagnosed, please make sure your plant problem is the same as the symptom described/ above before taking any action</string>
+    <string name="settings">Settings</string>
+    <string name="profile">Profile</string>
+    <string name="disclaimer">*The plant is auto diagnosed, so some results might be not accurate for rare plants</string>
     <string name="overview">Overview</string>
     <string name="treatment">treatment</string>
     <string name="cause">Cause</string>
@@ -39,5 +41,23 @@
     <string name="first_screen_description">You can capture images of plants by yourself or just pick a saved image of the required plant to check its health condition.</string>
     <string name="onBoarding2_txt">Guide to cure plants</string>
     <string name="second_screen_description">If the plant is diseased, you will know the disease type and will be provided with essential tips to know how to cure your plant</string>
+    <string name="onBoarding3_txt">Broaden your knowledge</string>
+    <string name="third_screen_description">You can follow the latest posts to learn more and search for diseases you want to know more about</string>
     <string name="back_btn">Back button</string>
+    <string name="language_screen">Take care of the earth and she will take care of you.</string>
+    <string name="choose_lang">Choose your language</string>
+    <string name="arabic">عربي</string>
+    <string name="english">English</string>
+    <string name="sign_in_with_phone_number">Sign In With Phone Number</string>
+    <string name="check_your_internet_connection">Check your internet connection</string>
+    <string name="invalid_credentials">invalid username or password</string>
+    <string name="complete_profile">You can complete your data on profile page</string>
+    <string name="mail_exists">E-mail already exists</string>
+    <string name="notifications">Notifications</string>
+    <string name="help">Help</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="about_us">About Us</string>
+    <string name="camera_granted">camera permission granted</string>
+    <string name="camera_denied">camera permission denied</string>
+    <string name="invalid_pass">Invalid Password</string>
 </resources>

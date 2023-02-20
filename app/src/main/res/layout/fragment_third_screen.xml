@@ -4,20 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
-
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.onboardingscreens.SecondScreen"
+    tools:context=".ui.onboardingscreens.ThirdScreen"
     android:background="@color/dark_green">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/_287sdp"
         android:layout_height="@dimen/_218sdp"
         android:layout_marginTop="@dimen/_85sdp"
-        android:src="@drawable/onboarding2"
+        android:src="@drawable/ic_loginvec"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,12 +24,11 @@
         android:id="@+id/title"
         style="@style/onBoarding_title"
         android:layout_marginTop="@dimen/_38sdp"
-        android:text="@string/onBoarding2_txt"
+        android:text="@string/onBoarding3_txt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        android:textStyle="bold"
-        android:contentDescription="@string/onBoarding2_txt"/>
+        android:contentDescription="@string/onBoarding3_txt"/>
 
     <TextView
         android:id="@+id/description"
@@ -39,14 +36,14 @@
         android:layout_marginStart="@dimen/_38sdp"
         android:layout_marginTop="@dimen/_16sdp"
         android:layout_marginEnd="@dimen/_38sdp"
-        android:text="@string/second_screen_description"
+        android:text="@string/third_screen_description"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title"
-        android:contentDescription="@string/second_screen_description"/>
+        android:contentDescription="@string/third_screen_description"/>
 
     <TextView
-        android:id="@+id/next2"
+        android:id="@+id/next3"
         style="@style/next_style"
         android:layout_marginEnd="@dimen/_31sdp"
         android:layout_marginBottom="@dimen/_31sdp"
@@ -54,7 +51,7 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
-        android:id="@+id/skip2"
+        android:id="@+id/skip3"
         style="@style/skip_style"
         android:layout_marginStart="@dimen/_31sdp"
         android:layout_marginBottom="@dimen/_31sdp"

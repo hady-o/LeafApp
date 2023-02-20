@@ -7,6 +7,7 @@ import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.leafapp.databinding.ActivityMainBinding
+import com.example.leafapp.utils.setLocale
 
 class MainActivity : AppCompatActivity() {
     lateinit var  navController: NavController
@@ -16,16 +17,11 @@ class MainActivity : AppCompatActivity() {
          navController = this.findNavController(R.id.fragmentHostId)
 
         DiseasesData.loadData(assets)
-
-        //val destination=if(onBoardingFinished()) R.id.loginFragment else
+        setLocale(SharedPref.language)
 
         // NavigationUI.setupActionBarWithNavController(this, navController)
     }
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp()
     }
-//    private fun onBoardingFinished(): Boolean{
-//        val sharedPref = getSharedPreferences("onBoarding", MODE_PRIVATE)
-//        return sharedPref.getBoolean("Finished", false)
-//    }
 }

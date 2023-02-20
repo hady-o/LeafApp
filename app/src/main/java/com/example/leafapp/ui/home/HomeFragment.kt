@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat.checkSelfPermission
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 
 import com.example.leafapp.R
 
@@ -22,6 +23,7 @@ import androidx.navigation.fragment.findNavController
 
 import com.example.leafapp.databinding.FragmentHomeBinding
 import com.example.leafapp.posts.PostDao
+import com.example.leafapp.ui.SettingsFragment
 import com.example.leafapp.ui.home.homemenus.HistoryFragment
 import com.example.leafapp.ui.home.homemenus.UserHomeFragment
 import com.google.firebase.firestore.ktx.firestore
@@ -66,10 +68,20 @@ class HomeFragment : Fragment() {
         
         binding.navBarId.setOnItemSelectedListener() {
 
+//            when(it.itemId){
+//                R.id.homeMenuId -> {
+//                    getFragment(UserHomeFragment())
+//                }
+//                else -> {
+//
+//                }
+//            }
             if (it.itemId == R.id.homeMenuId) {
                 getFragment(UserHomeFragment())
             } else if (it.itemId == R.id.plantMenuId) {
                 getFragment(HistoryFragment())
+            } else if (it.itemId == R.id.menuId) {
+                Navigation.findNavController(binding.root).navigate(R.id.action_homeFragment_to_settingsFragment)
             }
             true
         }
@@ -78,7 +90,7 @@ class HomeFragment : Fragment() {
         return binding.root
     }
 
-    fun getFragment(dest: Fragment) {
+    private fun getFragment(dest: Fragment) {
         var frag = parentFragmentManager
         var tran = frag.beginTransaction()
         tran.replace(R.id.frameId, dest)
@@ -93,12 +105,12 @@ class HomeFragment : Fragment() {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == MY_CAMERA_PERMISSION_CODE) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(requireContext(), "camera permission granted", Toast.LENGTH_LONG)
+                Toast.makeText(requireContext(), getString(R.string.camera_granted), Toast.LENGTH_LONG)
                     .show()
                 val cameraIntent = CropImage.activity().getIntent(this.requireContext())
                 startActivityForResult(cameraIntent, CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE)
             } else {
-                Toast.makeText(requireContext(), "camera permission denied", Toast.LENGTH_LONG)
+                Toast.makeText(requireContext(), getString(R.string.camera_denied), Toast.LENGTH_LONG)
                     .show()
             }
         }

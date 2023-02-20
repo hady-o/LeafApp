@@ -16,7 +16,7 @@
         android:layout_width="0dp"
         android:layout_height="@dimen/_204sdp"
         android:layout_marginTop="@dimen/_85sdp"
-        android:src="@drawable/onpording1"
+        android:src="@drawable/on_boarding1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

@@ -45,9 +45,9 @@ class HistoryFragment : Fragment() {
                     val tmp = document.getString("className").toString()
                     val l = tmp.split("___")
                     val plantName = l[0]
-                    val dseas = l[1].replace('_', ' ')
+                    val disease = l[1].replace('_', ' ')
                     val plant = PlantClass(
-                        document.id, plantName, dseas,
+                        document.id, plantName, disease,
                         document.getString("date").toString(),
                         document.getString("photoUri").toString()
                     )
