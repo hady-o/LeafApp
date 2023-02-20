@@ -33,7 +33,7 @@
                 android:layout_marginEnd="@dimen/_18sdp"
                 android:layout_marginStart="@dimen/_18sdp"
                 android:background="@drawable/square_shape"
-                android:layout_weight="0.5"
+                android:layout_weight="1"
                 android:orientation="vertical"
 
                 android:paddingBottom="@dimen/_15sdp"
@@ -84,8 +84,8 @@
 
             <com.mikhaellopez.circularimageview.CircularImageView
                 android:id="@+id/userImage"
-                android:layout_width="@dimen/_100sdp"
-                android:layout_height="@dimen/_100sdp"
+                android:layout_width="@dimen/_130sdp"
+                android:layout_height="@dimen/_130sdp"
                 android:layout_marginTop="-15dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="1"
@@ -98,18 +98,20 @@
 
             <ScrollView
                 android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_18sdp"
+                android:layout_marginEnd="@dimen/_18sdp"
+                android:background="@drawable/square_shape"
                 android:layout_height="wrap_content">
 
             <LinearLayout
                 android:id="@+id/constraintLayout2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/_10sdp"
-                android:layout_marginStart="@dimen/_18sdp"
-                android:layout_marginEnd="@dimen/_18sdp"
-                android:background="@drawable/square_shape"
+
                 android:orientation="vertical"
-                android:layout_weight="1"
+
                 android:paddingTop="@dimen/_30sdp"
                 android:paddingBottom="@dimen/_10sdp"
                 app:layout_constraintBottom_toBottomOf="parent"
