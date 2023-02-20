@@ -48,9 +48,14 @@ class LoginFragment : Fragment() {
 
         binding = FragmentLoginBinding.inflate(layoutInflater)
 
-        val providers = arrayListOf(
-            AuthUI.IdpConfig.PhoneBuilder().build()
+        val googleProviders = arrayListOf(
+            AuthUI.IdpConfig.GoogleBuilder().build()
             )
+
+        val phoneProviders = arrayListOf(
+            AuthUI.IdpConfig.PhoneBuilder().build(),
+
+        )
 
 // Create and launch sign-in intent
 
@@ -78,12 +83,21 @@ class LoginFragment : Fragment() {
 //            showPassword(binding.passEditText)
 //        }
         //google sign in button
-        binding.googleSignInBtnId!!.setOnClickListener()
+        binding.googleLogin!!.setOnClickListener()
         {
             startActivityForResult(
-                    AuthUI.getInstance().createSignInIntentBuilder().setTheme(R.style.Theme_LeafApp).setAvailableProviders(providers)
+                    AuthUI.getInstance().createSignInIntentBuilder().setTheme(R.style.Theme_LeafApp).setAvailableProviders(googleProviders)
                         .build(),
             SIGN_IN_RESULT_CODE
+            )
+        }
+
+        binding.phoneLogin!!.setOnClickListener()
+        {
+            startActivityForResult(
+                AuthUI.getInstance().createSignInIntentBuilder().setTheme(R.style.Theme_LeafApp).setAvailableProviders(phoneProviders)
+                    .build(),
+                SIGN_IN_RESULT_CODE
             )
         }
 

@@ -15,6 +15,7 @@ import androidx.navigation.Navigation
 import com.bumptech.glide.Glide
 import com.example.leafapp.R
 import com.example.leafapp.databinding.FragmentProfileBinding
+import com.firebase.ui.auth.AuthUI
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.UserProfileChangeRequest
 import com.google.firebase.storage.FirebaseStorage
@@ -51,6 +52,7 @@ class ProfileFragment : Fragment() {
         binding.cancelBtnId.setOnClickListener()
         {
             FirebaseAuth.getInstance().signOut()
+            AuthUI.getInstance().signOut(requireContext())
             Navigation.findNavController(binding.root).navigate(R.id.action_profileFragment_to_loginFragment)
         }
         binding.searchBtn?.setOnClickListener(){
