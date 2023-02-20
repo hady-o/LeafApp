@@ -42,14 +42,15 @@
 
             <com.google.android.material.bottomnavigation.BottomNavigationView
                 android:id="@+id/navBarId"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginEnd="@dimen/_4sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:backgroundTint="@null"
                 android:background="@android:color/transparent"
                 app:elevation="0dp"
-                app:itemIconSize="@dimen/_25sdp"
-                app:itemIconTint="@color/dark_yellow"
-                app:itemTextColor="@color/white"
+                app:itemIconSize="@dimen/_20sdp"
+                app:itemIconTint="@color/fui_bgAnonymous"
+
                 app:menu="@menu/user_menu" />
 
 

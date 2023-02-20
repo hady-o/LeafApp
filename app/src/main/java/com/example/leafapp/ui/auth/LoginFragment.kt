@@ -1,5 +1,6 @@
 package com.example.leafapp.ui.auth
 
+import android.app.Activity.RESULT_OK
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,9 +15,13 @@ import com.example.leafapp.authentication.Resource
 import com.example.leafapp.databinding.FragmentLoginBinding
 import com.example.leafapp.resetPassword
 import com.example.leafapp.showPassword
+import com.firebase.ui.auth.AuthUI
+import com.firebase.ui.auth.FirebaseAuthUIActivityResultContract
+import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.firebase.auth.ActionCodeSettings
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -65,8 +70,27 @@ class LoginFragment : Fragment() {
 //            showPassword(binding.passEditText)
 //        }
         //google sign in button
+         val signInLauncher = registerForActivityResult(
+            FirebaseAuthUIActivityResultContract()
+        ) { res ->
+
+        }
+
         binding.googleSignInBtnId!!.setOnClickListener()
         {
+
+
+            val providers = listOf(
+                AuthUI.IdpConfig.EmailBuilder()
+                    .enableEmailLinkSignIn()
+                    .build()
+            )
+            val signInIntent = AuthUI.getInstance()
+                .createSignInIntentBuilder()
+                .setAvailableProviders(providers)
+                .build()
+            signInLauncher.launch(signInIntent)
+
 
         }
         //forgot password button
@@ -90,4 +114,18 @@ class LoginFragment : Fragment() {
             }
         }
     }
+    private fun onSignInResult(result: FirebaseAuthUIAuthenticationResult) {
+        val response = result.idpResponse
+        if (result.resultCode == RESULT_OK) {
+            // Successfully signed in
+            Navigation.findNavController(requireView()).navigate(R.id.action_loginFragment_to_homeFragment)
+            // ...
+        } else {
+            // Sign in failed. If response is null the user canceled the
+            // sign-in flow using the back button. Otherwise check
+            // response.getError().getErrorCode() and handle the error.
+            // ...
+        }
+    }
+
 }
