@@ -10,10 +10,10 @@
 
     <item
         android:id="@+id/dessId"
+        android:icon="@drawable/pest_control_fill0_wght400_grad0_opsz48"
         android:title=""
-        app:showAsAction="ifRoom"
         app:iconTint="@null"
-        android:icon="@drawable/sick_plant"/>
+        app:showAsAction="ifRoom" />
 
 
 

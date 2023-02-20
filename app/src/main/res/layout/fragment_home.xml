@@ -7,18 +7,15 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
-
     <FrameLayout
         android:id="@+id/frameId"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="@dimen/_30sdp"
+        android:layout_marginBottom="@dimen/_45sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
-
     </FrameLayout>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -70,9 +67,5 @@
 
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
