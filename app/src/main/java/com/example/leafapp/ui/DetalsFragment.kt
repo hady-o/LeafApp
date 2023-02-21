@@ -49,7 +49,7 @@ class DetalsFragment : Fragment() {
 
         args?.let {
             binding.post = it.post
-//            val postContent = readFromAsset(requireContext().assets,it.post.doc)
+            // val postContent = readFromAsset(requireContext().assets,it.post.doc)
             FancyToast.makeText(requireContext(),it.post.doc,FancyToast.LENGTH_LONG,FancyToast.CONFUSING,true).show()
             markwon.setMarkdown(binding.markdownTxt,it.post.contents)
             /*if(!postContent.equals(" # Hi From The Trap state :/ ")){
