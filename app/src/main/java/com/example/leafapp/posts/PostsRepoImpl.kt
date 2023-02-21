@@ -1,14 +1,9 @@
 package com.example.leafapp.posts
 
 import android.content.Context
-import android.widget.Toast
-import com.example.leafapp.dataclass.PlantClass
 import com.example.leafapp.dataclass.PostClass
-import com.example.leafapp.utils.await
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import com.shashank.sony.fancytoastlib.FancyToast
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
