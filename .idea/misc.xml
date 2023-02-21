@@ -49,30 +49,33 @@
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout-small/fragment_sign_up.xml" value="1.0" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout-xlarge/fragment_login.xml" value="0.1" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/activity_main.xml" value="0.20512820512820512" />
+        <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/disease_item.xml" value="0.2" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_add_post.xml" value="0.366412213740458" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_all.xml" value="0.375" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_care.xml" value="0.375" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_detals.xml" value="0.6" />
+        <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_disease.xml" value="0.16216216216216217" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_first_screen.xml" value="0.264" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_history.xml" value="0.11200000000000002" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_home.xml" value="0.1" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_land_scaping.xml" value="0.375" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_login.xml" value="0.1911392405063291" />
-        <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_profile.xml" value="1.0472222222222223" />
-        <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_result_and_tips.xml" value="0.732824427480916" />
+        <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_profile.xml" value="0.2" />
+        <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_result_and_tips.xml" value="0.176" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_second_screen.xml" value="0.2" />
+        <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_settings.xml" value="0.20512820512820512" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_sign_up.xml" value="0.11025641025641025" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_splash.xml" value="0.20512820512820512" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_treatment.xml" value="0.35390625" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_user_home.xml" value="0.2" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/history_card.xml" value="0.2" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/home_action_bar.xml" value="0.264" />
-        <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/post_card.xml" value="0.366412213740458" />
+        <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/post_card.xml" value="0.264" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/menu/user_menu.xml" value="0.136" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

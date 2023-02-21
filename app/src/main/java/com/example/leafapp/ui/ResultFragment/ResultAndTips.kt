@@ -40,6 +40,7 @@ class ResultAndTips : Fragment() {
             prediction = it.prediction
         }
 
+
         binding.backBtn.setOnClickListener() {
             Navigation.findNavController(binding.root).navigateUp()
         }

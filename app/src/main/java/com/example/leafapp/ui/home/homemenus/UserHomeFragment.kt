@@ -44,10 +44,10 @@ class UserHomeFragment : Fragment() {
 
         binding.allRC.adapter = adapter
         binding.allRC.layoutManager!!.scrollToPosition(CurrItem.pos)
-
+        // search edittext
         binding.editText.setOnClickListener()
         {
-            Navigation.findNavController(binding.root).navigate(R.id.action_homeFragment_to_detalsFragment2)
+            Navigation.findNavController(binding.root).navigate(R.id.action_homeFragment_to_diseaseFragment2)
         }
         // set user profile button
         binding.userImage.setOnClickListener()

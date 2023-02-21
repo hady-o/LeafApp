@@ -9,6 +9,8 @@ import java.io.InputStreamReader
 
 object DiseasesData {
     val lookUp: HashMap<String, DiseaseClass?> = hashMapOf("key" to null)
+    val lookUpList = ArrayList<DiseaseClass>()
+    val lookUpList2 = ArrayList<DiseaseClass>()
     val labes = arrayOf(
         "Alstonia Scholaris___diseased",
         "Alstonia Scholaris___healthy",
@@ -91,9 +93,11 @@ object DiseasesData {
                     tips = it[4]
                 )
                 lookUp[it[0]] = tmp
+                lookUpList.add(tmp)
             }
         }
-    }
 
+
+    }
 
 }

@@ -60,4 +60,5 @@
     <string name="camera_granted">camera permission granted</string>
     <string name="camera_denied">camera permission denied</string>
     <string name="invalid_pass">Invalid Password</string>
+    <string name="all_disease">All Disease</string>
 </resources>

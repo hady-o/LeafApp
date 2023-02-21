@@ -24,6 +24,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.leafapp.databinding.FragmentHomeBinding
 import com.example.leafapp.posts.PostDao
 import com.example.leafapp.ui.SettingsFragment
+import com.example.leafapp.ui.home.homemenus.DiseaseFragment
 import com.example.leafapp.ui.home.homemenus.HistoryFragment
 import com.example.leafapp.ui.home.homemenus.UserHomeFragment
 import com.google.firebase.firestore.ktx.firestore
@@ -82,6 +83,8 @@ class HomeFragment : Fragment() {
                 getFragment(HistoryFragment())
             } else if (it.itemId == R.id.menuId) {
                 Navigation.findNavController(binding.root).navigate(R.id.action_homeFragment_to_settingsFragment)
+            } else if (it.itemId == R.id.dessIdMenu) {
+                getFragment(DiseaseFragment())
             }
             true
         }
