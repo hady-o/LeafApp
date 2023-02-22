@@ -23,6 +23,7 @@ import androidx.navigation.fragment.findNavController
 
 import com.example.leafapp.databinding.FragmentHomeBinding
 import com.example.leafapp.posts.PostDao
+import com.example.leafapp.ui.ResultFragment.ResultAndTipsArgs
 import com.example.leafapp.ui.SettingsFragment
 import com.example.leafapp.ui.home.homemenus.DiseaseFragment
 import com.example.leafapp.ui.home.homemenus.HistoryFragment
@@ -49,6 +50,24 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(layoutInflater)
         getFragment(UserHomeFragment())
+        val args = arguments?.let {HomeFragmentArgs.fromBundle(it) }
+        args?.let {
+            if(it.dest==0)
+            {
+                getFragment(HistoryFragment())
+            }else if(it.dest==1)
+            {
+                getFragment(DiseaseFragment())
+            }else if(it.dest==2)
+            {
+                getFragment(SettingsFragment())
+            }
+            else
+            {
+                getFragment(UserHomeFragment())
+            }
+        }
+
         // AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         // PostDao.PostRoomDataBase.getInstance(requireContext()).dao.inserPosts(PostClass("first one",5,4,",","care","","",false))
         // PostDao.PostRoomDataBase.getInstance(requireContext()).dao.inserPosts(PostClass("first one",5,4,",","treatment","","",false))
@@ -84,7 +103,7 @@ class HomeFragment : Fragment() {
             } else if (it.itemId == R.id.plantMenuId) {
                 getFragment(HistoryFragment())
             } else if (it.itemId == R.id.menuId) {
-                Navigation.findNavController(binding.root).navigate(R.id.action_homeFragment_to_settingsFragment)
+               getFragment(SettingsFragment())
             } else if (it.itemId == R.id.dessIdMenu) {
                 getFragment(DiseaseFragment())
             }
@@ -128,6 +147,7 @@ class HomeFragment : Fragment() {
             val result = CropImage.getActivityResult(data)
             if (resultCode == AppCompatActivity.RESULT_OK) {
                 if (result != null) {
+
                     val uri = result.uri //path of image in phone
                     this.findNavController()
                         .navigate(

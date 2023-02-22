@@ -52,7 +52,7 @@ class UserHomeFragment : Fragment() {
         // set user profile button
         binding.userImage.setOnClickListener()
         {
-            SharedPref.fromWhere=Constants.HOME
+            SharedPref.fromWhereToProfile=Constants.HOME
             Navigation.findNavController(binding.root).navigate(R.id.action_homeFragment_to_profileFragment)
         }
         // set user data

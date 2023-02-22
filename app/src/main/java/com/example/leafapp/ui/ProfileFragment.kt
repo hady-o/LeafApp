@@ -12,6 +12,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.example.leafapp.Constants
 import com.example.leafapp.R
@@ -64,10 +65,10 @@ class ProfileFragment : Fragment() {
             Navigation.findNavController(binding.root).navigate(R.id.action_profileFragment_to_loginFragment)
         }
         binding.backBtn.setOnClickListener(){
-            if(SharedPref.fromWhere.equals(Constants.HOME,true))
-                Navigation.findNavController(binding.root).navigate(R.id.action_profileFragment_to_homeFragment)
-            else if(SharedPref.fromWhere.equals(Constants.SETTINGS,true))
-                Navigation.findNavController(binding.root).navigate(R.id.action_profileFragment_to_settingsFragment)
+            if(SharedPref.fromWhereToProfile.equals(Constants.HOME,true))
+                this.findNavController().navigate(ProfileFragmentDirections.actionProfileFragmentToHomeFragment(3))
+            else if(SharedPref.fromWhereToProfile.equals(Constants.SETTINGS,true))
+                this.findNavController().navigate(ProfileFragmentDirections.actionProfileFragmentToHomeFragment(2))
         }
         //edit profile button
 

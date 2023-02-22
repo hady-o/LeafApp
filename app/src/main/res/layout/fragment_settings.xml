@@ -203,55 +203,6 @@
                 android:textSize="@dimen/_14ssp" />
         </androidx.appcompat.widget.LinearLayoutCompat>
     </ScrollView>
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:id="@+id/coordinatorLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:backgroundTint="@color/dark_green"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <com.google.android.material.bottomappbar.BottomAppBar
-            android:id="@+id/bottomBar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:background="@android:color/transparent"
-
-            android:backgroundTint="@color/dark_green"
-            app:fabCradleRoundedCornerRadius="@dimen/_50sdp">
-
-            <com.google.android.material.bottomnavigation.BottomNavigationView
-                android:id="@+id/navBarId"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginEnd="@dimen/_8sdp"
-                android:backgroundTint="@null"
-                android:background="@android:color/transparent"
-                app:elevation="0dp"
-                app:itemIconSize="@dimen/_20sdp"
-                app:itemIconTint="@color/fui_bgAnonymous"
-
-                app:menu="@menu/user_menu" />
-
-
-        </com.google.android.material.bottomappbar.BottomAppBar>
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/camBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/dark_yellow"
-            android:src="@drawable/ic_photo_camera_fill0_wght500_grad200_opsz48"
-            app:fabCustomSize="@dimen/_50sdp"
-            app:fabSize="auto"
-            app:layout_anchor="@id/bottomBar"
-            app:maxImageSize="@dimen/_30sdp"
-            app:tint="@android:color/white" />
-
-
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

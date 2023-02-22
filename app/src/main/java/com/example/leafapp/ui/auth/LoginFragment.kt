@@ -14,11 +14,13 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.*
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.example.leafapp.R
 import com.example.leafapp.authentication.Resource
 import com.example.leafapp.databinding.FragmentLoginBinding
 import com.example.leafapp.resetPassword
 import com.example.leafapp.showPassword
+import com.example.leafapp.ui.ProfileFragmentDirections
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.FirebaseAuthUIActivityResultContract
 import com.firebase.ui.auth.IdpResponse
@@ -127,7 +129,7 @@ class LoginFragment : Fragment() {
                     binding.progressBar.setVisibility(View.GONE)}
                 is Resource.Load ->{binding.progressBar.setVisibility(View.VISIBLE)}
                 is Resource.Success -> {
-                    Navigation.findNavController(requireView()).navigate(R.id.action_loginFragment_to_homeFragment)
+                    this.findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToHomeFragment(3))
                 }
             }
         }
@@ -137,7 +139,7 @@ class LoginFragment : Fragment() {
         if (requestCode == SIGN_IN_RESULT_CODE) {
             val response = IdpResponse.fromResultIntent(data)
             if (resultCode == Activity.RESULT_OK) {
-                Navigation.findNavController(requireView()).navigate(R.id.action_loginFragment_to_homeFragment)
+                this.findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToHomeFragment(3))
                 FancyToast.makeText(requireContext(),getString(R.string.complete_profile),
                     FancyToast.LENGTH_LONG,
                     FancyToast.INFO,true).show()

@@ -14,6 +14,7 @@ import com.example.leafapp.Constants
 import com.example.leafapp.R
 import com.example.leafapp.SharedPref
 import com.example.leafapp.databinding.FragmentSettingsBinding
+import com.example.leafapp.ui.home.HomeFragmentDirections
 import com.example.leafapp.ui.home.homemenus.HistoryFragment
 import com.example.leafapp.ui.home.homemenus.UserHomeFragment
 import com.firebase.ui.auth.AuthUI
@@ -54,11 +55,11 @@ class SettingsFragment : Fragment(),View.OnClickListener{
             binding.btnLogOut.id -> {
                 FirebaseAuth.getInstance().signOut()
                 AuthUI.getInstance().signOut(requireContext())
-                Navigation.findNavController(binding.root).navigate(R.id.action_settingsFragment_to_loginFragment)
+                Navigation.findNavController(binding.root).navigate(R.id.action_homeFragment_to_loginFragment)
             }
             binding.btnProfile.id -> {
-                SharedPref.fromWhere=Constants.SETTINGS
-                Navigation.findNavController(binding.root).navigate(SettingsFragmentDirections.actionSettingsFragmentToProfileFragment())
+                SharedPref.fromWhereToProfile=Constants.SETTINGS
+                Navigation.findNavController(binding.root).navigate(HomeFragmentDirections.actionHomeFragmentToProfileFragment())
             }
             binding.btnAboutUs.id -> {
                 Navigation.findNavController(binding.root).navigate(SettingsFragmentDirections.actionSettingsFragmentToAboutUsFragment())

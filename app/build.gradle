@@ -100,6 +100,9 @@ dependencies {
     //databinding
     annotationProcessor "com.android.databinding:compiler:3.1.4"
 
+    // Moshi
+    implementation "com.squareup.moshi:moshi:1.14.0"
+    implementation "com.squareup.moshi:moshi-kotlin:1.14.0"
     // Room
     implementation("androidx.room:room-ktx:2.3.0-alpha01")
     implementation "androidx.room:room-runtime:2.3.0-alpha01"

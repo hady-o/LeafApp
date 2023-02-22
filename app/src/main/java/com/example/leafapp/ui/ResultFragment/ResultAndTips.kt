@@ -11,10 +11,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
+import com.example.leafapp.Constants
 import com.example.leafapp.R
+import com.example.leafapp.SharedPref
 import com.example.leafapp.databinding.FragmentResultAndTipsBinding
-
+import com.squareup.moshi.Json
 class ResultAndTips : Fragment() {
 
 
@@ -42,7 +45,10 @@ class ResultAndTips : Fragment() {
 
 
         binding.backBtn.setOnClickListener() {
-            Navigation.findNavController(binding.root).navigateUp()
+            if(SharedPref.fromWhereToResults.equals(Constants.HISTORY,true))
+                this.findNavController().navigate(ResultAndTipsDirections.actionResultAndTips2ToHomeFragment(0))
+            else
+                this.findNavController().navigate(ResultAndTipsDirections.actionResultAndTips2ToHomeFragment(1))
         }
 
         viewModel.diseaseNameLD.observe(viewLifecycleOwner, Observer {

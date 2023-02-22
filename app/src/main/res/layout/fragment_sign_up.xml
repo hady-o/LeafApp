@@ -118,6 +118,7 @@
                         android:drawableStart="@drawable/ic_baseline_lock_24"
                         android:drawablePadding="8dp"
                         android:hint="@string/pass"
+                        android:paddingEnd="@dimen/_10sdp"
                         android:textCursorDrawable="@drawable/color_cursor"
                         android:inputType="textPassword"
                         app:layout_constraintBottom_toBottomOf="parent"

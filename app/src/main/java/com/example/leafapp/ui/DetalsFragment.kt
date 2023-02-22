@@ -17,6 +17,7 @@ import java.io.BufferedReader
 import java.io.InputStreamReader
 import android.content.res.AssetManager
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.leafapp.ui.home.AllFragmentViewModel
 import com.shashank.sony.fancytoastlib.FancyToast
 
@@ -47,6 +48,9 @@ class DetalsFragment : Fragment() {
             )
         }
 
+        binding.backBtn.setOnClickListener{
+            this.findNavController().navigate(DetalsFragmentDirections.actionDetalsFragmentToHomeFragment(3))
+        }
         args?.let {
             binding.post = it.post
             // val postContent = readFromAsset(requireContext().assets,it.post.doc)

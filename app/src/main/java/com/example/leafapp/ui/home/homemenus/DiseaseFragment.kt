@@ -8,8 +8,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.example.leafapp.Constants
 import com.example.leafapp.DiseasesData
 import com.example.leafapp.R
+import com.example.leafapp.SharedPref
 import com.example.leafapp.adapters.DiseaseAdapter
 import com.example.leafapp.adapters.PsAdapter
 import com.example.leafapp.databinding.FragmentDiseaseBinding
@@ -24,6 +26,7 @@ class DiseaseFragment : Fragment() {
         // Inflate the layout for this fragment
         val binding = FragmentDiseaseBinding.inflate(layoutInflater)
         val adapter= DiseaseAdapter(DiseaseAdapter.DiseaseListenerClass {
+            SharedPref.fromWhereToResults=Constants.DISEASE
             this.findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToResultAndTips2("",false,it.diseaseName))
         })
         binding.allRC.adapter = adapter

@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.leafapp.Constants
+import com.example.leafapp.SharedPref
 import com.example.leafapp.adapters.PlantAdapter
 import com.example.leafapp.databinding.FragmentHistoryBinding
 import com.example.leafapp.dataclass.PlantClass
@@ -25,6 +27,7 @@ class HistoryFragment : Fragment() {
         // Inflate the layout for this fragment
         val binding = FragmentHistoryBinding.inflate(layoutInflater)
         val adapter = PlantAdapter(PlantAdapter.HistoryListenerClass {
+            SharedPref.fromWhereToResults= Constants.HISTORY
             this.findNavController()
                 .navigate(
                     HomeFragmentDirections.actionHomeFragmentToResultAndTips2(
