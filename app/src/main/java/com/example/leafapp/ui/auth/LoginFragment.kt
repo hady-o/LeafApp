@@ -73,11 +73,15 @@ class LoginFragment : Fragment() {
         //sign in button
         binding.signIntBtnId!!.setOnClickListener()
         {
-            viewModel.login(
-                binding.emailEditText.text.toString(),
-                binding.passEditText.text.toString()
-            )
-
+            try {
+                viewModel.login(
+                    binding.emailEditText.text.toString(),
+                    binding.passEditText.text.toString()
+                )
+            }
+            catch (e:Exception){
+                Toast.makeText(requireContext(),e.message,Toast.LENGTH_LONG).show()
+            }
         }
         //show pass button
 //        binding.showBtn!!.setOnClickListener()
@@ -146,5 +150,9 @@ class LoginFragment : Fragment() {
             } else {
             }
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
     }
 }

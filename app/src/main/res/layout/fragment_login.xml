@@ -90,8 +90,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:paddingStart="@dimen/_30sdp"
-                    android:paddingEnd="@dimen/_30sdp"
+                    android:paddingStart="@dimen/_80sdp"
+                    android:paddingEnd="@dimen/_80sdp"
                     android:gravity="center"
                     android:layout_marginTop="@dimen/_15sdp"
                     android:layout_weight=".5"
@@ -103,7 +103,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:src="@drawable/ic_google"/>
+                        android:src="@drawable/ic_google__g__logo"/>
                     <ImageView
                         android:id="@+id/phoneLogin"
                         android:layout_weight="1"
