@@ -62,6 +62,9 @@
   <string name="camera_denied">تم رفض إذن الكاميرا</string>
   <string name="all_diseases">كل الأمراض</string>
   <string name="language">اللغة</string>
-  <string name="not_plant">لا يبدو كنبات</string>
   <string name="healthy">سليم</string>
+  <string name="not_plant">ذلك المدخل لا يبدو كنبات !</string>
+  <string name="or">أو</string>
+  <string name="or">أ</string>
+  <string name="no_data_for_these_plants_yet">مازالت البيانات غير متاحة لتلك النباتات</string>
 </resources>

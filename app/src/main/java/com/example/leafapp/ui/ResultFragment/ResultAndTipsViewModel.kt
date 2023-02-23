@@ -74,8 +74,13 @@ class ResultAndTipsViewModel : ViewModel() {
         _diseasData.value = DiseasesData.lookUp[pridiction]
 
         val l = pridiction.split("___")
-        _plantNameLD.value = l[0]
-        _diseasNamaLD.value = l[1].replace('_', ' ')
+        try{
+            _plantNameLD.value = l[0]
+            _diseasNamaLD.value = l[1].replace('_', ' ')
+        }catch (ex:java.lang.IndexOutOfBoundsException){
+            ex.message.toString()
+        }
+
     }
 
     private fun saveImage(isSave: Boolean, imageBitmap: Bitmap?,pridiction: String) {

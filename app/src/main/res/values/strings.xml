@@ -62,6 +62,9 @@
     <string name="invalid_pass">Invalid Password</string>
     <string name="all_diseases">All Diseases</string>
     <string name="language">Language</string>
-    <string name="not_plant">That Does Not Look Like a Plant !!</string>
     <string name="healthy">healthy</string>
+    <string name="or">Or</string>
+    <string name="no_data_for_these_plants_yet">No data for these plants yet</string>
+    <string name="not_plant">This doesn\'t look like a plant !</string>
+    <string name="not_plant">T</string>
 </resources>

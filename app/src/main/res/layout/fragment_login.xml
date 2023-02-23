@@ -95,8 +95,7 @@
                     android:gravity="center"
                     android:layout_marginTop="@dimen/_15sdp"
                     android:layout_weight=".5"
-                    android:drawableStart="@drawable/ic_google"
-                    android:text="Sign In With phone number ">
+                    android:drawableStart="@drawable/ic_google">
 
                     <ImageView
                         android:id="@+id/googleLogin"
@@ -122,25 +121,12 @@
                     app:layout_constraintStart_toStartOf="parent"
                     tools:layout_editor_absoluteY="310dp">
 
-                    <View
-                        android:id="@+id/view"
-                        android:layout_width="@dimen/_80sdp"
-                        android:layout_height="@dimen/_2sdp"
-                        android:layout_marginEnd="@dimen/_20sdp"
-                        android:background="@color/black" />
+
 
                     <TextView
                         android:id="@+id/textView3"
                         style="@style/text_style_b25"
-
-                        android:text="Or" />
-
-                    <View
-                        android:id="@+id/view2"
-                        android:layout_width="@dimen/_80sdp"
-                        android:layout_height="@dimen/_2sdp"
-                        android:layout_marginStart="@dimen/_20sdp"
-                        android:background="@color/black" />
+                        android:text="@string/or" />
 
                 </LinearLayout>
 

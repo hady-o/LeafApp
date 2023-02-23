@@ -47,7 +47,6 @@
                 app:elevation="0dp"
                 app:itemIconSize="@dimen/_20sdp"
                 app:itemIconTint="@color/fui_bgAnonymous"
-
                 app:menu="@menu/user_menu" />
 
 

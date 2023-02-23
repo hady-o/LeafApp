@@ -100,10 +100,15 @@ class ResultAndTips : Fragment() {
         }
         // Means the person is just checking the image from the history fragment
         else {
-            Glide.with(requireContext())
-                .load(img)
-                .into(binding.takenImg)
-            prediction?.let { viewModel.getDiseaseData(it) }
+            try{
+                Glide.with(requireContext())
+                    .load(img)
+                    .into(binding.takenImg)
+                prediction?.let { viewModel.getDiseaseData(it) }
+            }catch (ex:java.lang.IndexOutOfBoundsException){
+                ex.message.toString()
+            }
+
         }
 
 
