@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Leaf App</string>
+    <string name="app_name">Leaf</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="slogan">Let\'s Save\nThe\nPlants</string>
     <string name="sign_in">Sign In</string>
@@ -12,7 +12,7 @@
     <string name="already_have_an_account">already have an account?</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="log_out">Log Out</string>
+    <string name="sign_out">Sign Out</string>
     <string name="my_plants">My Plants</string>
     <string name="settings">Settings</string>
     <string name="profile">Profile</string>
@@ -60,5 +60,8 @@
     <string name="camera_granted">camera permission granted</string>
     <string name="camera_denied">camera permission denied</string>
     <string name="invalid_pass">Invalid Password</string>
-    <string name="all_disease">All Disease</string>
+    <string name="all_diseases">All Diseases</string>
+    <string name="language">Language</string>
+    <string name="not_plant">That Does Not Look Like a Plant !!</string>
+    <string name="healthy">healthy</string>
 </resources>

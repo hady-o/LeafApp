@@ -26,7 +26,7 @@
                 android:id="@+id/welcomeTextId"
                 style="@style/text_style_w25"
                 android:layout_margin="@dimen/_22sdp"
-                android:text="@string/all_disease"
+                android:text="@string/all_diseases"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 

@@ -57,13 +57,6 @@ class ProfileFragment : Fragment() {
                 .load(user.photoUrl)
                 .into(binding.userImage)
         }
-        //log out
-        binding.cancelBtnId.setOnClickListener()
-        {
-            FirebaseAuth.getInstance().signOut()
-            AuthUI.getInstance().signOut(requireContext())
-            Navigation.findNavController(binding.root).navigate(R.id.action_profileFragment_to_loginFragment)
-        }
         binding.backBtn.setOnClickListener(){
             if(SharedPref.fromWhereToProfile.equals(Constants.HOME,true))
                 this.findNavController().navigate(ProfileFragmentDirections.actionProfileFragmentToHomeFragment(3))

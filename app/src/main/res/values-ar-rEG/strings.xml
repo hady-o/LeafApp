@@ -1,5 +1,5 @@
 <resources>
-  <string name="app_name">Leaf App</string>
+  <string name="app_name">Leaf</string>
   <!-- TODO: Remove or change this placeholder text -->
   <string name="slogan">فلننقذ النباتات</string>
   <string name="sign_in">تسجيل الدخول</string>
@@ -12,7 +12,7 @@
   <string name="already_have_an_account">لديك حساب؟</string>
   <!-- TODO: Remove or change this placeholder text -->
   <string name="hello_blank_fragment">مرحباً! صفحة خالية</string>
-  <string name="log_out">تسجيل الخروج</string>
+  <string name="sign_out">تسجيل الخروج</string>
   <string name="my_plants">نباتاتى</string>
   <string name="settings">الإعدادات</string>
   <string name="disclaimer">*يتم تشخيص النبات بشكل أوتوماتيكي لذلك قد تكون بعض النتائج غير دقيقة إذا كان النبات من الأنواع النادرة</string>
@@ -60,4 +60,8 @@
   <string name="invalid_pass">كلمة المرور غير صالحة</string>
   <string name="camera_granted">تم منح إذن الكاميرا</string>
   <string name="camera_denied">تم رفض إذن الكاميرا</string>
+  <string name="all_diseases">كل الأمراض</string>
+  <string name="language">اللغة</string>
+  <string name="not_plant">لا يبدو كنبات</string>
+  <string name="healthy">سليم</string>
 </resources>

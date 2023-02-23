@@ -24,7 +24,7 @@ class ResultAndTips : Fragment() {
     private lateinit var viewModel: ResultAndTipsViewModel
     lateinit var binding: FragmentResultAndTipsBinding
 
-    lateinit var img: String
+    private lateinit var img: String
     var isSave: Boolean = true
     var prediction: String? = null
     override fun onCreateView(
@@ -53,7 +53,7 @@ class ResultAndTips : Fragment() {
 
         viewModel.diseaseNameLD.observe(viewLifecycleOwner, Observer {
             binding.diseaseText.text = it
-            if (it.equals("healthy")) {
+            if (it.equals(getString(R.string.healthy),true)) {
                 binding.statImg.setImageResource(R.drawable.good_plant)
             }
         })
@@ -98,7 +98,7 @@ class ResultAndTips : Fragment() {
                 binding.resLv.visibility = View.GONE
             }
         }
-        // Means the person just chcking the image from the history fragment
+        // Means the person is just checking the image from the history fragment
         else {
             Glide.with(requireContext())
                 .load(img)

@@ -52,19 +52,11 @@ class HomeFragment : Fragment() {
         getFragment(UserHomeFragment())
         val args = arguments?.let {HomeFragmentArgs.fromBundle(it) }
         args?.let {
-            if(it.dest==0)
-            {
-                getFragment(HistoryFragment())
-            }else if(it.dest==1)
-            {
-                getFragment(DiseaseFragment())
-            }else if(it.dest==2)
-            {
-                getFragment(SettingsFragment())
-            }
-            else
-            {
-                getFragment(UserHomeFragment())
+            when(it.dest){
+                0 -> getFragment(HistoryFragment())
+                1 -> getFragment(DiseaseFragment())
+                2 -> getFragment(SettingsFragment())
+                else -> getFragment(UserHomeFragment())
             }
         }
 
@@ -89,28 +81,14 @@ class HomeFragment : Fragment() {
 
         }
         binding.navBarId.setOnItemSelectedListener() {
-
-//            when(it.itemId){
-//                R.id.homeMenuId -> {
-//                    getFragment(UserHomeFragment())
-//                }
-//                else -> {
-//
-//                }
-//            }
-            if (it.itemId == R.id.homeMenuId) {
-                getFragment(UserHomeFragment())
-            } else if (it.itemId == R.id.plantMenuId) {
-                getFragment(HistoryFragment())
-            } else if (it.itemId == R.id.menuId) {
-               getFragment(SettingsFragment())
-            } else if (it.itemId == R.id.dessIdMenu) {
-                getFragment(DiseaseFragment())
+            when(it.itemId){
+                R.id.homeMenuId -> getFragment(UserHomeFragment())
+                R.id.plantMenuId -> getFragment(HistoryFragment())
+                R.id.menuId -> getFragment(SettingsFragment())
+                R.id.dessIdMenu -> getFragment(DiseaseFragment())
             }
             true
         }
-
-
         return binding.root
     }
 

@@ -79,8 +79,8 @@
                     android:src="@drawable/arrow_forward" />
 
             </RelativeLayout>
-            
-            
+
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -196,7 +196,7 @@
                 android:layout_marginBottom="@dimen/_20sdp"
                 android:backgroundTint="@color/dark_yellow"
                 android:padding="@dimen/_12sdp"
-                android:text="@string/log_out"
+                android:text="@string/sign_out"
                 android:textAllCaps="false"
                 style="@style/primary_btn_style"
                 android:textColor="@color/white"
