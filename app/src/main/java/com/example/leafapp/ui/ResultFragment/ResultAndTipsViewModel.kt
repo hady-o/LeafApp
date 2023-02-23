@@ -57,7 +57,7 @@ class ResultAndTipsViewModel : ViewModel() {
     ) {
         viewModelScope.launch {
 
-            val mainModel = ImageClassifier(activity.assets, "Models/MobileNetV2/MobileNetV2.tflite",256)
+            val mainModel = ImageClassifier(activity.assets, "Models/MobileNetV2/mobile_net_v2_80_class.tflite",256)
             var pridiction = if (prediction == null) {
                 val res = mainModel.predict(imageBitmap)
                 val idx = getIdxOfMax(res)
