@@ -4,15 +4,11 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.leafapp.authentication.AuthRepo
 import com.example.leafapp.authentication.AuthRepoImpl
 import com.example.leafapp.authentication.Resource
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import dagger.hilt.android.lifecycle.HiltViewModel
-import dagger.hilt.android.scopes.ViewModelScoped
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -31,13 +27,13 @@ class AuthViewModel @Inject constructor(): ViewModel() {
     init {
         if(repo.currentUSer!=null)
         {
-            _loginState.value=Resource.Success(repo.currentUSer!!)
+            _loginState.value= Resource.Success(repo.currentUSer!!)
         }
     }
 
     fun login(email:String, password:String) =
         viewModelScope.launch {
-            _loginState.value=Resource.Load
+            _loginState.value= Resource.Load
             val res = repo.login(email,password)
             _loginState.value=res
         }
@@ -45,7 +41,7 @@ class AuthViewModel @Inject constructor(): ViewModel() {
 
     fun signUp(name:String, email:String, password:String) =
         viewModelScope.launch {
-            _signUpState.value=Resource.Load
+            _signUpState.value= Resource.Load
             val res = repo.signUp(name,email,password)
             _signUpState.value=res
         }

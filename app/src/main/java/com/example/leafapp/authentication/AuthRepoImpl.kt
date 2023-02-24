@@ -1,8 +1,9 @@
 package com.example.leafapp.authentication
+import android.widget.Toast
 import com.example.leafapp.utils.await
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.auth.UserProfileChangeRequest
+import com.google.firebase.auth.*
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 import javax.inject.Inject
 
@@ -33,6 +34,7 @@ class AuthRepoImpl @Inject constructor(private val firebaseAuth: FirebaseAuth) :
             Resource.Success(res.user!!)
         }catch (e:Exception)
         {
+
             e.printStackTrace()
             Resource.Fail(e)
         }

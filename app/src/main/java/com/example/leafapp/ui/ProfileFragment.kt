@@ -12,9 +12,13 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
+import com.example.leafapp.Constants
 import com.example.leafapp.R
+import com.example.leafapp.SharedPref
 import com.example.leafapp.databinding.FragmentProfileBinding
+import com.firebase.ui.auth.AuthUI
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.UserProfileChangeRequest
 import com.google.firebase.storage.FirebaseStorage
@@ -36,31 +40,35 @@ class ProfileFragment : Fragment() {
         // Inflate the layout for this fragment
         binding =FragmentProfileBinding.inflate(layoutInflater)
         //set slogan colored text
-        val surName = getColoredSpanned("deference", "#6BDBAB")
-        binding.slogan.text = Html.fromHtml("To gather we can<br>make"+" "+surName)
+        if(SharedPref.language.equals(Constants.ENGLISH,true)){
+            val surName = getColoredSpanned("difference", "#6BDBAB")
+            binding.slogan.text = Html.fromHtml("Together we can<br>make $surName")
+        }else{
+            val surName = getColoredSpanned("فارق", "#6BDBAB")
+            binding.slogan.text = Html.fromHtml("نستطيع إحداث $surName سويا")
+        }
+
         //user data
         var user = FirebaseAuth.getInstance().currentUser
-
-        binding.nameEditText.setText(user!!.displayName.toString())
-        binding.emailEditText.setText(user!!.email.toString())
-        if(user.photoUrl!=null)
+        binding.user = user
+        if(user!!.photoUrl!=null)
         {
             Glide.with(requireContext())
                 .load(user.photoUrl)
                 .into(binding.userImage)
         }
-        //log out
-        binding.cancelBtnId.setOnClickListener()
-        {
-            FirebaseAuth.getInstance().signOut()
-            Navigation.findNavController(binding.root).navigate(R.id.action_profileFragment_to_loginFragment)
+        binding.backBtn.setOnClickListener(){
+            if(SharedPref.fromWhereToProfile.equals(Constants.HOME,true))
+                this.findNavController().navigate(ProfileFragmentDirections.actionProfileFragmentToHomeFragment(3))
+            else if(SharedPref.fromWhereToProfile.equals(Constants.SETTINGS,true))
+                this.findNavController().navigate(ProfileFragmentDirections.actionProfileFragmentToHomeFragment(2))
         }
         //edit profile button
 
         binding.EditBtn.setOnClickListener()
         {
             if(!editMode) {
-                binding.EditBtn.text = "Save"
+                binding.EditBtn.text = getString(R.string.save)
                 editMode = true
                 binding.passEditText.setVisibility(View.VISIBLE)
                 //change user image
@@ -76,7 +84,7 @@ class ProfileFragment : Fragment() {
             {
                 updateProfile()
                 binding.passEditText.setVisibility(View.GONE)
-                binding.EditBtn.text = "Edit"
+                binding.EditBtn.text = getString(R.string.edit)
                 editMode = false
                 //change user image
                 binding.userImage.isClickable=false
@@ -90,13 +98,15 @@ class ProfileFragment : Fragment() {
 
         return binding.root
     }
+
+
     // text color
     private fun getColoredSpanned(text: String, color: String): String? {
         return "<font color=$color>$text</font>"
     }
 
 
-    fun showImages() {
+    private fun showImages() {
         val intent = Intent()
         intent.type = "image/*"
         intent.action = Intent.ACTION_GET_CONTENT
@@ -154,7 +164,7 @@ class ProfileFragment : Fragment() {
 
                 }.addOnFailureListener()
                 {
-                    Toast.makeText(requireContext(),"Invalid Password",Toast.LENGTH_LONG).show()
+                    Toast.makeText(requireContext(),getString(R.string.invalid_pass),Toast.LENGTH_LONG).show()
                 }
         }
         if(image_uri==null && user!!.displayName!!.equals(binding.nameEditText.text))

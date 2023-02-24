@@ -18,7 +18,7 @@
     </style>
 
 
-<style name="text_style_b25">
+    <style name="text_style_b25">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/black</item>
@@ -40,7 +40,7 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/white</item>
-        <item name="android:textSize">@dimen/_8sdp</item>
+        <item name="android:textSize">@dimen/_10sdp</item>
         <item name="android:textAllCaps">false</item>
         <item name="android:backgroundTint">@null</item>
     </style>
@@ -80,8 +80,8 @@
         <item name="android:textColor">@color/black</item>
         <item name="android:background">@drawable/button_shape</item>
         <item name="android:textSize">@dimen/_15sdp</item>
-        <item name="android:layout_marginLeft">@dimen/_18sdp</item>
-        <item name="android:layout_marginRight">@dimen/_18sdp</item>
+        <item name="android:layout_marginStart">@dimen/_18sdp</item>
+        <item name="android:layout_marginEnd">@dimen/_18sdp</item>
         <item name="android:textAllCaps">false</item>
         <item name="android:backgroundTint">@null</item>
     </style>
@@ -92,8 +92,19 @@
         <item name="android:textColor">@color/black</item>
         <item name="android:background">@drawable/button_shape</item>
         <item name="android:textSize">@dimen/_13sdp</item>
-        <item name="android:layout_marginLeft">@dimen/_18sdp</item>
-        <item name="android:layout_marginRight">@dimen/_18sdp</item>
+        <item name="android:layout_marginStart">@dimen/_18sdp</item>
+        <item name="android:layout_marginEnd">@dimen/_18sdp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:backgroundTint">@null</item>
+    </style>
+
+    <style name="second_btn_style_5">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/_30sdp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/button_shape5</item>
+        <item name="android:textSize">@dimen/_6sdp</item>
         <item name="android:textAllCaps">false</item>
         <item name="android:backgroundTint">@null</item>
     </style>
@@ -115,11 +126,12 @@
         <item name="android:background">@drawable/button_shape</item>
         <item name="android:textSize">@dimen/_15sdp</item>
         <item name="android:padding">@dimen/_14sdp</item>
-        <item name="android:layout_marginLeft">@dimen/_18sdp</item>
-        <item name="android:layout_marginRight">@dimen/_18sdp</item>
+        <item name="android:layout_marginStart">@dimen/_18sdp</item>
+        <item name="android:layout_marginEnd">@dimen/_18sdp</item>
         <item name="android:textAllCaps">false</item>
         <item name="android:backgroundTint">@null</item>
     </style>
+
 
     <style name="edit_text_style_s">
         <item name="android:layout_width">match_parent</item>
@@ -128,12 +140,70 @@
         <item name="android:background">@drawable/button_shape</item>
         <item name="android:textSize">@dimen/_12sdp</item>
         <item name="android:padding">@dimen/_8sdp</item>
-        <item name="android:layout_marginLeft">@dimen/_18sdp</item>
-        <item name="android:layout_marginRight">@dimen/_18sdp</item>
+        <item name="android:layout_marginStart">@dimen/_18sdp</item>
+        <item name="android:layout_marginEnd">@dimen/_18sdp</item>
         <item name="android:textAllCaps">false</item>
         <item name="android:backgroundTint">@null</item>
     </style>
 
 
+    <style name="sub_hider_txt">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 
+    <style name="content_txt">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_marginTop">0dp</item>
+    </style>
+
+    <style name="onBoarding_title">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/_19ssp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+
+    </style>
+
+    <style name="onBoarding_description">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/_16ssp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+
+    <style name="next_style">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:text">@string/next</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/_16ssp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:contentDescription">@string/next</item>
+
+    </style>
+
+    <style name="skip_style">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:text">@string/skip</item>
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textSize">@dimen/_16ssp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:contentDescription">@string/skip</item>
+    </style>
 </resources>

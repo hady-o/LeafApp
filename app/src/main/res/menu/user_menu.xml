@@ -3,27 +3,42 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/homeMenuId"
-        android:title="Home"
+        android:title=""
         app:showAsAction="ifRoom"
 
         android:icon="@drawable/ic_home_fill0_wght500_grad200_opsz48"/>
 
+    <item
+        android:id="@+id/dessIdMenu"
+        android:icon="@drawable/pest_control_fill0_wght400_grad0_opsz48"
+        android:title=""
+        app:iconTint="@null"
+        app:showAsAction="ifRoom" />
+
+
 
     <item
-        android:id="@+id/space"
+        android:id="@+id/space2"
         android:title=""
-        android:enabled="false"
         app:showAsAction="ifRoom"
+        />
 
-       />
+
 
 
 
     <item
         android:id="@+id/plantMenuId"
-        android:title="plant"
+        android:title=""
         app:showAsAction="ifRoom"
         android:icon="@drawable/ic_psychiatry_fill0_wght500_grad200_opsz48"/>
+
+    <item
+        android:id="@+id/menuId"
+        android:title=""
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_baseline_settings_24"/>
+
 
 
 </menu>

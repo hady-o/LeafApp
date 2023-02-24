@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.onboardingscreens.ThirdScreen"
+    android:background="@color/dark_green">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="@dimen/_287sdp"
+        android:layout_height="@dimen/_218sdp"
+        android:layout_marginTop="@dimen/_85sdp"
+        android:src="@drawable/ic_loginvec"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/onBoarding_title"
+        android:layout_marginTop="@dimen/_38sdp"
+        android:text="@string/onBoarding3_txt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        android:contentDescription="@string/onBoarding3_txt"/>
+
+    <TextView
+        android:id="@+id/description"
+        style="@style/onBoarding_description"
+        android:layout_marginStart="@dimen/_38sdp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginEnd="@dimen/_38sdp"
+        android:text="@string/third_screen_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        android:contentDescription="@string/third_screen_description"/>
+
+    <TextView
+        android:id="@+id/next3"
+        style="@style/next_style"
+        android:layout_marginEnd="@dimen/_31sdp"
+        android:layout_marginBottom="@dimen/_31sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/skip3"
+        style="@style/skip_style"
+        android:layout_marginStart="@dimen/_31sdp"
+        android:layout_marginBottom="@dimen/_31sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

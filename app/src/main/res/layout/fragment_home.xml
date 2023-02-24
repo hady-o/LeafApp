@@ -5,20 +5,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.HomeFragment">
-
+    tools:context=".ui.home.HomeFragment">
 
     <FrameLayout
         android:id="@+id/frameId"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="@dimen/_30sdp"
+        android:layout_marginBottom="@dimen/_45sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
-
     </FrameLayout>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -42,14 +39,14 @@
 
             <com.google.android.material.bottomnavigation.BottomNavigationView
                 android:id="@+id/navBarId"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginEnd="@dimen/_4sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:backgroundTint="@null"
                 android:background="@android:color/transparent"
                 app:elevation="0dp"
-                app:itemIconSize="@dimen/_25sdp"
-                app:itemIconTint="@color/dark_yellow"
-                app:itemTextColor="@color/white"
+                app:itemIconSize="@dimen/_20sdp"
+                app:itemIconTint="@color/fui_bgAnonymous"
                 app:menu="@menu/user_menu" />
 
 
@@ -69,9 +66,5 @@
 
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,6 +7,7 @@ import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.leafapp.databinding.ActivityMainBinding
+import com.example.leafapp.utils.setLocale
 
 class MainActivity : AppCompatActivity() {
     lateinit var  navController: NavController
@@ -14,10 +15,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
          navController = this.findNavController(R.id.fragmentHostId)
+
+        DiseasesData.loadData(assets)
+        setLocale(SharedPref.language)
+
         // NavigationUI.setupActionBarWithNavController(this, navController)
     }
     override fun onSupportNavigateUp(): Boolean {
-
         return navController.navigateUp()
     }
 }
