@@ -19,39 +19,48 @@
         android:backgroundTint="@{plant.disease.equalsIgnoreCase(&quot;healthy&quot;)? @color/light_green : @color/light_red}"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/plantImage"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView3"
             android:layout_width="@dimen/_60sdp"
-            loadImage="@{plant.photo}"
             android:layout_height="@dimen/_60sdp"
-            android:layout_margin="@dimen/_10sdp"
-            android:src="@drawable/ic_loginvec"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            app:cardCornerRadius="10dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/plantImage"
+                loadImage="@{plant.photo}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_loginvec" />
+        </androidx.cardview.widget.CardView>
 
         <TextView
             android:id="@+id/plantNameId"
             style="@style/text_style_g25"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="@dimen/_15sdp"
-            android:layout_marginStart="@dimen/_15sdp"
+            android:contentDescription="@{plant.name}"
             android:text="@{plant.name}"
             android:textColor="@color/white"
-            tools:text="Plant Name"
-            android:contentDescription="@{plant.name}"
-            app:layout_constraintStart_toEndOf="@+id/plantImage"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toEndOf="@+id/cardView3"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Plant Name" />
 
         <TextView
             android:id="@+id/plantDisID"
             style="@style/text_style_b20"
-            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginStart="26dp"
             android:layout_marginTop="@dimen/_7sdp"
+            android:contentDescription="@{plant.disease}"
             android:text="@{plant.disease}"
             android:textColor="@color/white"
-            android:contentDescription="@{plant.disease}"
-            tools:text="Plant Disease"
-            app:layout_constraintStart_toEndOf="@+id/plantImage"
-            app:layout_constraintTop_toBottomOf="@+id/plantNameId" />
+            app:layout_constraintStart_toEndOf="@+id/cardView3"
+            app:layout_constraintTop_toBottomOf="@+id/plantNameId"
+            tools:text="Plant Disease" />
 
         <TextView
             android:id="@+id/plantDate"

@@ -103,12 +103,13 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:src="@drawable/ic_google__g__logo"/>
+
                     <ImageView
                         android:id="@+id/phoneLogin"
-                        android:layout_weight="1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic_baseline_phone_android_24"/>
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_baseline_local_phone_24" />
 
                 </LinearLayout>
 
