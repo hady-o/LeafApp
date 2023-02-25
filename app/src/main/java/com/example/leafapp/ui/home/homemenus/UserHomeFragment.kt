@@ -45,7 +45,7 @@ class UserHomeFragment : Fragment() {
         binding.allRC.adapter = adapter
         binding.allRC.layoutManager!!.scrollToPosition(CurrItem.pos)
         // search edittext
-        binding.editText.setOnClickListener()
+        binding.searchBtnUserHome.setOnClickListener()
         {
             Navigation.findNavController(binding.root).navigate(R.id.action_homeFragment_to_diseaseFragment2)
         }

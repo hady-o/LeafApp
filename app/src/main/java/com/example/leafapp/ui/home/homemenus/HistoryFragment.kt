@@ -2,9 +2,13 @@ package com.example.leafapp.ui.home.homemenus
 
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.leafapp.Constants
@@ -19,7 +23,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 
 
 class HistoryFragment : Fragment() {
-    var plants: MutableList<PlantClass> = ArrayList<PlantClass>()
+    private var plants: MutableList<PlantClass> = ArrayList()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -37,6 +41,29 @@ class HistoryFragment : Fragment() {
                     )
                 )
         })
+
+        binding.searchUserScans.addTextChangedListener(object : TextWatcher {
+                override fun beforeTextChanged(currentText: CharSequence?, start: Int, count: Int, after: Int) {
+
+                }
+
+                override fun onTextChanged(currentText: CharSequence?,  start: Int, before: Int, count: Int) {
+                    val newPlants: MutableList<PlantClass> = ArrayList()
+
+                    Log.i("oooo", " ${plants.count()}")
+                    plants.forEach { userPlant ->
+                        if(userPlant.name.contains(currentText.toString(), ignoreCase = true)
+                            || userPlant.disease.contains(currentText.toString(), ignoreCase = true))
+                            newPlants.add(userPlant)
+                    }
+                    adapter.submitList(newPlants)
+                    binding.res.adapter = adapter
+                }
+
+                override fun afterTextChanged(p0: Editable?) {
+                }
+            }
+        )
 
         FirebaseFirestore.getInstance()
             .collection("history")

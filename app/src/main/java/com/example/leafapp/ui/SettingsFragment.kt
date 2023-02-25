@@ -42,6 +42,8 @@ class SettingsFragment : Fragment(),View.OnClickListener{
         binding.btnLogOut.setOnClickListener(this)
         binding.btnProfile.setOnClickListener(this)
         binding.btnAboutUs.setOnClickListener(this)
+        binding.btnHelp.setOnClickListener(this)
+        binding.btnChat.setOnClickListener(this)
     }
 
     override fun onClick(view: View?) {
@@ -78,6 +80,14 @@ class SettingsFragment : Fragment(),View.OnClickListener{
             binding.btnAboutUs.id -> {
                 Navigation.findNavController(binding.root)
                     .navigate(HomeFragmentDirections.actionHomeFragmentToAboutUsFragment())
+            }
+            binding.btnHelp.id -> {
+                Navigation.findNavController(binding.root)
+                    .navigate(HomeFragmentDirections.actionHomeFragmentToHelpFragment())
+            }
+            binding.btnChat.id -> {
+                Navigation.findNavController(binding.root)
+                    .navigate(HomeFragmentDirections.actionHomeFragmentToContactFragment())
             }
         }
     }

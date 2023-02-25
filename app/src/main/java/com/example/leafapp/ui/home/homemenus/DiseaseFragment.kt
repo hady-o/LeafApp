@@ -3,6 +3,7 @@ package com.example.leafapp.ui.home.homemenus
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -16,6 +17,8 @@ import com.example.leafapp.adapters.DiseaseAdapter
 import com.example.leafapp.adapters.PsAdapter
 import com.example.leafapp.databinding.FragmentDiseaseBinding
 import com.example.leafapp.databinding.FragmentHistoryBinding
+import com.example.leafapp.dataclass.DiseaseClass
+import com.example.leafapp.ui.home.HomeFragment
 import com.example.leafapp.ui.home.HomeFragmentDirections
 
 class DiseaseFragment : Fragment() {
@@ -29,11 +32,14 @@ class DiseaseFragment : Fragment() {
             SharedPref.fromWhereToResults=Constants.DISEASE
             this.findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToResultAndTips2("",false,it.diseaseName))
         })
+        val allDiseases = DiseasesData.lookUpList.toMutableList()
         binding.allRC.adapter = adapter
         binding.look = DiseasesData
-        binding.editText.addTextChangedListener(object : TextWatcher {
 
-            override fun afterTextChanged(s: Editable) {}
+        binding.searchBtnDisease.addTextChangedListener(object : TextWatcher {
+
+            override fun afterTextChanged(s: Editable) {
+            }
 
             override fun beforeTextChanged(s: CharSequence, start: Int,
                                            count: Int, after: Int) {
@@ -42,6 +48,11 @@ class DiseaseFragment : Fragment() {
             override fun onTextChanged(s: CharSequence, start: Int,
                                        before: Int, count: Int) {
                 DiseasesData.lookUpList.clear()
+
+                allDiseases.forEach { diseaseClass ->
+                    if(diseaseClass.diseaseName.contains(s.toString(), ignoreCase = true))
+                        DiseasesData.lookUpList.add(diseaseClass)
+                }
 
                 binding.allRC.adapter = adapter
                 binding.look = DiseasesData
