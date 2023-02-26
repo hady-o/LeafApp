@@ -4,12 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <data>
-        <variable
-            name="look"
-            type="com.example.leafapp.DiseasesData" />
-    </data>
-
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -64,7 +58,6 @@
             android:layout_height="match_parent"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="0dp"
-            listDisease="@{look.lookUpList}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/disease_item" />
     </LinearLayout>

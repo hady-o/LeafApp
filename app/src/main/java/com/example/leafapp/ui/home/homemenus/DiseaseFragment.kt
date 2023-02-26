@@ -8,20 +8,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.leafapp.Constants
 import com.example.leafapp.DiseasesData
 import com.example.leafapp.R
 import com.example.leafapp.SharedPref
 import com.example.leafapp.adapters.DiseaseAdapter
-import com.example.leafapp.adapters.PsAdapter
 import com.example.leafapp.databinding.FragmentDiseaseBinding
-import com.example.leafapp.databinding.FragmentHistoryBinding
 import com.example.leafapp.dataclass.DiseaseClass
-import com.example.leafapp.ui.home.HomeFragment
 import com.example.leafapp.ui.home.HomeFragmentDirections
 
 class DiseaseFragment : Fragment() {
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -32,9 +31,7 @@ class DiseaseFragment : Fragment() {
             SharedPref.fromWhereToResults=Constants.DISEASE
             this.findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToResultAndTips2("",false,it.diseaseName))
         })
-        val allDiseases = DiseasesData.lookUpList.toMutableList()
-        binding.allRC.adapter = adapter
-        binding.look = DiseasesData
+        adapter.submitList(DiseasesData.lookUpList)
 
         binding.searchBtnDisease.addTextChangedListener(object : TextWatcher {
 
@@ -47,19 +44,18 @@ class DiseaseFragment : Fragment() {
 
             override fun onTextChanged(s: CharSequence, start: Int,
                                        before: Int, count: Int) {
-                DiseasesData.lookUpList.clear()
+                val tmpList: MutableList<DiseaseClass> = ArrayList()
 
-                allDiseases.forEach { diseaseClass ->
+                DiseasesData.lookUpList.forEach { diseaseClass ->
                     if(diseaseClass.diseaseName.contains(s.toString(), ignoreCase = true))
-                        DiseasesData.lookUpList.add(diseaseClass)
+                        tmpList.add(diseaseClass)
                 }
-
-                binding.allRC.adapter = adapter
-                binding.look = DiseasesData
+                adapter.submitList(tmpList)
 
             }
         })
 
+        binding.allRC.adapter = adapter
         return binding.root
     }
 }

@@ -47,7 +47,7 @@ class UserHomeFragment : Fragment() {
         // search edittext
         binding.searchBtnUserHome.setOnClickListener()
         {
-            Navigation.findNavController(binding.root).navigate(R.id.action_homeFragment_to_diseaseFragment2)
+            getFragment(DiseaseFragment())
         }
         // set user profile button
         binding.userImage.setOnClickListener()
@@ -94,6 +94,13 @@ class UserHomeFragment : Fragment() {
         }
 
         return binding.root
+    }
+
+    private fun getFragment(dest: Fragment) {
+        var frag = parentFragmentManager
+        var tran = frag.beginTransaction()
+        tran.replace(R.id.frameId, dest)
+        tran.commit()
     }
     override fun onResume() {
         super.onResume()
