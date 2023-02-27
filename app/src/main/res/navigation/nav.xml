@@ -80,6 +80,9 @@
         <action
             android:id="@+id/action_homeFragment_to_helpFragment"
             app:destination="@id/helpFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_addPostFragment"
+            app:destination="@id/addPostFragment" />
 
 
     </fragment>
@@ -173,7 +176,11 @@
         android:id="@+id/addPostFragment"
         android:name="com.example.leafapp.AddPostFragment"
         android:label="fragment_add_post"
-        tools:layout="@layout/fragment_add_post" />
+        tools:layout="@layout/fragment_add_post" >
+        <action
+            android:id="@+id/action_addPostFragment_to_detalsFragment"
+            app:destination="@id/detalsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/languageFragment"
         android:name="com.example.leafapp.ui.language.LanguageFragment"

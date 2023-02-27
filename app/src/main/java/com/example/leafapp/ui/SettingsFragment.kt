@@ -21,10 +21,10 @@ import com.example.leafapp.utils.setLocale
 import com.firebase.ui.auth.AuthUI
 import com.google.firebase.auth.FirebaseAuth
 
-class SettingsFragment : Fragment(),View.OnClickListener{
+class SettingsFragment : Fragment(), View.OnClickListener {
 
     private lateinit var binding: FragmentSettingsBinding
-    private lateinit var tempLanguage:String
+    private lateinit var tempLanguage: String
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -49,22 +49,22 @@ class SettingsFragment : Fragment(),View.OnClickListener{
     override fun onClick(view: View?) {
         when (view?.id) {
             binding.rbEnglish.id -> {
-                tempLanguage=Constants.ENGLISH
+                tempLanguage = Constants.ENGLISH
                 //if SharedPref language is different recreate activity
-                if(SharedPref.language.equals(Constants.ARABIC,true)) {
+                if (SharedPref.language.equals(Constants.ARABIC, true)) {
                     requireActivity().setLocale(tempLanguage)
                     requireActivity().recreate()
                 }
-                SharedPref.language=tempLanguage
+                SharedPref.language = tempLanguage
             }
             binding.rbArabic.id -> {
-                tempLanguage=Constants.ARABIC
+                tempLanguage = Constants.ARABIC
                 //if SharedPref language is different recreate activity
-                if(SharedPref.language.equals(Constants.ENGLISH,true)){
+                if (SharedPref.language.equals(Constants.ENGLISH, true)) {
                     requireActivity().setLocale(tempLanguage)
                     requireActivity().recreate()
                 }
-                SharedPref.language=tempLanguage
+                SharedPref.language = tempLanguage
             }
             binding.btnLogOut.id -> {
                 FirebaseAuth.getInstance().signOut()
@@ -78,8 +78,10 @@ class SettingsFragment : Fragment(),View.OnClickListener{
                     .navigate(HomeFragmentDirections.actionHomeFragmentToProfileFragment())
             }
             binding.btnAboutUs.id -> {
+                /*Navigation.findNavController(binding.root)
+                    .navigate(HomeFragmentDirections.actionHomeFragmentToAboutUsFragment())*/
                 Navigation.findNavController(binding.root)
-                    .navigate(HomeFragmentDirections.actionHomeFragmentToAboutUsFragment())
+                    .navigate(HomeFragmentDirections.actionHomeFragmentToAddPostFragment())
             }
             binding.btnHelp.id -> {
                 Navigation.findNavController(binding.root)
@@ -89,13 +91,18 @@ class SettingsFragment : Fragment(),View.OnClickListener{
                 Navigation.findNavController(binding.root)
                     .navigate(HomeFragmentDirections.actionHomeFragmentToContactFragment())
             }
+            binding.postAddingBtn.id -> {
+                Navigation.findNavController(binding.root)
+                    .navigate(HomeFragmentDirections.actionHomeFragmentToAboutUsFragment())
+            }
         }
     }
-    private fun setCheckedButton(language:String){
-        if(language.equals(Constants.ENGLISH,true)){
-            binding.rbEnglish.isChecked=true
-        }else{
-            binding.rbArabic.isChecked=true
+
+    private fun setCheckedButton(language: String) {
+        if (language.equals(Constants.ENGLISH, true)) {
+            binding.rbEnglish.isChecked = true
+        } else {
+            binding.rbArabic.isChecked = true
         }
     }
 

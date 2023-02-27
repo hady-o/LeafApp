@@ -53,17 +53,9 @@ class DetalsFragment : Fragment() {
         }
         args?.let {
             binding.post = it.post
-            // val postContent = readFromAsset(requireContext().assets,it.post.doc)
-            FancyToast.makeText(requireContext(),it.post.doc,FancyToast.LENGTH_LONG,FancyToast.CONFUSING,true).show()
+
             markwon.setMarkdown(binding.markdownTxt,it.post.contents)
-            /*if(!postContent.equals(" # Hi From The Trap state :/ ")){
-                val viewModel: AllFragmentViewModel by lazy {
-                    ViewModelProvider(this).get(AllFragmentViewModel::class.java)
-                }
-                val postt = it.post
-                postt.contents = postContent
-                viewModel.addPost(postt)
-            }*/
+
 
         }
 
@@ -71,20 +63,5 @@ class DetalsFragment : Fragment() {
         return binding.root
     }
 
-   /* private fun readFromAsset(asset: AssetManager,id:String): String {
-        try {
-            val inputStream = InputStreamReader(asset.open("Posts md/${id}.md"))
-            val reader = BufferedReader(inputStream)
-            val data = reader.use {
-                it.readText()
-            }
-            return data
-        }
-        catch (e: Exception){
-            return " # Hi From The Trap state :/ "
-        }
-
-
-    }*/
 
 }

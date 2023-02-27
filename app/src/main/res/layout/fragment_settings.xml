@@ -32,6 +32,8 @@
             android:orientation="vertical">
 
 
+
+
             <RelativeLayout
                 android:id="@+id/btnProfile"
                 android:layout_width="match_parent"
@@ -79,7 +81,6 @@
                     android:src="@drawable/arrow_forward" />
 
             </RelativeLayout>
-
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -130,9 +131,34 @@
 
             </RelativeLayout>
 
-
             <RelativeLayout
                 android:id="@+id/btnAboutUs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingVertical="@dimen/_12sdp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/add_post"
+                    android:textColor="@color/dark_yellow"
+                    android:textSize="@dimen/_14ssp" />
+
+                <ImageView
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:layout_alignParentEnd="true"
+                    android:padding="4dp"
+                    android:src="@drawable/arrow_forward" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/postAdding_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_15sdp"
@@ -157,7 +183,8 @@
                     android:src="@drawable/arrow_forward" />
 
             </RelativeLayout>
-            
+
+
             <RadioGroup
                 android:id="@+id/rgLanguage"
                 android:layout_width="wrap_content"

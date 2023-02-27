@@ -77,9 +77,9 @@ class HomeFragment : Fragment() {
 
             }
         }
-        viewModel.allPosts.value?.forEach{
-
-        }
+//        viewModel.allPosts.value?.forEach{
+//
+//        }
         binding.navBarId.setOnItemSelectedListener() {
             when(it.itemId){
                 R.id.homeMenuId -> getFragment(UserHomeFragment())

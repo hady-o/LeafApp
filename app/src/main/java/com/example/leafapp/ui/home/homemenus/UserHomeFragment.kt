@@ -1,5 +1,6 @@
 package com.example.leafapp.ui.home.homemenus
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -25,6 +26,7 @@ class UserHomeFragment : Fragment() {
         ViewModelProvider(this).get(AllFragmentViewModel::class.java)
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

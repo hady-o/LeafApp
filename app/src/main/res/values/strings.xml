@@ -66,5 +66,7 @@
     <string name="or">Or</string>
     <string name="no_data_for_these_plants_yet">No data for these plants yet</string>
     <string name="not_plant">This doesn\'t look like a plant !</string>
+    <string name="add_post">Add Post</string>
+
 
 </resources>
