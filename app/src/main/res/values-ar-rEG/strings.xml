@@ -65,6 +65,5 @@
   <string name="healthy">سليم</string>
   <string name="not_plant">ذلك المدخل لا يبدو كنبات !</string>
   <string name="or">أو</string>
-  <string name="or">أ</string>
   <string name="no_data_for_these_plants_yet">مازالت البيانات غير متاحة لتلك النباتات</string>
 </resources>

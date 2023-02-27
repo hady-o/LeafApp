@@ -4,15 +4,22 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
 import android.graphics.Bitmap
+import android.util.Base64
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.leafapp.Constants
 import com.example.leafapp.DiseasesData
+import com.example.leafapp.api.ModelAPI
 import com.example.leafapp.dataclass.DiseaseClass
+import com.example.leafapp.dataclass.URLRequestClass
 import com.example.leafapp.savePhoto
 import com.example.leafapp.utils.getIdxOfMax
+import com.google.gson.Gson
 import kotlinx.coroutines.launch
+import java.io.ByteArrayOutputStream
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -40,6 +47,9 @@ class ResultAndTipsViewModel : ViewModel() {
         val diseasData : LiveData<DiseaseClass>
             get() = _diseasData
 
+    private val _loading = MutableLiveData<Boolean>()
+    val loading: LiveData<Boolean>
+        get() = _loading
 
     var diseaseData: DiseaseClass? = null
 
@@ -68,6 +78,57 @@ class ResultAndTipsViewModel : ViewModel() {
             getDiseaseData(pridiction)
             saveImage(isSave, imageBitmap,pridiction)
         }
+    }
+
+    // Predict the image with a base 64 format
+    fun onlinePredictImage(
+        imageBitmap: Bitmap,
+        isSave: Boolean,
+        prediction: String?
+    ): String{
+        var predictedClass = ""
+        viewModelScope.launch {
+            val data = readImageToBase64(imageBitmap)
+            try {
+                val json = Gson().toJson(
+                    URLRequestClass(data)
+                )
+                _loading.value = true
+                predictedClass = prediction ?: ModelAPI.retrofitService.sendImageToAPI(json).predictedPlantClass
+                _loading.value = false
+                if(predictedClass != Constants.NOT_A_PLANT)
+                    saveToHistory(isSave, imageBitmap, predictedClass)
+            }
+            catch (e: Exception) {
+                Log.i("Api","Failed to Classify: ${e.message}")
+            }
+        }
+        return predictedClass
+    }
+
+    private fun saveToHistory(
+        isSave: Boolean,
+        imageBitmap: Bitmap?,
+        prediction: String
+    ) {
+        getDiseaseData(prediction)
+        saveImage(isSave, imageBitmap,prediction)
+    }
+
+    private fun readImageToBase64(bm: Bitmap): String {
+        Log.i("main", "Converting the image to base64")
+        // Rescale the image to 256x256 pixels
+        val resizedBitmap = Bitmap.createScaledBitmap(bm, 256, 256, true)
+        val byteArray = ByteArrayOutputStream()
+        resizedBitmap.compress(
+            Bitmap.CompressFormat.JPEG,
+            100,
+            byteArray
+        )
+        // Converts the image to byte array
+        val imageBytes = byteArray.toByteArray()
+        // Converts the byte array to base64 string
+        return Base64.encodeToString(imageBytes, Base64.DEFAULT)
     }
 
     fun getDiseaseData(pridiction: String) {
