@@ -33,7 +33,6 @@ import com.google.firebase.ktx.Firebase
 
 import com.theartofdev.edmodo.cropper.CropImage
 
-
 class HomeFragment : Fragment() {
     private val CAMERA_REQUEST = 1888
     private val MY_CAMERA_PERMISSION_CODE = 100
@@ -122,8 +121,10 @@ class HomeFragment : Fragment() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
+            Toast.makeText(requireContext(),"done1",Toast.LENGTH_LONG).show()
             val result = CropImage.getActivityResult(data)
             if (resultCode == AppCompatActivity.RESULT_OK) {
+                Toast.makeText(requireContext(),"done2",Toast.LENGTH_LONG).show()
                 if (result != null) {
 
                     val uri = result.uri //path of image in phone

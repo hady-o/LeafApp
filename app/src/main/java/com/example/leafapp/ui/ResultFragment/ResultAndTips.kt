@@ -1,23 +1,26 @@
 package com.example.leafapp.ui.ResultFragment
 
+import android.content.Intent
 import android.graphics.BitmapFactory
 import android.net.Uri
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.provider.MediaStore
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.navigation.Navigation
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.example.leafapp.Constants
 import com.example.leafapp.R
 import com.example.leafapp.SharedPref
 import com.example.leafapp.databinding.FragmentResultAndTipsBinding
-import com.squareup.moshi.Json
+import com.example.leafapp.dataclass.PostClass
+import com.example.leafapp.ui.home.homemenus.DiseaseFragment
+import com.google.common.reflect.Reflection.getPackageName
+
 class ResultAndTips : Fragment() {
 
 
@@ -42,6 +45,7 @@ class ResultAndTips : Fragment() {
             isSave = it.saveImge
             prediction = it.prediction
         }
+
 
 
         binding.backBtn.setOnClickListener() {
@@ -73,6 +77,19 @@ class ResultAndTips : Fragment() {
                 binding.resLv.visibility = View.GONE
             }
         })
+
+        binding.shareBtn.setOnClickListener(){
+            val share = Intent(Intent.ACTION_SEND)
+
+            share.putExtra(Intent.EXTRA_TEXT,
+                "Plant name: "+viewModel.plantNameLD.value+"\n\n\n"
+                        +"Disease name: "+viewModel.diseaseNameLD.value+"\n\n\n"
+                        +"Treatment:"+"\n"
+            +viewModel.diseasData.value!!.tips)
+            share.type = "text/*"
+            share.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            binding.root.context.startActivity(share)
+        }
         return binding.root
     }
 
@@ -113,5 +130,7 @@ class ResultAndTips : Fragment() {
 
 
     }
-
+    private fun getColored(text: String, color: String): String? {
+        return "<font color=$color>$text</font>"
+    }
 }

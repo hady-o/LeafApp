@@ -1,16 +1,17 @@
 package com.example.leafapp.adapters
 
+import android.content.Intent
+import android.net.Uri
+import android.provider.MediaStore.Images
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.leafapp.R
 import com.example.leafapp.databinding.PostCardBinding
 import com.example.leafapp.dataclass.PostClass
-import com.example.leafapp.posts.PostDao
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
+
 
 class PsAdapter(val clickListener: PostListenerClass) :
     ListAdapter<PostClass, PsAdapter.ViewHolder>(PostDiffCallBack()) {
@@ -49,8 +50,14 @@ class PsAdapter(val clickListener: PostListenerClass) :
 //            Firebase.firestore.collection("postInfo")
 //                .document().collection("info")
 //                .add(info)
-            binding.likeImBtn.setOnClickListener {
+            binding.shareImBtn.setOnClickListener {
+                val share = Intent(Intent.ACTION_SEND)
+                share.type = "text/plain"
+                share.putExtra(Intent.EXTRA_TEXT, post!!.title+"\n\n"+post.contents)
+                binding.root.context.startActivity(Intent.createChooser(share, "Share using"))
+
             }
+
         }
     }
 
