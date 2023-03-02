@@ -61,7 +61,7 @@ class ResultAndTipsViewModel : ViewModel() {
             var pridiction = if (prediction == null) {
                 val res = mainModel.predict(imageBitmap)
                 val idx = getIdxOfMax(res)
-                DiseasesData.labes[idx]
+                DiseasesData.labels[idx]
             } else {
                 prediction
             }

@@ -18,9 +18,9 @@
     <string name="profile">Profile</string>
     <string name="disclaimer">*The plant is auto diagnosed, so some results might be not accurate for rare plants</string>
     <string name="overview">Overview</string>
-    <string name="treatment">treatment</string>
+    <string name="treatment">Treatment</string>
     <string name="cause">Cause</string>
-    <string name="symptom">Symptom</string>
+    <string name="symptom">Symptoms</string>
     <string name="like_button">Like button image</string>
     <string name="share_button">Share Button</string>
     <string name="the_post_picture">The Post picture</string>

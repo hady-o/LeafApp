@@ -10,8 +10,9 @@ import java.io.InputStreamReader
 object DiseasesData {
     val lookUp: HashMap<String, DiseaseClass?> = hashMapOf("key" to null)
     val lookUpList = ArrayList<DiseaseClass>()
+    private lateinit var tmp:DiseaseClass
     //val lookUpList2 = ArrayList<DiseaseClass>()
-    val labes = arrayOf(
+    val labels = arrayOf(
         "Alstonia Scholaris___diseased",
         "Alstonia Scholaris___healthy",
         "Apple___Apple_scab",
@@ -105,13 +106,13 @@ object DiseasesData {
         )
         csvPars.forEach {
             it?.let {
-                var tmp = DiseaseClass(
-                    diseaseName = it[0],
-                    symptoms = it[1],
-                    cause = it[2],
-                    howItStared = it[3],
-                    tips = it[4]
-                )
+                    tmp = DiseaseClass(
+                        diseaseName = it[0],
+                        symptoms = it[1],
+                        cause = it[2],
+                        howItStared = it[3],
+                        tips = it[4]
+                    )
                 lookUp[it[0]] = tmp
                 lookUpList.add(tmp)
             }

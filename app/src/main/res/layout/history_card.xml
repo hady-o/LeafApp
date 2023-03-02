@@ -16,6 +16,7 @@
         android:layout_marginEnd="@dimen/_10sdp"
         android:layout_width="match_parent"
         android:background="@drawable/square_shape"
+        android:backgroundTint="@{plant.disease.equalsIgnoreCase(&quot;healthy&quot;)? @color/light_green : @color/light_red}"
         android:layout_height="wrap_content">
 
         <androidx.cardview.widget.CardView

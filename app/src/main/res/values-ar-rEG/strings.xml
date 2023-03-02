@@ -15,11 +15,9 @@
   <string name="sign_out">تسجيل الخروج</string>
   <string name="my_plants">نباتاتى</string>
   <string name="settings">الإعدادات</string>
-  <string name="disclaimer">*يتم تشخيص النبات بشكل أوتوماتيكي لذلك قد تكون بعض النتائج غير دقيقة إذا كان النبات من الأنواع النادرة</string>
+  <string name="disclaimer">*يتم تشخيص النبات بشكل أوتوماتيكي لذلك قد تكون بعض النتائج غير دقيقة إذا كان النبات من الأنواع الغير منتشرة</string>
   <string name="overview">نظرة عامة</string>
-  <string name="treatment">علاج</string>
-  <string name="cause">سبب</string>
-  <string name="symptom">عرض</string>
+  <string name="cause">السبب</string>
   <string name="like_button">زر الإعجاب</string>
   <string name="share_button">زر النشر</string>
   <string name="the_post_picture">صورة المنشور</string>
@@ -67,4 +65,7 @@
   <string name="or">أو</string>
 
   <string name="no_data_for_these_plants_yet">مازالت البيانات غير متاحة لتلك النباتات</string>
+  <string name="add_post">إضافة منشور</string>
+  <string name="symptom">الأعراض</string>
+  <string name="treatment">العلاج</string>
 </resources>
