@@ -59,7 +59,8 @@
                 android:paddingStart="@dimen/_10sdp"
                 android:paddingTop="@dimen/_7sdp"
                 android:paddingBottom="@dimen/_7sdp"
-
+                android:paddingEnd="@dimen/_10sdp"
+                android:drawableEnd="@drawable/ic_baseline_mic_none_24"
                 android:textSize="@dimen/_15sdp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

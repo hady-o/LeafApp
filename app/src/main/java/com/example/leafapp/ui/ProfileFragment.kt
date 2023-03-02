@@ -66,7 +66,6 @@ class ProfileFragment : Fragment() {
             if(!editMode) {
                 binding.editBtn.setImageResource(R.drawable.ic_baseline_check_24)
                 editMode = true
-                binding.passEditText.setVisibility(View.VISIBLE)
                 //change user image
                 binding.userImage.setOnClickListener()
                 {
@@ -79,7 +78,6 @@ class ProfileFragment : Fragment() {
             else
             {
                 updateProfile()
-                binding.passEditText.setVisibility(View.GONE)
                 binding.editBtn.setImageResource(R.drawable.ic_baseline_mode_edit_24)
                 editMode = false
                 //change user image
