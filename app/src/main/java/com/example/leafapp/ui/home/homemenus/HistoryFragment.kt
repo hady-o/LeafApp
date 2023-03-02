@@ -102,8 +102,11 @@ class HistoryFragment : Fragment() {
 //                RecognizerIntent.EXTRA_LANGUAGE,
 //              Locale.
 //            )
+            if(SharedPref.language.equals(Constants.ARABIC, true))
+            {
+                intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE,"ar");
+            }
             intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Speak to text")
-
             try {
                 startActivityForResult(intent, REQUEST_CODE_SPEECH_INPUT)
             } catch (e: Exception) {

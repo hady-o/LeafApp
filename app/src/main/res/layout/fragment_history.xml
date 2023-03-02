@@ -39,6 +39,7 @@
             android:drawableStart="@drawable/ic_baseline_search_24"
             android:drawablePadding="@dimen/_5sdp"
             android:hint="@string/plant_or_topic"
+            android:paddingEnd="@dimen/_20sdp"
             android:textColor="@color/dark_green"
             android:inputType="textCapWords|textPersonName"
             android:paddingStart="@dimen/_10sdp"

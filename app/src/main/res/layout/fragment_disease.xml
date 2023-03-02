@@ -44,7 +44,7 @@
         android:inputType="textCapWords|textPersonName"
         android:paddingStart="@dimen/_10sdp"
         android:paddingTop="@dimen/_7sdp"
-        android:paddingEnd="@dimen/_10sdp"
+        android:paddingEnd="@dimen/_20sdp"
         android:paddingBottom="@dimen/_7sdp"
         android:textColor="@color/dark_green"
         android:textSize="@dimen/_15sdp"
