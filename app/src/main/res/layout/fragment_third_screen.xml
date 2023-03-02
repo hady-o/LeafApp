@@ -15,7 +15,7 @@
         android:layout_width="@dimen/_287sdp"
         android:layout_height="@dimen/_218sdp"
         android:layout_marginTop="@dimen/_85sdp"
-        android:src="@drawable/ic_loginvec"
+        android:src="@drawable/ic_newloginsvg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

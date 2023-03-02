@@ -16,13 +16,13 @@
             android:orientation="vertical">
 
 
-                <ImageView
-                    android:id="@+id/language_icon"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="@dimen/_25sdp"
-                    android:src="@drawable/on_boarding1" />
+            <ImageView
+                android:id="@+id/language_icon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:src="@drawable/on_boarding1" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -35,6 +35,13 @@
                 android:text="@string/language_screen"
                 android:textColor="@color/gray"
                 android:textSize="@dimen/_24ssp" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="@dimen/_287sdp"
+                android:layout_height="@dimen/_218sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_lang" />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <androidx.appcompat.widget.LinearLayoutCompat

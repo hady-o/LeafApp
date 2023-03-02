@@ -17,14 +17,19 @@
         <entry key="..\:/Users/hadi/AndroidStudioProjects/LeafApp/app/src/main/res/layout/fragment_login.xml" value="0.2" />
         <entry key="..\:/Users/hadi/AndroidStudioProjects/LeafApp/app/src/main/res/layout/fragment_sign_up.xml" value="0.1935897435897436" />
         <entry key="..\:/Users/hadi/AndroidStudioProjects/LeafApp/app/src/main/res/layout/fragment_splash.xml" value="0.25" />
+        <entry key="..\:/Users/hadi/AppData/Local/Android/Sdk/platforms/android-32/data/res/drawable/stat_sys_speakerphone.xml" value="0.1575" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/drawable-v24/search_shape.xml" value="0.175" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/drawable-v24/tab_shape.xml" value="0.175" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/drawable/bar_shape.xml" value="0.175" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/drawable/button_shape.xml" value="0.175" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/drawable/button_shape5.xml" value="0.1575" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/drawable/green_search_shape.xml" value="0.1335" />
+        <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/drawable/ic__lang.xml" value="0.1575" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/drawable/ic_arrow_back_fill0_wght500_grad200_opsz48.xml" value="0.1335" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.1365" />
+        <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/drawable/ic_baseline_local_phone_24.xml" value="0.1575" />
+        <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/drawable/ic_baseline_mode_edit_24.xml" value="0.1575" />
+        <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/drawable/ic_baseline_phone_24.xml" value="0.1575" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/drawable/ic_baseline_phone_android_24.xml" value="0.145" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.1335" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/drawable/ic_baseline_share_24white.xml" value="0.1575" />
@@ -32,7 +37,10 @@
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/drawable/ic_google__g__logo.xml" value="0.1365" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/drawable/ic_google_s.xml" value="0.1655" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/drawable/ic_home_fill0_wght500_grad200_opsz48.xml" value="0.175" />
+        <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/drawable/ic_lang.xml" value="0.1575" />
+        <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/drawable/ic_login22.xml" value="0.1575" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/drawable/ic_logo.xml" value="0.134" />
+        <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/drawable/ic_newloginsvg.xml" value="0.1575" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/drawable/ic_photo_camera_fill0_wght500_grad200_opsz48.xml" value="0.175" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/drawable/ic_psychiatry_fill0_wght500_grad200_opsz48.xml" value="0.175" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/drawable/ic_search_fill0_wght500_grad200_opsz48.xml" value="0.1335" />
@@ -56,19 +64,21 @@
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_add_post.xml" value="0.366412213740458" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_all.xml" value="0.375" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_care.xml" value="0.375" />
-        <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_detals.xml" value="0.6" />
+        <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_detals.xml" value="0.2" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_disease.xml" value="0.16216216216216217" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_first_screen.xml" value="0.264" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_history.xml" value="0.11200000000000002" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_home.xml" value="0.1" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_land_scaping.xml" value="0.375" />
-        <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_login.xml" value="0.1911392405063291" />
-        <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_profile.xml" value="0.2" />
+        <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_language.xml" value="0.136" />
+        <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_login.xml" value="0.2" />
+        <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_profile.xml" value="0.176" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_result_and_tips.xml" value="0.176" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_second_screen.xml" value="0.2" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_settings.xml" value="0.152" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_sign_up.xml" value="0.11025641025641025" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_splash.xml" value="0.20512820512820512" />
+        <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_third_screen.xml" value="0.1361111111111111" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_treatment.xml" value="0.35390625" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/fragment_user_home.xml" value="0.2" />
         <entry key="..\:/Users/hadi/Documents/GitHub/LeafApp/app/src/main/res/layout/history_card.xml" value="0.2" />

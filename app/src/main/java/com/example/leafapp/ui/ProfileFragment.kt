@@ -40,13 +40,6 @@ class ProfileFragment : Fragment() {
         // Inflate the layout for this fragment
         binding =FragmentProfileBinding.inflate(layoutInflater)
         //set slogan colored text
-        if(SharedPref.language.equals(Constants.ENGLISH,true)){
-            val surName = getColoredSpanned("difference", "#6BDBAB")
-            binding.slogan.text = Html.fromHtml("Together we can<br>make $surName")
-        }else{
-            val surName = getColoredSpanned("فارق", "#6BDBAB")
-            binding.slogan.text = Html.fromHtml("نستطيع إحداث $surName سويا")
-        }
 
         //user data
         var user = FirebaseAuth.getInstance().currentUser
@@ -56,6 +49,9 @@ class ProfileFragment : Fragment() {
             Glide.with(requireContext())
                 .load(user.photoUrl)
                 .into(binding.userImage)
+            Glide.with(requireContext())
+                .load(user.photoUrl)
+                .into(binding.linearLayout)
         }
         binding.backBtn.setOnClickListener(){
             if(SharedPref.fromWhereToProfile.equals(Constants.HOME,true))
@@ -65,10 +61,10 @@ class ProfileFragment : Fragment() {
         }
         //edit profile button
 
-        binding.EditBtn.setOnClickListener()
+        binding.editBtn.setOnClickListener()
         {
             if(!editMode) {
-                binding.EditBtn.text = getString(R.string.save)
+                binding.editBtn.setImageResource(R.drawable.ic_baseline_check_24)
                 editMode = true
                 binding.passEditText.setVisibility(View.VISIBLE)
                 //change user image
@@ -84,7 +80,7 @@ class ProfileFragment : Fragment() {
             {
                 updateProfile()
                 binding.passEditText.setVisibility(View.GONE)
-                binding.EditBtn.text = getString(R.string.edit)
+                binding.editBtn.setImageResource(R.drawable.ic_baseline_mode_edit_24)
                 editMode = false
                 //change user image
                 binding.userImage.isClickable=false
@@ -129,7 +125,7 @@ class ProfileFragment : Fragment() {
     }
     fun uploadphoto() {
         binding.progressBar.setVisibility(View.VISIBLE)
-        binding.EditBtn.setEnabled(false)
+        binding.editBtn.setEnabled(false)
         val mStorageRef: StorageReference = FirebaseStorage.getInstance()
             .getReference("profiles/" + System.currentTimeMillis() + ".jpg")
         if (image_uri != null) {
@@ -145,7 +141,7 @@ class ProfileFragment : Fragment() {
                             .build()
                         FirebaseAuth.getInstance().currentUser!!.updateProfile(profile).addOnSuccessListener {
                             binding.progressBar.setVisibility(View.GONE)
-                            binding.EditBtn.setEnabled(true)
+                            binding.editBtn.setEnabled(true)
                         }
                     }
                 }
@@ -170,7 +166,7 @@ class ProfileFragment : Fragment() {
         if(image_uri==null && user!!.displayName!!.equals(binding.nameEditText.text))
         {
             binding.progressBar.setVisibility(View.GONE)
-            binding.EditBtn.setEnabled(true)
+            binding.editBtn.setEnabled(true)
         }
         else if(image_uri==null)
         {
@@ -179,7 +175,7 @@ class ProfileFragment : Fragment() {
                 .build()
             user!!.updateProfile(profile).addOnSuccessListener {
                 binding.progressBar.setVisibility(View.GONE)
-                binding.EditBtn.setEnabled(true)
+                binding.editBtn.setEnabled(true)
             }
         }
         else
