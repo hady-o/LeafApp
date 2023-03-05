@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
 import android.graphics.Bitmap
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -71,6 +72,7 @@ class ResultAndTipsViewModel : ViewModel() {
     }
 
     fun getDiseaseData(pridiction: String) {
+        Log.i("predictt", pridiction)
         _diseasData.value = DiseasesData.lookUp[pridiction]
 
         val l = pridiction.split("___")

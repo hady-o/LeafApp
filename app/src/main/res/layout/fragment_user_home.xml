@@ -31,7 +31,23 @@
                 style="@style/text_style_w25"
                 android:layout_margin="@dimen/_22sdp"
                 android:text="@string/welcome_back"
+                app:layout_constrainedWidth="true"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/userNameId"
+                style="@style/text_style_w25"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:text="users name"
+                app:layout_constrainedWidth="true"
+                app:autoSizeMinTextSize="@dimen/_1ssp"
+                app:autoSizeMaxTextSize="@dimen/_10ssp"
+                app:autoSizeStepGranularity="1sp"
+                app:layout_constraintBottom_toTopOf="@+id/searchBtnUserHome"
+                app:layout_constraintEnd_toStartOf="@+id/userImage"
+                app:layout_constraintStart_toEndOf="@+id/welcomeTextId"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <com.mikhaellopez.circularimageview.CircularImageView
@@ -40,6 +56,7 @@
                 android:layout_height="@dimen/_40sdp"
                 android:layout_margin="@dimen/_14sdp"
                 android:src="@drawable/ic_loginvec"
+                app:layout_constrainedWidth="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -48,19 +65,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/_22sdp"
-               android:focusable="false"
-                android:clickable="true"
                 android:background="@drawable/search_shape"
+                android:clickable="true"
                 android:drawableStart="@drawable/ic_baseline_search_24"
+                android:drawableEnd="@drawable/ic_baseline_mic_none_24"
                 android:drawablePadding="@dimen/_5sdp"
+                android:focusable="false"
                 android:hint="@string/plant_or_topic"
-                android:textColor="@color/dark_green"
                 android:inputType="textCapWords|textPersonName"
                 android:paddingStart="@dimen/_10sdp"
                 android:paddingTop="@dimen/_7sdp"
-                android:paddingBottom="@dimen/_7sdp"
                 android:paddingEnd="@dimen/_10sdp"
-                android:drawableEnd="@drawable/ic_baseline_mic_none_24"
+                android:paddingBottom="@dimen/_7sdp"
+                android:textColor="@color/dark_green"
                 android:textSize="@dimen/_15sdp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

@@ -46,7 +46,7 @@
                 android:background="@android:color/transparent"
                 app:elevation="0dp"
                 app:itemIconSize="@dimen/_20sdp"
-                app:itemIconTint="@color/fui_bgAnonymous"
+                app:itemIconTint="@color/dark_yellow"
                 app:menu="@menu/user_menu" />
 
 

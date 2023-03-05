@@ -5,6 +5,7 @@ import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,6 +18,7 @@ import com.example.leafapp.Constants
 import com.example.leafapp.R
 import com.example.leafapp.SharedPref
 import com.example.leafapp.databinding.FragmentResultAndTipsBinding
+import com.example.leafapp.dataclass.DiseaseClass
 import com.example.leafapp.dataclass.PostClass
 import com.example.leafapp.ui.home.homemenus.DiseaseFragment
 import com.google.common.reflect.Reflection.getPackageName
@@ -39,6 +41,15 @@ class ResultAndTips : Fragment() {
         viewModel.context = requireContext()
         viewModel.resources = resources
         viewModel.activity = requireActivity()
+        binding.disease = DiseaseClass(
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        )
         val args = arguments?.let { ResultAndTipsArgs.fromBundle(it) }
         args?.let {
             img = it.myImage
@@ -56,7 +67,7 @@ class ResultAndTips : Fragment() {
         }
 
         viewModel.diseaseNameLD.observe(viewLifecycleOwner, Observer {
-            binding.diseaseText.text = it
+            binding.disease?.diseaseName = it
             if (it.equals(getString(R.string.healthy),true)) {
                 binding.statImg.setImageResource(R.drawable.good_plant)
             }
@@ -64,7 +75,7 @@ class ResultAndTips : Fragment() {
 
         viewModel.plantNameLD.observe(viewLifecycleOwner, Observer {
             if(it != null){
-                binding.plantName.text = it
+                binding.disease?.plantName = it
                 binding.noPlant.visibility = View.GONE
             }
         })

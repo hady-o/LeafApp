@@ -35,7 +35,7 @@ class DiseaseFragment : Fragment() {
         binding = FragmentDiseaseBinding.inflate(layoutInflater)
         val adapter= DiseaseAdapter(DiseaseAdapter.DiseaseListenerClass {
             SharedPref.fromWhereToResults=Constants.DISEASE
-            this.findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToResultAndTips2("",false,it.diseaseName))
+            this.findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToResultAndTips2("",false,it.id))
         })
         adapter.submitList(DiseasesData.lookUpList)
 
@@ -53,7 +53,8 @@ class DiseaseFragment : Fragment() {
                 val tmpList: MutableList<DiseaseClass> = ArrayList()
 
                 DiseasesData.lookUpList.forEach { diseaseClass ->
-                    if(diseaseClass.diseaseName.contains(s.toString(), ignoreCase = true))
+                    if(diseaseClass.diseaseName.contains(s.toString(), ignoreCase = true) ||
+                        diseaseClass.plantName.contains(s.toString(), ignoreCase = true))
                         tmpList.add(diseaseClass)
                 }
                 adapter.submitList(tmpList)
