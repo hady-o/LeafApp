@@ -1,19 +1,18 @@
 id,Plants,Diseases,Symptoms,Cause,How it started,Tips
 Apple___Apple_scab,Apple,Apple scab,"Yellow or chlorotic spots on leaves,
 dark olive green spots on leaves and fruit,
-may be a velvety growth on spots on undersides of leaves, 
-twisting of leaves, 
-distorted leaves, 
-severely infected leaves turn yellow and drop from tree.",Fungus Venturia inaequalis,"Fungus overwinters on dead foliage on ground,
+maybe a velvety growth on spots on the undersides of leaves, 
+twisting of leaves, distorted leaves, 
+severely infected leaves turn yellow and drop from trees.",Fungus Venturia inaequalis,"Fungus overwinters on dead foliage on the ground,
 spores dispersed by wind,
 high moisture encourages fungal growth.","Remove all fallen leaves from trees in the fall and compost to prevent any disease infestations in the debris.
 It may be necessary to add Zinc and fertilizer-grade urea in the fall to speed leaf drop, then add lime to fallen leaves.
 Using fungicide may be necessary for areas where leaves remain wet for periods of more than 9 hours.
 Fungicides such as copper soaps and Bordeaux mixture should be applied if there is a chance of a wet period as soon as leaf tips emerge."
-Apple___Black_rot,Apple,Black rot,"Purple flecks or circular lesions which are brown in the centre and purple at margin; 
-red flecks, purple lesions and/or brown black rings on fruit.",Fungus,Spores can overwinter in twigs or fruit remaining on the tree and spread during rainfall.,"Remove dead wood, mummified fruit and cankers from trees to reduce spread of disease;
-burn any prunings that have been made from the tree;
-disease can be controlled by applying fungicides from silver tip to harvest."
+Apple___Black_rot,Apple,Black rot,"Purple flecks or circular lesions which are brown in the center and purple at the margin; 
+red flecks, purple lesions and/or brown-black rings on fruit.",Fungus,Spores can overwinter in twigs or fruit remaining on the tree and spread during rainfall.,"Remove dead wood, mummified fruit and cankers from trees to reduce spread of disease;
+burn any prunings that have been made from the tree,
+controlling the disease by applying fungicides on silver tips to harvest."
 Apple___Cedar_apple_rust,Apple,Cedar apple rust,"Bright orange or yellow patches on top side of leaves surrounded by a red band and small black spots in the center;
 by mid-summer, cup-like structures called aecia form on the leaf undersides; 
 these become covered in tubular structures from which spores are released.",Fungus,"Fungus requires two hosts to complete lifecycle;
@@ -21,8 +20,8 @@ forms galls on Eastern red cedar and spores are carried by wind to apple;
 use caution when planting apple close to red cedar.","Plant resistant varieties where possible;
 remove nearby red cedar;
 if growing susceptible varieties in proximity to red cedar follow a fungicide program."
-Cherry_(including_sour)___Powdery_mildew,Cherry_(including_sour),Powdery mildew,"Light colored circular lesions on leaves inside tree canopy which develop a powdery appearance; 
-lesions may coalesce to cover leaf; 
+Cherry_(including_sour)___Powdery_mildew,Cherry_(including_sour),Powdery mildew,"Light colored circular lesions on leaves inside tree canopy which develop a powdery appearance. 
+Lesions may coalesce to cover leaf. 
 if infection is severe, leaves may blister and infected shoots may be distorted and stunted; 
 infected fruits may have slightly depressed areas on the surface containing fungal hyphae (filamentous fungal structures).",Fungus,Infection of fruit is more likely if there are rainfalls close to harvest.,Management of powdery mildew in cherry is reliant on the application of appropriate fungicides and cultural practices which promote good air circulation around tree canopies to lower humidity.
 Corn_(maize)___Cercospora_leaf_spot_Gray_leaf_spot,Corn_(maize),Cercospora leaf spot Gray leaf spot,"Small necrotic (brown or tan) spots that may have a yellow chlorotic halo appear on lower leaves, usually before flowering. 

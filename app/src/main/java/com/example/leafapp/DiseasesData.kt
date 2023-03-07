@@ -10,6 +10,7 @@ import java.io.InputStreamReader
 object DiseasesData {
     val lookUp: HashMap<String, DiseaseClass?> = hashMapOf("key" to null)
     val lookUpList = ArrayList<DiseaseClass>()
+    private lateinit var inputStream:InputStreamReader
     //val lookUpList2 = ArrayList<DiseaseClass>()
     val labels = arrayOf(
         "Alstonia Scholaris___diseased",
@@ -36,8 +37,8 @@ object DiseasesData {
         "Cotton___Healthy",
         "Cotton___Powdery mildew",
         "Cotton___Target spot",
-        "Gauva___diseased",
-        "Gauva___healthy",
+        "Guava___diseased",
+        "Guava___healthy",
         "Grape___Black_rot",
         "Grape___Esca_(Black_Measles)",
         "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)",
@@ -96,8 +97,10 @@ object DiseasesData {
 
     fun loadData(asset: AssetManager) {
 
-        val inputStream = InputStreamReader(asset.open("Data/DiseasesDescription.csv"))
-
+        inputStream = if(SharedPref.language.equals(Constants.ENGLISH,true))
+            InputStreamReader(asset.open("Data/DiseasesDescription.csv"))
+        else
+            InputStreamReader(asset.open("Data/ArabicDiseasesDescription.csv"))
         val reader = BufferedReader(inputStream)
         val csvPars = CSVParser.parse(
             reader,
@@ -115,7 +118,8 @@ object DiseasesData {
                     tips = it[6]
                 )
                 lookUp[it[0]] = tmp
-                lookUpList.add(tmp)
+                if(it[0].equals(Constants.ID,true).not())
+                    lookUpList.add(tmp)
             }
         }
 

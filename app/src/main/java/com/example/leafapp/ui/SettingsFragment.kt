@@ -11,6 +11,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.leafapp.Constants
+import com.example.leafapp.DiseasesData.lookUpList
 import com.example.leafapp.R
 import com.example.leafapp.SharedPref
 import com.example.leafapp.databinding.FragmentSettingsBinding
@@ -52,8 +53,7 @@ class SettingsFragment : Fragment(), View.OnClickListener {
                 tempLanguage = Constants.ENGLISH
                 //if SharedPref language is different recreate activity
                 if (SharedPref.language.equals(Constants.ARABIC, true)) {
-                    requireActivity().setLocale(tempLanguage)
-                    requireActivity().recreate()
+                    changeLanguage()
                 }
                 SharedPref.language = tempLanguage
             }
@@ -61,8 +61,7 @@ class SettingsFragment : Fragment(), View.OnClickListener {
                 tempLanguage = Constants.ARABIC
                 //if SharedPref language is different recreate activity
                 if (SharedPref.language.equals(Constants.ENGLISH, true)) {
-                    requireActivity().setLocale(tempLanguage)
-                    requireActivity().recreate()
+                    changeLanguage()
                 }
                 SharedPref.language = tempLanguage
             }
@@ -96,6 +95,12 @@ class SettingsFragment : Fragment(), View.OnClickListener {
                     .navigate(HomeFragmentDirections.actionHomeFragmentToAboutUsFragment())
             }
         }
+    }
+
+    private fun changeLanguage() {
+        requireActivity().setLocale(tempLanguage)
+        requireActivity().recreate()
+        lookUpList.clear()
     }
 
     private fun setCheckedButton(language: String) {

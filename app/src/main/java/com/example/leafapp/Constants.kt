@@ -7,4 +7,5 @@ object Constants {
     const val HOME="home"
     const val DISEASE="disease"
     const val HISTORY="history"
+    const val ID="id"
 }
