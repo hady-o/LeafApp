@@ -20,6 +20,7 @@ import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.example.leafapp.databinding.FragmentAddPostBinding
 import com.example.leafapp.dataclass.PostClass
+import com.example.leafapp.notification.MyFirebaseMessagingService
 import com.shashank.sony.fancytoastlib.FancyToast
 import com.theartofdev.edmodo.cropper.CropImage
 import io.noties.markwon.Markwon
@@ -44,7 +45,6 @@ class AddPostFragment : Fragment() {
     ): View? {
         binding = FragmentAddPostBinding.inflate(layoutInflater)
         viewModel = ViewModelProvider(this).get(AddPostViewModel::class.java)
-
         binding.addImage.setOnClickListener {
             if (checkSelfPermission(
                     requireContext(),
@@ -94,7 +94,8 @@ class AddPostFragment : Fragment() {
             binding.addingPostProgres.visibility = View.GONE
             binding.addPostBtn.isClickable = true
             binding.previewBtn.isClickable = true
-
+            var note= MyFirebaseMessagingService()
+            note.sendNotification("new post uploaded",requireActivity())
         })
 
         // obtain Markwon instance

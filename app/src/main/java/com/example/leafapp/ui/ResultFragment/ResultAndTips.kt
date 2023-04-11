@@ -9,6 +9,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.app.NotificationCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -84,6 +85,7 @@ class ResultAndTips : Fragment() {
             if (it != null) {
                 binding.disease = it
                 binding.fail.visibility = View.GONE
+
             } else {
                 binding.resLv.visibility = View.GONE
             }

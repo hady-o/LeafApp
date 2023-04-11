@@ -38,7 +38,7 @@
             <TextView
                 android:id="@+id/userNameId"
                 style="@style/text_style_w25"
-                android:layout_marginStart="@dimen/_5sdp"
+
                 android:layout_marginEnd="@dimen/_5sdp"
                 android:text="users name"
                 app:layout_constrainedWidth="true"

@@ -99,7 +99,7 @@
     </style>
 
     <style name="second_btn_style_5">
-        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">@dimen/_30sdp</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:layout_weight">1</item>
