@@ -1,4 +1,4 @@
-package com.example.leafapp.admin
+package com.example.leafapp
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -12,20 +12,22 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat.checkSelfPermission
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
-import com.example.leafapp.R
+import com.example.leafapp.admin.AddPostViewModel
 import com.example.leafapp.databinding.FragmentAddPostBinding
 import com.example.leafapp.dataclass.PostClass
-import com.example.leafapp.notification.MyFirebaseMessagingService
+import com.google.firebase.firestore.DocumentReference
 import com.shashank.sony.fancytoastlib.FancyToast
 import com.theartofdev.edmodo.cropper.CropImage
 import io.noties.markwon.Markwon
 import io.noties.markwon.editor.MarkwonEditor
 import io.noties.markwon.editor.MarkwonEditorTextWatcher
+import kotlin.concurrent.timerTask
 
 class AddPostFragment : Fragment() {
 
@@ -42,6 +44,7 @@ class AddPostFragment : Fragment() {
     ): View? {
         binding = FragmentAddPostBinding.inflate(layoutInflater)
         viewModel = ViewModelProvider(this).get(AddPostViewModel::class.java)
+
         binding.addImage.setOnClickListener {
             if (checkSelfPermission(
                     requireContext(),
@@ -52,101 +55,63 @@ class AddPostFragment : Fragment() {
             } else {
                 val cameraIntent = CropImage.activity().getIntent(this.requireContext())
                 startActivityForResult(cameraIntent, CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE)
-
             }
         }
 
-        binding.previewBtn.setOnClickListener {
-            val post = collectData()
-            this.findNavController()
-                .navigate(AddPostFragmentDirections.actionAddPostFragmentToDetalsFragment(post))
-        }
+//        binding.previewBtn.setOnClickListener {
+//            val post = collectData()
+//            this.findNavController()
+//                .navigate(AddPostFragmentDirections.actionAddPostFragmentToDetalsFragment(post))
+//        }
 
         binding.addPostBtn.setOnClickListener {
-            val post = collectData()
-            if(post.title.isBlank()){
-                binding.titelTxt.error = "This Feald cannot be empty"
-            }
-            if(post.contents.isBlank()){
-                binding.postContant.error = "This Feald cannot be empty"
-            }
-            if(post.type.isBlank()){
-                FancyToast.makeText(requireContext(),"You Must Chose the Type of the post",
-                                    FancyToast.LENGTH_LONG,FancyToast.ERROR,true).show()
-            }
-
-            if(post.photo == "null"){
-                FancyToast.makeText(requireContext(),"You have to add photo for the post",
-                    FancyToast.LENGTH_LONG,FancyToast.ERROR,true).show()
-            }
-            if(post.title.isNotBlank() &&
-                post.contents.isNotBlank() &&
-                post.type.isNotBlank() &&
-                post.photo != "null"){
-                viewModel.uploadPost(requireActivity())
+            //  val post = collectData()
+            if(!viewModel.isInternetConnected(requireContext())){
+                Toast.makeText(requireContext(), "No Internet Connection", Toast.LENGTH_LONG).show()
+            }else{
+                viewModel.uploadPostImage(uri!!)
                 binding.addingPostProgres.visibility= View.VISIBLE
                 binding.addPostBtn.isClickable = false
                 binding.previewBtn.isClickable = false
             }
         }
 
-        viewModel.uri.observe(viewLifecycleOwner, Observer {
+        viewModel.task.observe(viewLifecycleOwner, Observer {
             it?.let {
-                Glide.with(this.requireContext()).load(it).into(binding.selectedImv)
-
+                if(!viewModel.isInternetConnected(requireContext())){
+                    Toast.makeText(requireContext(), "No Internet Connection", Toast.LENGTH_LONG).show()
+                }else{
+                    viewModel.addPost(collectData(viewModel.task.value!!))
+                }
             }
         })
-
-        viewModel.uplodingIsDone.observe(viewLifecycleOwner, Observer {
+        viewModel.postRes.observe(viewLifecycleOwner, Observer {
             it?.let {
-                if (it)
-                    FancyToast.makeText(
-                        requireContext(),
-                        "The Post have uploded successfully",
-                        FancyToast.LENGTH_LONG,
-                        FancyToast.SUCCESS,
-                        true
-                    ).show()
+                binding.addingPostProgres.visibility= View.GONE
             }
-            binding.addingPostProgres.visibility = View.GONE
-            binding.addPostBtn.isClickable = true
-            binding.previewBtn.isClickable = true
-            var note= MyFirebaseMessagingService()
-            note.sendNotification("new post uploaded",requireActivity())
         })
-
-        // obtain Markwon instance
-        val markwon: Markwon = Markwon.create(this.requireContext())
-
-        // create editor
-        val editor: MarkwonEditor = MarkwonEditor.create(markwon)
-
-        // set edit listener
-        binding.postContant.addTextChangedListener(MarkwonEditorTextWatcher.withProcess(editor));
-
 
         return binding.root
     }
 
-    private fun collectData(): PostClass {
+    private fun collectData(uri:String): PostClass {
         val cat = when (binding.catGrop.checkedRadioButtonId) {
             R.id.care_btn -> requireContext().resources.getString(R.string.care)
+
             R.id.treat_btn -> requireContext().resources.getString(R.string.treatment)
-            R.id.land_btn ->requireContext().resources.getString(R.string.landscape)
-             else-> ""
+
+            else -> requireContext().resources.getString(R.string.landscape)
         }
         val post = PostClass(
             binding.titelTxt.text.toString(),
-            viewModel.uri.value.toString(),
+            uri,
             cat,
             "",
             binding.postContant.text.toString(),
             ""
         )
-        viewModel.setPost(post)
         return post
     }
-
     @SuppressLint("SimpleDateFormat")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -155,12 +120,9 @@ class AddPostFragment : Fragment() {
             if (resultCode == AppCompatActivity.RESULT_OK) {
                 if (result != null) {
                     uri = result.uri //path of image in phone
-                    viewModel.setUri(uri)
-
+                    Glide.with(this.requireContext()).load(uri).into(binding.selectedImv)
                 }
             }
         }
     }
-
-
 }

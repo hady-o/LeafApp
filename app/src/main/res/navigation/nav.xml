@@ -19,6 +19,15 @@
         <action
             android:id="@+id/action_splashFragment_to_languageFragment"
             app:destination="@id/languageFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_detalsFragment"
+            app:destination="@id/detalsFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_historyFragment"
+            app:destination="@id/historyFragment" />
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"

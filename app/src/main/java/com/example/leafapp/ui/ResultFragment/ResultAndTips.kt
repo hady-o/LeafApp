@@ -143,6 +143,7 @@ class ResultAndTips : Fragment() {
 
 
     }
+
     private fun getColored(text: String, color: String): String? {
         return "<font color=$color>$text</font>"
     }

@@ -23,6 +23,7 @@ import com.example.leafapp.dataclass.PlantClass
 import com.example.leafapp.ui.home.HomeFragmentDirections
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.Query
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -75,7 +76,7 @@ class HistoryFragment : Fragment() {
         FirebaseFirestore.getInstance()
             .collection("history")
             .document(FirebaseAuth.getInstance().currentUser!!.uid)
-            .collection("photos")
+            .collection("photos").orderBy("date",Query.Direction.DESCENDING)
             .addSnapshotListener { value, _ ->
                 plants.clear()
                 for (document in value!!) {

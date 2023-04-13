@@ -55,4 +55,17 @@ class AllFragmentViewModel(application: Application) : AndroidViewModel(applicat
             repo.addPost(p)
         }
     }
+
+    fun addToFav(p:PostClass){
+        viewModelScope.launch {
+            repo.addToFav(p)
+        }
+    }
+
+
+    fun deleteFromFav(p:PostClass){
+        viewModelScope.launch {
+            repo.deleteFromFav(p)
+        }
+    }
 }

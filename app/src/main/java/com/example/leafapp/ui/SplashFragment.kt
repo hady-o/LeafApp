@@ -25,7 +25,10 @@ class SplashFragment : Fragment() {
         binding =  FragmentSplashBinding.inflate(layoutInflater)
 //        position = 0
         Handler(Looper.getMainLooper()).postDelayed({
-           navigateFromSplash()
+            try {
+                navigateFromSplash()
+            }catch (e:Exception){}
+
         }, 3000)
 
         return binding.root

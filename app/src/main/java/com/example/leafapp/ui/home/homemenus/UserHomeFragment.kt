@@ -12,11 +12,11 @@ import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.example.leafapp.Constants
-import com.example.leafapp.notification.MyFirebaseMessagingService
 import com.example.leafapp.R
 import com.example.leafapp.SharedPref
 import com.example.leafapp.adapters.PsAdapter
 import com.example.leafapp.databinding.FragmentUserHomeBinding
+
 import com.example.leafapp.ui.home.AllFragmentViewModel
 import com.example.leafapp.ui.home.HomeFragmentDirections
 //import com.example.leafapp.ui.home.homemenus.position
@@ -43,7 +43,7 @@ class UserHomeFragment : Fragment() {
         CurrItem.deleteEnable = false
         val adapter= PsAdapter(PsAdapter.PostListenerClass {
             this.findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDetalsFragment(it))
-        })
+        },viewModel)
 
 
 

@@ -1,98 +1,76 @@
-package com.example.leafapp.admin
+package com.example.leafapp
 
 import android.app.Activity
+import android.app.Application
+import android.content.Context
 import android.graphics.Bitmap
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
 import android.net.Uri
+import android.os.Build
 import android.provider.MediaStore
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.example.leafapp.dataclass.PostClass
+import com.example.leafapp.posts.PostDao
+import com.example.leafapp.posts.PostsRepoImpl
+import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
+import com.google.firebase.storage.UploadTask
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.plus
 import java.io.ByteArrayOutputStream
 
-class AddPostViewModel : ViewModel() {
-    private val _uri = MutableLiveData<Uri?>()
-        val uri : LiveData<Uri?>
-            get() = _uri
+class AddPostViewModel (application: Application) : AndroidViewModel(application) {
+    private val database = PostDao.PostRoomDataBase.getInstance(application)
+    private val repo = PostsRepoImpl(database, application.applicationContext)
+    private val _task = MutableLiveData<String>()
+    val task : LiveData<String>
+        get() = _task
 
-    private val _imge_bitMap = MutableLiveData<Bitmap?>()
-        val imge_bitMap : LiveData<Bitmap?>
-            get() = _imge_bitMap
+    private val _postRes = MutableLiveData<DocumentReference>()
+    val postRes : LiveData<DocumentReference>
+        get() = _postRes
 
-    private val _post = MutableLiveData<PostClass>()
-        val post : LiveData<PostClass>
-            get() = _post
+    private val _deletePostRes = MutableLiveData<Boolean>()
+    val deletePostRes : LiveData<Boolean>
+        get() = _deletePostRes
 
-
-    private val _uplodingIsDone = MutableLiveData<Boolean>()
-        val uplodingIsDone : LiveData<Boolean>
-            get() = _uplodingIsDone
-
-    private val _validPost = MutableLiveData<Boolean>()
-        val validPost : LiveData<Boolean>
-            get() = _validPost
-
-    fun setPost(p : PostClass){
-        _post.value = p
-    }
-
-    fun setUri(u: Uri?){
-        _uri.value = u
-    }
-
-    fun uploadPost(act : Activity){
+    fun uploadPostImage(imageUri:Uri){
         viewModelScope.launch {
-            _imge_bitMap.value = MediaStore.Images.Media.getBitmap(act.contentResolver,_uri.value)
-            imge_bitMap.value?.let {
-                val img = it
-                _post.value?.let {
-                    savePhoto(img, it)
-                }
-            }
-
+            _task.value = repo.uploadPostPhoto(imageUri)
         }
     }
 
-
-    private fun savePhoto(image: Bitmap, p :PostClass){
-        val mStorageRef: StorageReference = FirebaseStorage.getInstance()
-            .getReference("history/" + System.currentTimeMillis() + ".jpg")
-        var bytes = ByteArrayOutputStream()
-        image!!.compress(Bitmap.CompressFormat.JPEG,90,bytes)
-        var bb = bytes.toByteArray()
-
-        mStorageRef.putBytes(bb).addOnCompleteListener()
-        {
-            it.addOnSuccessListener {
-                it.storage.downloadUrl.addOnSuccessListener()
-                {
-
-                        p.photo = it.toString()
-                        addPost(p)
-                        _uplodingIsDone.value = true
-                        _validPost.value = true
-
-
-                }
-            }
+    fun addPost(post:PostClass){
+        viewModelScope.launch {
+            _postRes.value = repo.addPost(post)
         }
     }
 
-    fun addPost(post: PostClass) {
-        Firebase.firestore.collection("Posts")
-            .add(post).addOnCompleteListener(){
-                val info = hashMapOf(
-                    "likes" to 0,
-                    "shares" to 0,
-                )
-                Firebase.firestore.collection("postInfo")
-                    .document(it.getResult().id).set(info)
-            }
+    fun deletePost(post:PostClass){
+        viewModelScope.launch {
+            _deletePostRes.value = repo.deletePost(post)
+        }
     }
+
+    fun isInternetConnected(context: Context): Boolean {
+        val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            val networkCapabilities = connectivityManager.activeNetwork ?: return false
+            val activeNetwork = connectivityManager.getNetworkCapabilities(networkCapabilities) ?: return false
+            return when {
+                activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> true
+                activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> true
+                activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET) -> true
+                else -> false
+            }
+        } else {
+            val activeNetworkInfo = connectivityManager.activeNetworkInfo
+            return activeNetworkInfo != null && activeNetworkInfo.isConnected
+        }
+    }
+
 }
