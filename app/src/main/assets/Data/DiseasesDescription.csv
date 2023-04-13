@@ -59,18 +59,38 @@ The disease can be easily identified in the field due to its long, narrow lesion
 •Follow crop rotation with non-host crops.
 •Grow available resistant varieties.
 •In severe cases of disease incidence, apply a suitable fungicide."
-Cotton___Aphids,Cotton,Aphids,,,,
-Cotton___Bacterial blight,Cotton,Bacterial blight,,,,
-Cotton___Powdery mildew,Cotton,Powdery mildew,,,,
+Cotton___Aphids,Cotton,Aphids,,"Aphid Species (including Aphis gossypii, Aphis craccivora)",,"•Consult industry Insecticide Resistance Management Strategies because it is important not to rely on insecticides alone.
+•Aphid levels should be monitored at least weekly from seedling emergence through to defoliation.
+•Controlling brassica weeds and other hosts such as marshmallows, capeweed and thistles between seasons will help reduce aphid pressure. 
+•Cotton aphid populations build rapidly as spring temperatures increase. At this time, beneficial insects can play a very important role in suppressing aphid populations, so it is important to consider their populations too when assessing aphid spray thresholds.
+•In addition to beneficial numbers, consider the current growing conditions. If crops have good growing conditions at the time of infestation (i.e., good soil moisture), they are more likely to be able to compensate for aphid damage compared to moisture stressed plants."
+Cotton___Bacterial blight,Cotton,Bacterial blight,"•Water-soaked lesions: The symptoms of the disease start as small, water-soaked lesions on the leaves, stems, and bolls of the cotton plant.
+•Lesion expansion: As the disease progresses, the lesions expand and become angular in shape, with a yellow halo around them.
+•Leaf drop: Infected leaves may drop prematurely, leading to the defoliation of the plant.
+•Reduced yield: In severe cases, bacterial blight can lead to significant yield losses and reduced fiber quality.
+•Shoot dieback: The disease can also cause shoot dieback and blackening of the stem.
+•Wilting: Infected plants may wilt and die prematurely.",Xanthomonas Bacteria,"Cotton bacterial blight leaf disease starts when the bacterium, Xanthomonas campestris pv. malvacearum, infects cotton plants through natural openings or wounds on the leaves. The bacteria can survive in plant debris and soil for several years and can be transmitted through contaminated seed, equipment, or water. The disease can also be spread by wind, rain, or insect vectors.
+Once the bacteria infect a cotton plant, they can cause water-soaked lesions that later turn brown or black. The lesions can spread rapidly, leading to defoliation of the plant and reduced yield. Warm and humid weather conditions can promote the spread of the disease.","•Diseased plant debris should be removed and burnt.
+•Deep ploughing after harvest helps reduce disease incidence.
+•Crop rotation, late sowing, early thinning, good tillage, early irrigation, and adding potash to soil help reduce disease incidence.
+•Since the bacteria inhabit seeds internally or externally, seed treatment is an effective means to control the disease. 
+•Bacteria occurring externally on seeds can be destroyed by immersing seeds in sulphuric acid for 10-15 minutes, then rinsing thoroughly by suspending them in water to remove acid, drying, and finally treating with Agrosan GN, Ceresan, etc. To remove bacteria lying inside the seeds, the use of antibiotics is recommended. Seeds may be soaked overnight in 1000 ppm of streptomycin for the purpose.
+The use of resistant varieties is the best and most effective control measure. Some of them are – HC 9, BJA 592, Reba-B 50, Badnawar-I, K-4005, DHY 286, Khandawa-2, 70 IH- 480/3, and so on."
+Cotton___Powdery mildew,Cotton,Powdery mildew,"•White powdery spots: The disease typically starts as small, white powdery spots on the leaves, stems, and bolls of the cotton plant.
+•Leaf distortion: As the disease progresses, the affected leaves may become distorted, curled, or twisted.
+•Stunted growth: Infected cotton plants may exhibit stunted growth and reduced vigor.
+•Reduced yield: In severe cases, powdery mildew can significantly reduce the yield and quality of cotton crops.
+•Premature defoliation: Infected leaves may drop prematurely, leading to defoliation of the plant.
+•The stem blackening: In some cases, the stem of the infected plant may become blackened.",Fungus ( the Oidium gossypii ),,
 Cotton___Target spot,Cotton,Target spot,,,,
 Guava___Die Back,Guava,Die Back,,,,
-Grape___Black_rot,Grape,Black rot,"Brown lesions on the leaves that develop black dots (pycnidia); 
+Grape___Black_rot,Grapes,Black rot,"Brown lesions on the leaves that develop black dots (pycnidia); 
 grapes have light spots that eventually form pycnidia; 
 grapes harden and turn black, while still remaining on the vine.",Fungus,"Disease favors rainy weather;
 spores may ooze out during rain.","Remove all mummified fruit from vines during dormant pruning;
 cultivate soil during bud break to bury mummies and reduce inoculant;
 application of appropriate fungicides can help control the disease."
-Grape___Esca_(Black_Measles),Grape,Esca (Black Measles),"Symptom appears on leaves, trunk, canes and berries. 
+Grape___Esca_(Black_Measles),Grapes,Esca (Black Measles),"Symptom appears on leaves, trunk, canes and berries. 
 On leaves we will see intervenaial striping looks like tiger strips. 
 White cultivars shows chlorotic and necrotic strips where as red cultivars shows red areas and necrotic strips. 
 On berries we will see superficial spots and later may coalesce making berries appear black. 
@@ -81,7 +101,7 @@ The symptoms are common in 5 to 7 year old vineyard.
 The prune wounds helps in pathogen entrance and establishment.","Till date there is no effective method to control this disease.
 Remove the infected berries, leaves and trunk and destroy them.
 Protect the prune wounds to minimize fungal infection using wound sealant (5% boric acid in acrylic paint) or essential oil or suitable fungicides."
-Grape___Leaf_blight_(Isariopsis_Leaf_Spot),Grape,Leaf blight (Isariopsis Leaf Spot),"On leaf surface we will see lesions which are irregularly shaped (2 to 25 mm in diameter). 
+Grape___Leaf_blight_(Isariopsis_Leaf_Spot),Grapes,Leaf blight (Isariopsis Leaf Spot),"On leaf surface we will see lesions which are irregularly shaped (2 to 25 mm in diameter). 
 Initially lesions are dull red to brown in color turn black later. 
 If disease is severe this lesions may coalesce. 
 On berries we can see symptom similar to black rot but the entire clusters will collapse.",Fungus,"Common in tropical and subtropical grapes.
