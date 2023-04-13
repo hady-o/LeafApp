@@ -11,11 +11,13 @@ class AllFragmentViewModel(application: Application) : AndroidViewModel(applicat
     private val database = PostDao.PostRoomDataBase.getInstance(application)
     private val repo = PostsRepoImpl(database, application.applicationContext)
     private val _allPosts = MutableLiveData<List<PostClass>>()
-    val allPosts: LiveData<List<PostClass>> = _allPosts
+        val allPosts : LiveData<List<PostClass>>
+            get() = _allPosts
+
 
 
     init {
-        refresh()
+//        refresh()
         getAllPost()
     }
 
@@ -38,6 +40,15 @@ class AllFragmentViewModel(application: Application) : AndroidViewModel(applicat
         viewModelScope.launch {
             _allPosts.value = database.dao.getSomePosts(type)
         }
+    }
+
+    fun removePost(post:PostClass):List<PostClass>{
+
+            val tmpList = _allPosts.value as MutableList<PostClass>
+            tmpList.remove(post)
+//            _allPosts.value = tmpList
+            return tmpList
+
     }
     fun addPost(p:PostClass){
         viewModelScope.launch {

@@ -32,6 +32,10 @@ class AdminHomeFragment : Fragment() {
             Navigation.findNavController(binding.root).navigate(R.id.action_adminHomeFragment_to_addPostFragment)
         }
 
+        binding.deletePostBtn.setOnClickListener{
+            Navigation.findNavController(binding.root).navigate(R.id.action_adminHomeFragment_to_deletePostFragment)
+        }
+
 
         return binding.root
     }

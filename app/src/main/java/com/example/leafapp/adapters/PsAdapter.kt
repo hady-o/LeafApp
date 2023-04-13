@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import android.provider.MediaStore.Images
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.DiffUtil
@@ -11,10 +12,14 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.leafapp.databinding.PostCardBinding
 import com.example.leafapp.dataclass.PostClass
+import com.example.leafapp.ui.home.homemenus.CurrItem
+import com.shashank.sony.fancytoastlib.FancyToast
 
 
 class PsAdapter(val clickListener: PostListenerClass) :
     ListAdapter<PostClass, PsAdapter.ViewHolder>(PostDiffCallBack()) {
+
+
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -57,6 +62,19 @@ class PsAdapter(val clickListener: PostListenerClass) :
                 binding.root.context.startActivity(Intent.createChooser(share, "Share using"))
 
             }
+
+
+            if(!CurrItem.deleteEnable){
+                binding.deletePostBtn.visibility = View.GONE
+            }else{
+                binding.deletePostBtn.visibility = View.VISIBLE
+                binding.deletePostBtn.setOnClickListener{
+                    /* FancyToast.makeText(binding.root.context,"you try to delete : ${post?.title}"
+                         ,FancyToast.LENGTH_LONG,FancyToast.SUCCESS,true).show()*/
+                    CurrItem.deletedPost.value = post;
+                }
+            }
+
 
         }
     }

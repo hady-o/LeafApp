@@ -228,6 +228,17 @@
         <action
             android:id="@+id/action_adminHomeFragment_to_addPostFragment"
             app:destination="@id/addPostFragment" />
+        <action
+            android:id="@+id/action_adminHomeFragment_to_deletePostFragment"
+            app:destination="@id/deletePostFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/deletePostFragment"
+        android:name="com.example.leafapp.admin.DeletePostFragment"
+        android:label="DeletePostFragment" >
+        <action
+            android:id="@+id/action_deletePostFragment_to_detalsFragment"
+            app:destination="@id/detalsFragment" />
     </fragment>
 
 </navigation>

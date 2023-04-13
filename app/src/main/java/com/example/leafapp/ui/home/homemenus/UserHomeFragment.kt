@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.compose.runtime.currentComposer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
@@ -20,6 +21,7 @@ import com.example.leafapp.ui.home.AllFragmentViewModel
 import com.example.leafapp.ui.home.HomeFragmentDirections
 //import com.example.leafapp.ui.home.homemenus.position
 import com.google.firebase.auth.FirebaseAuth
+import com.shashank.sony.fancytoastlib.FancyToast
 
 
 class UserHomeFragment : Fragment() {
@@ -27,7 +29,7 @@ class UserHomeFragment : Fragment() {
         ViewModelProvider(this).get(AllFragmentViewModel::class.java)
     }
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("SetTextI18n", "NotifyDataSetChanged")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -38,15 +40,23 @@ class UserHomeFragment : Fragment() {
         binding.lifecycleOwner = this
         binding.vie=viewModel
         viewModel.getAllPost()
-        viewModel.allPosts.observe(viewLifecycleOwner){
-
-        }
+        CurrItem.deleteEnable = false
         val adapter= PsAdapter(PsAdapter.PostListenerClass {
             this.findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDetalsFragment(it))
         })
 
-        binding.allRC.adapter = adapter
-        binding.allRC.layoutManager!!.scrollToPosition(CurrItem.pos)
+
+
+        CurrItem.deletedPost.observe(viewLifecycleOwner){
+            FancyToast.makeText(requireContext(),"hi from userFragment ${CurrItem.deletedPost.value?.title}",
+                FancyToast.LENGTH_LONG,FancyToast.SUCCESS,true).show()
+            CurrItem.deletedPost.value?.let { it1 ->
+                var newList = viewModel.removePost(it1)
+                adapter.submitList(newList)
+                binding.allRC.adapter?.notifyDataSetChanged()
+            }
+        }
+
         // search edittext
         binding.searchBtnUserHome.setOnClickListener()
         {
@@ -95,7 +105,8 @@ class UserHomeFragment : Fragment() {
             binding.treatment.background= resources.getDrawable(R.drawable.button_shape5)
             binding.landscape.background= resources.getDrawable(R.drawable.button_shape5g)
         }
-
+        binding.allRC.adapter = adapter
+        binding.allRC.layoutManager!!.scrollToPosition(CurrItem.pos)
         return binding.root
     }
 
