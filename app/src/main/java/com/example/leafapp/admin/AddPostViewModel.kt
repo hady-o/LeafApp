@@ -1,4 +1,4 @@
-package com.example.leafapp
+package com.example.leafapp.admin
 
 import android.app.Activity
 import android.graphics.Bitmap
@@ -14,7 +14,6 @@ import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.plus
 import java.io.ByteArrayOutputStream
 
 class AddPostViewModel : ViewModel() {
@@ -34,6 +33,10 @@ class AddPostViewModel : ViewModel() {
     private val _uplodingIsDone = MutableLiveData<Boolean>()
         val uplodingIsDone : LiveData<Boolean>
             get() = _uplodingIsDone
+
+    private val _validPost = MutableLiveData<Boolean>()
+        val validPost : LiveData<Boolean>
+            get() = _validPost
 
     fun setPost(p : PostClass){
         _post.value = p
@@ -57,24 +60,25 @@ class AddPostViewModel : ViewModel() {
     }
 
 
-    fun savePhoto(image: Bitmap,p :PostClass){
+    private fun savePhoto(image: Bitmap, p :PostClass){
         val mStorageRef: StorageReference = FirebaseStorage.getInstance()
             .getReference("history/" + System.currentTimeMillis() + ".jpg")
-        if (image != null) {
-            var bytes = ByteArrayOutputStream()
-            image!!.compress(Bitmap.CompressFormat.JPEG,90,bytes)
-            var bb = bytes.toByteArray()
+        var bytes = ByteArrayOutputStream()
+        image!!.compress(Bitmap.CompressFormat.JPEG,90,bytes)
+        var bb = bytes.toByteArray()
 
-            mStorageRef.putBytes(bb).addOnCompleteListener()
-            {
-                it.addOnSuccessListener {
-                    it.storage.downloadUrl.addOnSuccessListener()
-                    {
+        mStorageRef.putBytes(bb).addOnCompleteListener()
+        {
+            it.addOnSuccessListener {
+                it.storage.downloadUrl.addOnSuccessListener()
+                {
 
                         p.photo = it.toString()
                         addPost(p)
                         _uplodingIsDone.value = true
-                    }
+                        _validPost.value = true
+
+
                 }
             }
         }
