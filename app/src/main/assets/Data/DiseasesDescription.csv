@@ -1,58 +1,69 @@
-id,Plants,Diseases,Symptoms,Cause,How it started,Tips
-Apple___Apple_scab,Apple,Apple scab,"Yellow or chlorotic spots on leaves,
-dark olive green spots on leaves and fruit,
-maybe a velvety growth on spots on the undersides of leaves, 
-twisting of leaves, distorted leaves, 
-severely infected leaves turn yellow and drop from trees.",Fungus Venturia inaequalis,"Fungus overwinters on dead foliage on the ground,
-spores dispersed by wind,
-high moisture encourages fungal growth.","Remove all fallen leaves from trees in the fall and compost to prevent any disease infestations in the debris.
-It may be necessary to add Zinc and fertilizer-grade urea in the fall to speed leaf drop, then add lime to fallen leaves.
-Using fungicide may be necessary for areas where leaves remain wet for periods of more than 9 hours.
-Fungicides such as copper soaps and Bordeaux mixture should be applied if there is a chance of a wet period as soon as leaf tips emerge."
-Apple___Black_rot,Apple,Black rot,"Purple flecks or circular lesions which are brown in the center and purple at the margin; 
-red flecks, purple lesions and/or brown-black rings on fruit.",Fungus,Spores can overwinter in twigs or fruit remaining on the tree and spread during rainfall.,"Remove dead wood, mummified fruit and cankers from trees to reduce spread of disease;
-burn any prunings that have been made from the tree,
-controlling the disease by applying fungicides on silver tips to harvest."
-Apple___Cedar_apple_rust,Apple,Cedar apple rust,"Bright orange or yellow patches on top side of leaves surrounded by a red band and small black spots in the center;
-by mid-summer, cup-like structures called aecia form on the leaf undersides; 
-these become covered in tubular structures from which spores are released.",Fungus,"Fungus requires two hosts to complete lifecycle;
-forms galls on Eastern red cedar and spores are carried by wind to apple;
-use caution when planting apple close to red cedar.","Plant resistant varieties where possible;
-remove nearby red cedar;
-if growing susceptible varieties in proximity to red cedar follow a fungicide program."
-Cherry_(including_sour)___Powdery_mildew,Cherry_(including_sour),Powdery mildew,"Light colored circular lesions on leaves inside tree canopy which develop a powdery appearance. 
-Lesions may coalesce to cover leaf. 
-if infection is severe, leaves may blister and infected shoots may be distorted and stunted; 
-infected fruits may have slightly depressed areas on the surface containing fungal hyphae (filamentous fungal structures).",Fungus,Infection of fruit is more likely if there are rainfalls close to harvest.,Management of powdery mildew in cherry is reliant on the application of appropriate fungicides and cultural practices which promote good air circulation around tree canopies to lower humidity.
-Corn_(maize)___Cercospora_leaf_spot_Gray_leaf_spot,Corn_(maize),Cercospora leaf spot Gray leaf spot,"Small necrotic (brown or tan) spots that may have a yellow chlorotic halo appear on lower leaves, usually before flowering. 
+﻿id,Plants,Diseases,Symptoms,Cause,How it started,Tips
+Alstonia Scholaris___Galls,Alstonia Scholaris,Galls,,,,
+Apple___Apple_scab,Apple,Apple scab,"•Yellow or chlorotic spots on leaves.
+•Dark olive green spots on leaves and fruit.
+•Maybe a velvety growth on spots on the undersides of leaves.
+•Twisting of leaves.
+•Distorted leaves.
+•Severely infected leaves turn yellow and drop from trees.",Fungus Venturia inaequalis,"•Fungus overwinters on dead foliage on the ground.
+•Spores dispersed by wind.
+•High moisture encourages fungal growth.","•Remove all fallen leaves from trees in the fall and compost to prevent any disease infestations in the debris.
+•It may be necessary to add Zinc and fertilizer-grade urea in the fall to speed leaf drop, then add lime to fallen leaves.
+•Using fungicide may be necessary for areas where leaves remain wet for periods of more than 9 hours.
+•Fungicides such as copper soaps and Bordeaux mixture should be applied if there is a chance of a wet period as soon as leaf tips emerge."
+Apple___Black_rot,Apple,Black rot,"•Purple flecks or circular lesions which are brown in the center and purple at the margin.
+•Red flecks, purple lesions and/or brown-black rings on fruit.",Fungus Botryosphaeria obtusa,Spores can overwinter in twigs or fruit remaining on the tree and spread during rainfall.,"•Remove dead wood, mummified fruit, and cankers from trees to reduce the spread of disease.
+•Burn any pruning that has been made from the tree.
+•Controlling the disease by applying fungicides on silver tips to harvest. "
+Apple___Cedar_apple_rust,Apple,Cedar apple rust,"•Bright orange or yellow patches on the top side of leaves surrounded by a red band and small black spots in the center.
+•By mid-summer, cup-like structures called aecia form on the leaf undersides; these become covered in tubular structures from which spores are released.",Fungus Gymnosporangium juniperi virginianae,"•Fungus needs two hosts to complete its lifecycle.
+•It forms a gall on Eastern red cedar.
+•The spores of the fungus are carried by the wind from the red cedar to the apple.
+•It is important to exercise caution when planting apple trees close to Eastern red cedar.","•Plant disease-resistant varieties where possible.
+•Remove nearby red cedar.
+•If growing susceptible varieties in proximity to red cedar, follow a fungicide program."
+Arjun___Leaf Curl,Arjun,Leaf Curl,,,,
+Bael___leaf spot,Bael,leaf spot,,,,
+Cherry_(including_sour)___Powdery_mildew,Cherry_(including_sour),Powdery mildew,"•Light-colored circular lesions on leaves inside the tree canopy which develop a powdery appearance. 
+•Lesions may coalesce to cover the leaf. 
+•If the infection is severe, leaves may blister and infected shoots may be distorted and stunted.
+•Infected fruits may have slightly depressed areas on the surface containing fungal hyphae (filamentous fungal structures).",Fungus Podosphaera clandestina,Infection of fruit is more likely if there are rainfalls close to harvest.,Management of powdery mildew in cherry is reliant on the application of appropriate fungicides and cultural practices which promote good air circulation around tree canopies to lower humidity.
+Chinar ___Black_rot,Chinar,Black rot,,,,
+coffee___Rust,Coffee,Rust,,,,
+coffee___red_spider_mite,Coffee,Red spider mite,,,,
+Corn_(maize)___Cercospora_leaf_spot_Gray_leaf_spot,Corn_(maize),Cercospora leaf spot (Gray leaf spot),"Small necrotic (brown or tan) spots that may have a yellow chlorotic halo appear on lower leaves, usually before flowering. 
 Gradually these lesions will turn grayish and appear on younger leaves, too. 
 As the disease progresses, they enlarge into elongated, rectangular lesions that run parallel to the leaf veins. 
 In optimal conditions (warm temperatures, high humidity and wet leaves), they can coalesce and engulf the whole leaf. 
 If this happens before grain filling there can be considerable yield losses. 
-The leaf blight can weaken the plants and sometimes soften the stalks, leading to lodging.",Fungus,"The gray leaf spot disease is caused by the fungus Cercospora zeae-maydis.
-It survives in plant residues in the soil for long periods of time.
+The leaf blight can weaken the plants and sometimes soften the stalks, leading to lodging.",Fungus Cercospora zeae-maydis,"It survives in plant residues in the soil for long periods of time.
 During the spring, the spores are carried onto the lower leaves by rain splashes and wind.
-Its lifecycle is favored by elevated temperatures (25 to 30°C), high humidity (dews, fogs) and leaf wetness for prolonged periods of time.
+Its lifecycle is favored by elevated temperatures (25 to 30Â°C), high humidity (dews, fogs) and leaf wetness for prolonged periods of time.
 Hot, dry weather hinders its development.
 Symptoms vary slightly between different plant varieties.
-The fungus completes its lifecycle (from infection to production of new spores) in 14-21 days in a susceptible variety and in 21-28 days in a resistant one. ","Always consider an integrated approach with preventive measures and biological treatments if available.
-Foliar fungicide treatment is a way to manage the disease if it occurs at early stages but it has to be weighted against the weather conditions, the potential yield loss and the susceptibility of the plant.
-Fungicides containing pyraclostrobin and strobilurin, or combinations of azoxystrobin and propiconazole, prothioconazole and trifloxystrobin work well to control the fungus."
+The fungus completes its lifecycle (from infection to production of new spores) in 14-21 days in a susceptible variety and in 21-28 days in a resistant one. ","•Always consider an integrated approach with preventive measures and biological treatments if available.
+•Foliar fungicide treatment is a way to manage the disease if it occurs at its early stages, but it has to be weighed against the weather conditions, the potential yield loss, and the susceptibility of the plant.
+•Fungicides containing pyraclostrobin and strobilurin, or combinations of azoxystrobin and propiconazole, prothioconazole, and trifloxystrobin work well to control the fungus."
 Corn_(maize)___Common_rust_,Corn_(maize),Common rust ,"Oval or elongated cinnamon brown pustules on upper and lower surfaces of leaves;
 pustules rupture and release powdery red spores;
 pustules turn dark brown-black as they mature and release dark brown powdery spores;
 if infection is severe, pustules may appear on tassels and ears and leaves may begin to yellow;
-in partially resistant corn hybrids, symptoms appear as chlorotic or necrotic flecks on the leaves which release little or no spore.",Fungus,"Disease is spread by wind-borne spores;
-some of the most popularly grown sweet corn varieties have little or no resistance to the disease.","The most effective method of controlling the disease is to plant resistant hybrids;
-application of appropriate fungicides may provide some degree on control and reduce disease severity;
-fungicides are most effective when the amount of secondary inoculum is still low, generally when plants only have a few rust pustules per leaf."
+in partially resistant corn hybrids, symptoms appear as chlorotic or necrotic flecks on the leaves which release little or no spore.",Fungus Puccinia sorghi,"Disease is spread by wind-borne spores;
+some of the most popularly grown sweet corn varieties have little or no resistance to the disease.","•The most effective method of controlling the disease is to plant resistant hybrids.
+•The application of appropriate fungicides may provide some degree of control and reduce disease severity.
+•Fungicides are more effective when the amount of secondary inoculum is still low, generally when plants only have a few rust pustules per leaf."
 Corn_(maize)___Northern_Leaf_Blight,Corn_(maize),Northern Leaf Blight,"In the beginning we will notice elliptical gray-green lesions on leaves.
 As the disease process this lesions become pale gray to tan color.
 Later stage the lesions looks dirty due to dark gray spores particularly under lower leaf surface.
-The disease can be easily identified in the field due to its long, narrow lesions which are unrestricted by veins.",Fungus,The disease mainly spread through rain splash and wind.,"Follow proper tillage to reduce fungus inoculum from crop debris.
-Follow crop rotation with non host crop.
-Grow available resistant varieties.
-In severe case of disease incidence apply suitable fungicide."
+The disease can be easily identified in the field due to its long, narrow lesions which are unrestricted by veins.",Fungus Exserohilum turcicum,The disease mainly spread through rain splash and wind.,"•Follow proper tillage to reduce fungus inoculum from crop debris.
+•Follow crop rotation with non-host crops.
+•Grow available resistant varieties.
+•In severe cases of disease incidence, apply a suitable fungicide."
+Cotton___Aphids,Cotton,Aphids,,,,
+Cotton___Bacterial blight,Cotton,Bacterial blight,,,,
+Cotton___Powdery mildew,Cotton,Powdery mildew,,,,
+Cotton___Target spot,Cotton,Target spot,,,,
+Guava___Die Back,Guava,Die Back,,,,
 Grape___Black_rot,Grape,Black rot,"Brown lesions on the leaves that develop black dots (pycnidia); 
 grapes have light spots that eventually form pycnidia; 
 grapes harden and turn black, while still remaining on the vine.",Fungus,"Disease favors rainy weather;
@@ -76,6 +87,16 @@ If disease is severe this lesions may coalesce.
 On berries we can see symptom similar to black rot but the entire clusters will collapse.",Fungus,"Common in tropical and subtropical grapes.
 The disease appear late in the season.
 Cynthiana and Cabernet Sauvignon are susceptible to this pathogen.",Fungicides sprayed for other diseases in the season may help to reduce this disease.
+Jamun___Rust,Jamun,Rust,,,,
+Jatropha___Die Back,Jatropha,Die Back,,,,
+Lemon___Leaf Curl,Lemon,Leaf Curl,,,,
+Mango___Anthracnose,Mango,Anthracnose,,,,
+Mango___Bacterial Canker,Mango,Bacterial Canker,,,,
+Mango___Cutting Weevil,Mango,Cutting Weevil,,,,
+Mango___Die Back,Mango,Die Back,,,,
+Mango___Gall Midge,Mango,Gall Midge,,,,
+Mango___Powdery Mildew,Mango,Powdery Mildew,,,,
+Mango___Sooty Mould,Mango,Sooty Mould,,,,
 Orange___Haunglongbing_(Citrus_greening),Orange,Haunglongbing (Citrus greening),"Leaf symptoms of citrus greening include yellowing of one limb or one area of canopy, yellowing of leaf veins; 
 blotchy mottling and/or green islands (spots) surrounded by completely yellow leaf tissue; 
 twig and limbs begin to die back; 
@@ -110,6 +131,8 @@ raised brown cankers on stems;
 cracked brown lesions on fruit.",Bacteria,"Disease emergence favored by warm, wet conditions;
 the pathogen can be enter a field on seed and transplants and can be spread within a field by wind-driven rain, clipping plants and aerosols.","Use disease free planting material;
 remove and destroy all crop debris after harvest, or plow material deeply under soil."
+Pomegranate___Powdery_mildew,Pomegranate,Powdery mildew,,,,
+PongamiaPinnata___mosaic_virus,PongamiaPinnata,mosaic virus,,,,
 Potato___Early_blight,Potato,Early blight,"Dark lesions with yellow border which may form concentric rings of raised and sunken tissue on the leaves and stems;
 lesions initially circular but become angular;
 leaves become necrotic but remain attached to plant;
@@ -131,6 +154,9 @@ application of appropriate fungicide to potato hills at emergence;
 time watering to reduce periods of leaf wetness e.g. water early to allow plant to dry off during the day;
 plant resistant varieties;
 apply appropriate protective fungicide if disease is forecast in area."
+rice___BrownSpot,Rice,Brown Spot,,,,
+rice___Hispa,Rice,Hispa,,,,
+rice___LeafBlast,Rice,Leaf Blast,,,,
 Squash___Powdery_mildew,Squash,Powdery mildew,"White powdery growth on the upper surfaces of leaves and stems;
 infected areas stunted and distorted.",Fungus,Disease emergence favored by dry weather and high relative humidity.,"Plant in sites with good air circulation and sun exposure;
 do not overcrowd plants;
@@ -239,7 +265,7 @@ fruit yields are reduced in infected plants;
 green fruit may have yellow blotches or necrotic spots;
 dark necrotic streaks may appear on the stems, petioles leaves and fruit.",Virus,"ToMV is a closely related strain of Tobacco mosaic virus (TMV), it enters fields via infected weeds, peppers or potato plants;
 the virus may also be transmitted to tomato fields by grasshoppers, small mammals and birds.","Plant varieties that are resistant to the virus;
-heat treating seeds at 70°C (158°F) for 4 days or at 82–85°C (179.6–185°F) for 24 hours will help to eliminate any virus particles on the surface of the seeds;
+heat treating seeds at 70Â°C (158Â°F) for 4 days or at 82â€“85Â°C (179.6â€“185Â°F) for 24 hours will help to eliminate any virus particles on the surface of the seeds;
 soaking seed for 15 min in 100 g/l of tri-sodium phosphate solution (TSP) can also eliminate virus particles - seeds should be rinsed thoroughly and laid out to dry after this treatment;
 if the virus is confirmed in the field, infected plants should be removed and destroyed to limit further spread;
 plant tomato on a 2-year rotation, avoiding susceptible crops such as peppers, eggplant, cucurbits and tobacco;
