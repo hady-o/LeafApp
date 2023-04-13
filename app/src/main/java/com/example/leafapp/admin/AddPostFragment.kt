@@ -1,4 +1,4 @@
-package com.example.leafapp
+package com.example.leafapp.admin
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -8,7 +8,6 @@ import android.graphics.Bitmap
 import android.net.Uri
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import android.provider.MediaStore
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -18,6 +17,7 @@ import androidx.core.content.ContextCompat.checkSelfPermission
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
+import com.example.leafapp.R
 import com.example.leafapp.databinding.FragmentAddPostBinding
 import com.example.leafapp.dataclass.PostClass
 import com.example.leafapp.notification.MyFirebaseMessagingService
@@ -26,9 +26,6 @@ import com.theartofdev.edmodo.cropper.CropImage
 import io.noties.markwon.Markwon
 import io.noties.markwon.editor.MarkwonEditor
 import io.noties.markwon.editor.MarkwonEditorTextWatcher
-import io.noties.markwon.html.HtmlPlugin
-import io.noties.markwon.image.ImagesPlugin
-import io.noties.markwon.image.glide.GlideImagesPlugin
 
 class AddPostFragment : Fragment() {
 
@@ -67,10 +64,30 @@ class AddPostFragment : Fragment() {
 
         binding.addPostBtn.setOnClickListener {
             val post = collectData()
-            viewModel.uploadPost(requireActivity())
-            binding.addingPostProgres.visibility= View.VISIBLE
-            binding.addPostBtn.isClickable = false
-            binding.previewBtn.isClickable = false
+            if(post.title.isBlank()){
+                binding.titelTxt.error = "This Feald cannot be empty"
+            }
+            if(post.contents.isBlank()){
+                binding.postContant.error = "This Feald cannot be empty"
+            }
+            if(post.type.isBlank()){
+                FancyToast.makeText(requireContext(),"You Must Chose the Type of the post",
+                                    FancyToast.LENGTH_LONG,FancyToast.ERROR,true).show()
+            }
+
+            if(post.photo == "null"){
+                FancyToast.makeText(requireContext(),"You have to add photo for the post",
+                    FancyToast.LENGTH_LONG,FancyToast.ERROR,true).show()
+            }
+            if(post.title.isNotBlank() &&
+                post.contents.isNotBlank() &&
+                post.type.isNotBlank() &&
+                post.photo != "null"){
+                viewModel.uploadPost(requireActivity())
+                binding.addingPostProgres.visibility= View.VISIBLE
+                binding.addPostBtn.isClickable = false
+                binding.previewBtn.isClickable = false
+            }
         }
 
         viewModel.uri.observe(viewLifecycleOwner, Observer {
@@ -114,10 +131,9 @@ class AddPostFragment : Fragment() {
     private fun collectData(): PostClass {
         val cat = when (binding.catGrop.checkedRadioButtonId) {
             R.id.care_btn -> requireContext().resources.getString(R.string.care)
-
             R.id.treat_btn -> requireContext().resources.getString(R.string.treatment)
-
-            else -> requireContext().resources.getString(R.string.landscape)
+            R.id.land_btn ->requireContext().resources.getString(R.string.landscape)
+             else-> ""
         }
         val post = PostClass(
             binding.titelTxt.text.toString(),
