@@ -67,11 +67,8 @@
     <string name="no_data_for_these_plants_yet">No data for these plants yet</string>
     <string name="not_plant">This doesn\'t look like a plant !</string>
     <string name="add_post">Add Post</string>
-<<<<<<< Updated upstream
-    <string name="delete_post">Delete Post</string>
-=======
-    <string name="not_channel_id">channelId</string>
->>>>>>> Stashed changes
+    <string name="delete_post" translatable="false">Delete Post</string>
+    <string name="not_channel_id" translatable="false">channelId</string>
 
 
 </resources>

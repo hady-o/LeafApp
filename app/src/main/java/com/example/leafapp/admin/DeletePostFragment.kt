@@ -36,7 +36,7 @@ class DeletePostFragment : Fragment() {
         CurrItem.deleteEnable = true
         val adapter= PsAdapter(PsAdapter.PostListenerClass {
             this.findNavController().navigate(DeletePostFragmentDirections.actionDeletePostFragmentToDetalsFragment(it))
-        })
+        },viewModel)
         viewModel.getAllPost()
         adapter.submitList(viewModel.allPosts.value)
 

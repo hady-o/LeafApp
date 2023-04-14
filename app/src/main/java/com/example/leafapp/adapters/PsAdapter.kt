@@ -61,34 +61,6 @@ class PsAdapter(val clickListener: PostListenerClass,val viewModel: AllFragmentV
             post: PostClass?, clickListener: PostListenerClass, viewModel: AllFragmentViewModel
         ) {
             binding.post = post
-            binding.executePendingBindings()
-            Firebase.firestore.collection("fav")
-                .document("${FirebaseAuth.getInstance().currentUser!!.uid}_${post!!.doc}")
-                .get().addOnCompleteListener(){
-                    try {
-                        val x =it.result.getString("title")!!
-                        binding.likeImBtn.setImageResource(R.drawable.ic_baseline_favorite_24)
-                    }catch (e:Exception){
-                        binding.likeImBtn.setImageResource(R.drawable.ic_sharp_favorite_border_24)
-                    }
-                }
-            binding.likeImBtn.setOnClickListener(){
-                var x = ""
-                Firebase.firestore.collection("fav")
-                    .document("${FirebaseAuth.getInstance().currentUser!!.uid}_${post!!.doc}")
-                    .get().addOnCompleteListener(){
-                        try {
-                             x =it.result.getString("title")!!
-                             viewModel.deleteFromFav(post)
-                             binding.likeImBtn.setImageResource(R.drawable.ic_sharp_favorite_border_24)
-                        }catch (e:Exception){
-                            viewModel.addToFav(post)
-                            binding.likeImBtn.setImageResource(R.drawable.ic_baseline_favorite_24)
-                        }
-
-                    }
-
-            }
 
             binding.shareImBtn.setOnClickListener {
                 val share = Intent(Intent.ACTION_SEND)
@@ -101,6 +73,36 @@ class PsAdapter(val clickListener: PostListenerClass,val viewModel: AllFragmentV
 
             if(!CurrItem.deleteEnable){
                 binding.deletePostBtn.visibility = View.GONE
+                binding.executePendingBindings()
+
+                Firebase.firestore.collection("fav")
+                    .document("${FirebaseAuth.getInstance().currentUser!!.uid}_${post!!.doc}")
+                    .get().addOnCompleteListener(){
+                        try {
+                            val x =it.result.getString("title")!!
+                            binding.likeImBtn.setImageResource(R.drawable.ic_baseline_favorite_24)
+                        }catch (e:Exception){
+                            binding.likeImBtn.setImageResource(R.drawable.ic_sharp_favorite_border_24)
+                        }
+                    }
+                binding.likeImBtn.setOnClickListener(){
+                    var x = ""
+                    Firebase.firestore.collection("fav")
+                        .document("${FirebaseAuth.getInstance().currentUser!!.uid}_${post!!.doc}")
+                        .get().addOnCompleteListener(){
+                            try {
+                                x =it.result.getString("title")!!
+                                viewModel.deleteFromFav(post)
+                                binding.likeImBtn.setImageResource(R.drawable.ic_sharp_favorite_border_24)
+                            }catch (e:Exception){
+                                viewModel.addToFav(post)
+                                binding.likeImBtn.setImageResource(R.drawable.ic_baseline_favorite_24)
+                            }
+
+                        }
+
+                }
+
             }else{
                 binding.deletePostBtn.visibility = View.VISIBLE
                 binding.deletePostBtn.setOnClickListener{

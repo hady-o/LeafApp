@@ -18,7 +18,7 @@ import androidx.core.content.ContextCompat.checkSelfPermission
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
-import com.example.leafapp.admin.AddPostViewModel
+
 import com.example.leafapp.databinding.FragmentAddPostBinding
 import com.example.leafapp.dataclass.PostClass
 import com.google.firebase.firestore.DocumentReference
