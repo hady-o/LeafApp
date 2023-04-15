@@ -58,6 +58,11 @@ class ResultAndTips : Fragment() {
             prediction = it.prediction
         }
 
+        binding.youTubePlayerView.enterFullScreen()
+        binding.youTubePlayerView.toggleFullScreen()
+        lifecycle.addObserver(binding.youTubePlayerView)
+        binding.youTubePlayerView.getPlayerUiController()
+
 
 
         binding.backBtn.setOnClickListener() {

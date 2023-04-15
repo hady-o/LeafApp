@@ -181,9 +181,20 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/cardView">
-
+                    <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+                        android:id="@+id/youTubePlayerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:videoId="Svs0zJsRWaA"
+                        app:autoPlay="true"
+                        app:showYouTubeButton="false"
+                        app:showFullScreenButton="false"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
                     <TextView
-
                         style="@style/sub_hider_txt"
                         android:text="@string/overview"
                         android:textColor="@color/black" />

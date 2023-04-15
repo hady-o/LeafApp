@@ -127,4 +127,6 @@ dependencies {
     implementation"io.noties.markwon:image:$markwon_version"
     implementation"io.noties.markwon:html:$markwon_version"
 
+    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.3'
+
 }
