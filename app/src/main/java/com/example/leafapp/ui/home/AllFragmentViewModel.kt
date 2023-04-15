@@ -17,7 +17,7 @@ class AllFragmentViewModel(application: Application) : AndroidViewModel(applicat
 
 
     init {
-//        refresh()
+        refresh()
         getAllPost()
     }
 

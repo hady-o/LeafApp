@@ -21,6 +21,7 @@ import com.bumptech.glide.Glide
 
 import com.example.leafapp.databinding.FragmentAddPostBinding
 import com.example.leafapp.dataclass.PostClass
+import com.example.leafapp.notification.MyFirebaseMessagingService
 import com.google.firebase.firestore.DocumentReference
 import com.shashank.sony.fancytoastlib.FancyToast
 import com.theartofdev.edmodo.cropper.CropImage
@@ -58,16 +59,24 @@ class AddPostFragment : Fragment() {
             }
         }
 
-//        binding.previewBtn.setOnClickListener {
-//            val post = collectData()
-//            this.findNavController()
-//                .navigate(AddPostFragmentDirections.actionAddPostFragmentToDetalsFragment(post))
-//        }
+        binding.previewBtn.setOnClickListener {
+            if(uri!=null){
+                val post = collectData(uri.toString())
+                this.findNavController()
+                    .navigate(AddPostFragmentDirections.actionAddPostFragmentToDetalsFragment(post))
+            }else{
+                FancyToast.makeText(requireContext(),"please select image",FancyToast.LENGTH_LONG,FancyToast.ERROR,true).show()
+            }
+        }
 
         binding.addPostBtn.setOnClickListener {
             //  val post = collectData()
-            if(!viewModel.isInternetConnected(requireContext())){
-                Toast.makeText(requireContext(), "No Internet Connection", Toast.LENGTH_LONG).show()
+            if(uri==null){
+                FancyToast.makeText(requireContext(),"please select image",FancyToast.LENGTH_LONG,FancyToast.ERROR,true).show()
+            }
+            else if(!viewModel.isInternetConnected(requireContext())){
+                FancyToast.makeText(requireContext(),"No Internet Connection",FancyToast.LENGTH_LONG,FancyToast.ERROR,true).show()
+
             }else{
                 viewModel.uploadPostImage(uri!!)
                 binding.addingPostProgres.visibility= View.VISIBLE
@@ -81,14 +90,21 @@ class AddPostFragment : Fragment() {
                 if(!viewModel.isInternetConnected(requireContext())){
                     Toast.makeText(requireContext(), "No Internet Connection", Toast.LENGTH_LONG).show()
                 }else{
-                    viewModel.addPost(collectData(viewModel.task.value!!))
+                    if (viewModel.task!=null){
+                        viewModel.addPost(collectData(viewModel.task.value!!))
+                    }
                 }
             }
         })
         viewModel.postRes.observe(viewLifecycleOwner, Observer {
             it?.let {
                 binding.addingPostProgres.visibility= View.GONE
+                FancyToast.makeText(requireContext(),"Post has been uploaded successfully",FancyToast.LENGTH_LONG,FancyToast.SUCCESS,true).show()
+                this.findNavController()
+                    .navigate(AddPostFragmentDirections.actionAddPostFragmentToAdminHomeFragment2())
             }
+            var note= MyFirebaseMessagingService()
+            note.sendNotification("new post uploaded",requireActivity())
         })
 
         return binding.root

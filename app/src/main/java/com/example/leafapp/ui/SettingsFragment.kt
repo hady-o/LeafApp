@@ -79,8 +79,8 @@ class SettingsFragment : Fragment(), View.OnClickListener {
             binding.btnAboutUs.id -> {
                 /*Navigation.findNavController(binding.root)
                     .navigate(HomeFragmentDirections.actionHomeFragmentToAboutUsFragment())*/
-                Navigation.findNavController(binding.root)
-                    .navigate(HomeFragmentDirections.actionHomeFragmentToAddPostFragment())
+//                Navigation.findNavController(binding.root)
+//                    .navigate(HomeFragmentDirections.actionHomeFragmentToAddPostFragment())
             }
             binding.btnHelp.id -> {
                 Navigation.findNavController(binding.root)
