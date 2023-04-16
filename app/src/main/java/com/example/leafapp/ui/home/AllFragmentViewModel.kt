@@ -18,13 +18,23 @@ class AllFragmentViewModel(application: Application) : AndroidViewModel(applicat
 
     init {
         refresh()
+        refreshDeletedData()
         getAllPost()
     }
 
-    fun refresh() {
+    private fun refresh() {
         viewModelScope.launch {
             try {
                 repo.refreshData()
+            } catch (e: Exception) {
+            }
+        }
+    }
+
+    private fun refreshDeletedData() {
+        viewModelScope.launch {
+            try {
+                repo.refreshDeletedData()
             } catch (e: Exception) {
             }
         }
@@ -43,17 +53,11 @@ class AllFragmentViewModel(application: Application) : AndroidViewModel(applicat
     }
 
     fun removePost(post:PostClass):List<PostClass>{
-
             val tmpList = _allPosts.value as MutableList<PostClass>
             tmpList.remove(post)
 //            _allPosts.value = tmpList
             return tmpList
 
-    }
-    fun addPost(p:PostClass){
-        viewModelScope.launch {
-            repo.addPost(p)
-        }
     }
 
     fun addToFav(p:PostClass){

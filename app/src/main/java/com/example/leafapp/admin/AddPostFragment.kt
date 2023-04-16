@@ -88,7 +88,7 @@ class AddPostFragment : Fragment() {
         viewModel.task.observe(viewLifecycleOwner, Observer {
             it?.let {
                 if(!viewModel.isInternetConnected(requireContext())){
-                    Toast.makeText(requireContext(), "No Internet Connection", Toast.LENGTH_LONG).show()
+                    FancyToast.makeText(requireContext(),"No Internet Connection",FancyToast.LENGTH_LONG,FancyToast.ERROR,true).show()
                 }else{
                     if (viewModel.task!=null){
                         viewModel.addPost(collectData(viewModel.task.value!!))

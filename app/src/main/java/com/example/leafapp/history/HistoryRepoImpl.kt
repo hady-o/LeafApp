@@ -15,7 +15,6 @@ class HistoryRepoImpl(val database: HistoryDao.PlantRoomDatabase) : HistoryRepo 
             .document(FirebaseAuth.getInstance().currentUser!!.uid)
             .collection("photos")
             .get().addOnCompleteListener{
-
                 for (document in it.result!!) {
                     val tmp = document.getString("className").toString()
                     val l = tmp.split("___")

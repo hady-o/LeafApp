@@ -19,6 +19,7 @@ import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.UploadTask
 import com.google.firebase.storage.ktx.storage
+import com.shashank.sony.fancytoastlib.FancyToast
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.io.ByteArrayOutputStream
@@ -40,8 +41,6 @@ class PostsRepoImpl(val dataBase: PostDao.PostRoomDataBase,var context: Context)
                             document.getString("contents")!!,
                             document.id
                         )
-//                        FancyToast.makeText(context,document.getString("title")!!,FancyToast.LENGTH_SHORT,FancyToast.SUCCESS,false).show()
-////                        FancyToast.makeText(context,)
                         dataBase.dao.inserPosts(p)
                     }
 
@@ -51,8 +50,23 @@ class PostsRepoImpl(val dataBase: PostDao.PostRoomDataBase,var context: Context)
 
     }
 
-
-
+    override suspend fun refreshDeletedData() {
+        withContext(Dispatchers.IO){
+            Firebase.firestore.collection("deletedPosts")
+                .get()
+                .addOnCompleteListener(){
+                    for (document in it.getResult())
+                    {
+                        val postDoc = document.getString("deletedPostDocId")!!
+                        try {
+                            dataBase.dao.deletePost(postDoc)
+                        }catch (e:Exception){
+                            continue
+                        }
+                    }
+                }
+        }
+    }
 
 
     override suspend fun addToFav(post: PostClass) {
@@ -92,11 +106,19 @@ class PostsRepoImpl(val dataBase: PostDao.PostRoomDataBase,var context: Context)
                 return@withContext task
         }
 
-    override suspend fun deletePost(post: PostClass) :Boolean =
+    override suspend fun deletePost(post: PostClass)  =
         withContext(Dispatchers.IO){
            val task = Firebase.firestore.collection("Posts")
-                .document(post.doc).delete()
-            return@withContext task.isSuccessful
+                .document(post.doc).delete().await()
+        }
+
+    override suspend fun addDeletedPost(docId: String) : DocumentReference =
+        withContext(Dispatchers.IO){
+            val doc = HashMap<String,String>()
+            doc.put("deletedPostDocId",docId)
+            val task = Firebase.firestore.collection("deletedPosts")
+                .add(doc).await()
+            return@withContext task
         }
 
 

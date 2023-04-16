@@ -19,6 +19,9 @@ interface PostDao {
     @Query("SELECT * from PostClass where type = :typee")
     fun getSomePosts(typee:String): List<PostClass>
 
+    @Query("delete from PostClass where doc = :docId")
+    fun deletePost(docId:String)
+
 //    @Query("update PostClass SET likeCount=:likes WHERE title = :titlee")
 //    fun updatePost(titlee:String,likes:Int)
 

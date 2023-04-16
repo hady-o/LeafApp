@@ -34,9 +34,6 @@ class AddPostViewModel (application: Application) : AndroidViewModel(application
     val postRes : LiveData<DocumentReference>
         get() = _postRes
 
-    private val _deletePostRes = MutableLiveData<Boolean>()
-    val deletePostRes : LiveData<Boolean>
-        get() = _deletePostRes
 
     fun uploadPostImage(imageUri:Uri){
         viewModelScope.launch {
@@ -50,11 +47,6 @@ class AddPostViewModel (application: Application) : AndroidViewModel(application
         }
     }
 
-    fun deletePost(post:PostClass){
-        viewModelScope.launch {
-            _deletePostRes.value = repo.deletePost(post)
-        }
-    }
 
     fun isInternetConnected(context: Context): Boolean {
         val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager

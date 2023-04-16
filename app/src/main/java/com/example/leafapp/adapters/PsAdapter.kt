@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.leafapp.R
+import com.example.leafapp.admin.DeletePostViewModel
 import com.example.leafapp.databinding.PostCardBinding
 import com.example.leafapp.dataclass.PostClass
 
@@ -26,7 +27,7 @@ import com.google.firebase.ktx.Firebase
 
 
 
-class PsAdapter(val clickListener: PostListenerClass,val viewModel: AllFragmentViewModel) :
+class PsAdapter(val clickListener: PostListenerClass,val viewModel: AllFragmentViewModel,val deleteViewModel:DeletePostViewModel) :
     ListAdapter<PostClass, PsAdapter.ViewHolder>(PostDiffCallBack()) {
 
 
@@ -39,7 +40,7 @@ class PsAdapter(val clickListener: PostListenerClass,val viewModel: AllFragmentV
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         var post = getItem(position)!!
-        holder.postBind(post, clickListener,viewModel)
+        holder.postBind(post, clickListener,viewModel,deleteViewModel)
         holder.itemView.setOnClickListener{
             clickListener.onClick(post)
             com.example.leafapp.ui.home.homemenus.CurrItem.pos = position
@@ -58,7 +59,7 @@ class PsAdapter(val clickListener: PostListenerClass,val viewModel: AllFragmentV
         }
 
         fun postBind(
-            post: PostClass?, clickListener: PostListenerClass, viewModel: AllFragmentViewModel
+            post: PostClass?, clickListener: PostListenerClass, viewModel: AllFragmentViewModel,deleteViewModel:DeletePostViewModel
         ) {
             binding.post = post
 
@@ -106,9 +107,15 @@ class PsAdapter(val clickListener: PostListenerClass,val viewModel: AllFragmentV
             }else{
                 binding.deletePostBtn.visibility = View.VISIBLE
                 binding.deletePostBtn.setOnClickListener{
-                    /* FancyToast.makeText(binding.root.context,"you try to delete : ${post?.title}"
-                         ,FancyToast.LENGTH_LONG,FancyToast.SUCCESS,true).show()*/
-                    CurrItem.deletedPost.value = post;
+
+                    if(deleteViewModel.isInternetConnected(binding.root.context)){
+                        deleteViewModel.deletePost(post!!)
+                        deleteViewModel.addDeletedPost(post.doc)
+                      //  FancyToast.makeText(binding.root.context,"post has been deleted successfully",FancyToast.LENGTH_LONG,FancyToast.SUCCESS,true).show()
+
+                    }else{
+                        FancyToast.makeText(binding.root.context,"No Internet Connection",FancyToast.LENGTH_LONG,FancyToast.ERROR,true).show()
+                    }
                 }
             }
 
@@ -128,7 +135,6 @@ class PsAdapter(val clickListener: PostListenerClass,val viewModel: AllFragmentV
     }
 
     class PostListenerClass(val clickListener: (post: PostClass) -> Unit) {
-
         fun onClick(post: PostClass) = clickListener(post)
     }
 

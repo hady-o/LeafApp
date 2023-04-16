@@ -15,6 +15,7 @@ import com.example.leafapp.Constants
 import com.example.leafapp.R
 import com.example.leafapp.SharedPref
 import com.example.leafapp.adapters.PsAdapter
+import com.example.leafapp.admin.DeletePostViewModel
 import com.example.leafapp.databinding.FragmentUserHomeBinding
 
 import com.example.leafapp.ui.home.AllFragmentViewModel
@@ -28,7 +29,9 @@ class UserHomeFragment : Fragment() {
     private val viewModel: AllFragmentViewModel by lazy {
         ViewModelProvider(this).get(AllFragmentViewModel::class.java)
     }
-
+    private val deleteViewModel: DeletePostViewModel by lazy {
+        ViewModelProvider(this).get(DeletePostViewModel::class.java)
+    }
     @SuppressLint("SetTextI18n", "NotifyDataSetChanged")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,7 +46,7 @@ class UserHomeFragment : Fragment() {
         CurrItem.deleteEnable = false
         val adapter= PsAdapter(PsAdapter.PostListenerClass {
             this.findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDetalsFragment(it))
-        },viewModel)
+        },viewModel,deleteViewModel)
 
 
 

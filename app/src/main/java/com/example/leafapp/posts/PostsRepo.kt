@@ -11,8 +11,10 @@ import com.google.firebase.storage.UploadTask
 interface PostsRepo {
 
     suspend fun refreshData()
+    suspend fun refreshDeletedData()
     suspend fun addPost(post: PostClass): DocumentReference
-    suspend fun deletePost(post: PostClass): Boolean
+    suspend fun deletePost(post: PostClass)
+    suspend fun addDeletedPost(docId:String): DocumentReference
     suspend fun addToFav(post: PostClass)
     suspend fun deleteFromFav(post: PostClass)
     suspend fun uploadPostPhoto(imageUri: Uri): String?
