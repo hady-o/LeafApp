@@ -29,7 +29,9 @@
             <TextView
                 android:id="@+id/welcomeTextId"
                 style="@style/text_style_w25"
-                android:layout_margin="@dimen/_22sdp"
+                android:layout_marginStart="@dimen/_22sdp"
+                android:layout_marginTop="@dimen/_22sdp"
+                android:layout_marginBottom="@dimen/_22sdp"
                 android:text="@string/welcome_back"
                 app:layout_constrainedWidth="true"
                 app:layout_constraintStart_toStartOf="parent"
@@ -38,15 +40,14 @@
             <TextView
                 android:id="@+id/userNameId"
                 style="@style/text_style_w25"
-
-                android:layout_marginEnd="@dimen/_5sdp"
                 android:text="users name"
-                app:layout_constrainedWidth="true"
-                app:autoSizeMinTextSize="@dimen/_1ssp"
+                android:layout_marginTop="@dimen/_22sdp"
+                android:layout_marginStart="@dimen/_3sdp"
+
                 app:autoSizeMaxTextSize="@dimen/_10ssp"
+                app:autoSizeMinTextSize="@dimen/_1ssp"
                 app:autoSizeStepGranularity="1sp"
-                app:layout_constraintBottom_toTopOf="@+id/searchBtnUserHome"
-                app:layout_constraintEnd_toStartOf="@+id/userImage"
+                app:layout_constrainedWidth="true"
                 app:layout_constraintStart_toEndOf="@+id/welcomeTextId"
                 app:layout_constraintTop_toTopOf="parent" />
 

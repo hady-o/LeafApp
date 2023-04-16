@@ -161,7 +161,7 @@ class ProfileFragment : Fragment() {
                     Toast.makeText(requireContext(),getString(R.string.invalid_pass),Toast.LENGTH_LONG).show()
                 }
         }
-        if(image_uri==null && user!!.displayName!!.equals(binding.nameEditText.text))
+        if(image_uri==null && user!!.displayName!!.equals(binding.nameEditText.text)&&binding.phoneEditText.equals(user!!.phoneNumber))
         {
             binding.progressBar.setVisibility(View.GONE)
             binding.editBtn.setEnabled(true)

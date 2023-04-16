@@ -156,14 +156,7 @@
                         app:srcCompat="@drawable/ic_sharp_favorite_border_24"
                         tools:ignore="RedundantDescriptionCheck" />
 
-                    <TextView
-                        android:id="@+id/like_counter"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        tools:text="123"
 
-                        android:textColor="@color/black" />
 
                     <ImageView
                         android:id="@+id/share_im_btn"
@@ -174,17 +167,9 @@
                         app:srcCompat="@drawable/ic_baseline_share_24"
                         tools:ignore="RedundantDescriptionCheck" />
 
-                    <TextView
-                        android:id="@+id/share_counter"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        tools:text="123"
 
-                        android:textColor="@color/black" />
                 </LinearLayout>
             </LinearLayout>
-
         </androidx.cardview.widget.CardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
