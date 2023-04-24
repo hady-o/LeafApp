@@ -7,8 +7,7 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.SettingsFragment"
-    android:background="@color/dark_green">
+    tools:context=".ui.SettingsFragment">
 
     <TextView
         android:id="@+id/settingsTitleId"
@@ -30,9 +29,6 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/_10sdp"
             android:orientation="vertical">
-
-
-
 
             <RelativeLayout
                 android:id="@+id/btnProfile"
@@ -107,29 +103,6 @@
 
             </RelativeLayout>
 
-            <RelativeLayout
-                android:id="@+id/btnChat"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_15sdp"
-                android:layout_marginEnd="@dimen/_15sdp"
-                android:paddingVertical="@dimen/_12sdp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/contact_us"
-                    android:textColor="@color/dark_yellow"
-                    android:textSize="@dimen/_14ssp" />
-
-                <ImageView
-                    android:layout_width="@dimen/_18sdp"
-                    android:layout_height="@dimen/_18sdp"
-                    android:layout_alignParentEnd="true"
-                    android:padding="4dp"
-                    android:src="@drawable/arrow_forward" />
-
-            </RelativeLayout>
 
             <RelativeLayout
                 android:id="@+id/btnAboutUs"

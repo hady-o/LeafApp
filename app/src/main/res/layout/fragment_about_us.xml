@@ -1,9 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.settingstabs.AboutUsFragment">
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/dark_green"
+        tools:context=".ui.settingstabs.AboutUsFragment">
 
+        <ImageView
+            android:id="@+id/imageView12"
+            android:layout_width="match_parent"
+            android:layout_height="195dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/ic_logo" />
 
-</LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="10dp"
+                android:text="@string/about_us_text"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15ssp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:drawablePadding="@dimen/_7sdp"
+                android:text="Our Team: "
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15ssp"
+                app:drawableStartCompat="@drawable/ic_team_members_24dp" />
+
+            <TextView
+                android:id="@+id/textView17"
+                style="@style/about_us_names"
+                android:text="Hady Ahmed" />
+
+            <TextView
+                android:id="@+id/textView16"
+                style="@style/about_us_names"
+                android:text="Hady Atef" />
+
+            <TextView
+                android:id="@+id/textView15"
+                style="@style/about_us_names"
+                android:text="Hady Ehab" />
+
+            <TextView
+                android:id="@+id/textView19"
+                style="@style/about_us_names"
+                android:text="Hany Mohamed" />
+
+            <TextView
+                android:id="@+id/textView18"
+                style="@style/about_us_names"
+                android:text="Haitham Mahmoud" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingVertical="@dimen/_5sdp"
+                android:paddingHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:backgroundTint="@color/dark_yellow"
+                android:text="Contact Us"
+                style="@style/primary_btn_style"
+                android:textAllCaps="false"
+                android:textSize="@dimen/_16ssp"
+                app:cornerRadius="@dimen/_10sdp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

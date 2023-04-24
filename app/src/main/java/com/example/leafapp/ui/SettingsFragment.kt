@@ -44,7 +44,8 @@ class SettingsFragment : Fragment(), View.OnClickListener {
         binding.btnProfile.setOnClickListener(this)
         binding.btnAboutUs.setOnClickListener(this)
         binding.btnHelp.setOnClickListener(this)
-        binding.btnChat.setOnClickListener(this)
+        //binding.btnChat.setOnClickListener(this)
+        binding.postAddingBtn.setOnClickListener(this)
     }
 
     override fun onClick(view: View?) {
@@ -79,17 +80,17 @@ class SettingsFragment : Fragment(), View.OnClickListener {
             binding.btnAboutUs.id -> {
                 /*Navigation.findNavController(binding.root)
                     .navigate(HomeFragmentDirections.actionHomeFragmentToAboutUsFragment())*/
-//                Navigation.findNavController(binding.root)
-//                    .navigate(HomeFragmentDirections.actionHomeFragmentToAddPostFragment())
+               /*Navigation.findNavController(binding.root)
+                  .navigate(HomeFragmentDirections.actionHomeFragmentToAddPostFragment())*/
             }
             binding.btnHelp.id -> {
                 Navigation.findNavController(binding.root)
                     .navigate(HomeFragmentDirections.actionHomeFragmentToHelpFragment())
             }
-            binding.btnChat.id -> {
+            /*binding.btnChat.id -> {
                 Navigation.findNavController(binding.root)
                     .navigate(HomeFragmentDirections.actionHomeFragmentToContactFragment())
-            }
+            }*/
             binding.postAddingBtn.id -> {
                 Navigation.findNavController(binding.root)
                     .navigate(HomeFragmentDirections.actionHomeFragmentToAboutUsFragment())
