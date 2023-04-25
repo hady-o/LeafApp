@@ -8,14 +8,21 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:background="@color/dark_green"
+        android:padding="@dimen/_12sdp"
         tools:context=".ui.settingstabs.AboutUsFragment">
+
+        <ImageView
+            android:id="@+id/backBtn"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_back_fill0_wght500_grad200_opsz48"/>
 
         <ImageView
             android:id="@+id/imageView12"
             android:layout_width="match_parent"
             android:layout_height="195dp"
             android:layout_gravity="center"
-            android:layout_marginTop="15dp"
             android:src="@drawable/ic_logo" />
 
         <LinearLayout
@@ -27,9 +34,6 @@
                 android:id="@+id/textView12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginEnd="10dp"
                 android:text="@string/about_us_text"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_15ssp" />
@@ -37,9 +41,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_7sdp"
                 android:drawablePadding="@dimen/_7sdp"
                 android:text="Our Team: "
                 android:textColor="@color/white"

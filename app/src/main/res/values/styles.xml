@@ -212,8 +212,6 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:drawableStart">@drawable/ic_developer_24dp</item>
         <item name="android:drawablePadding">10dp</item>
-        <item name="android:layout_marginStart">@dimen/_10sdp</item>
-        <item name="android:layout_marginEnd">@dimen/_10sdp</item>
         <item name="android:layout_marginBottom">@dimen/_5sdp</item>
         <item name="android:padding">5dp</item>
         <item name="android:textColor">@color/dark_yellow</item>

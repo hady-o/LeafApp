@@ -70,6 +70,10 @@
     <string name="delete_post" translatable="false">Delete Post</string>
     <string name="not_channel_id" translatable="false">channelId</string>
     <string name="about_us_text">Welcome to our plant disease detection app! Our app was created to help farmers, gardeners, and anyone else who cares about plants to easily identify and diagnose plant diseases.</string>
+    <string name="different_way_to_communicate">Need a different way to communicate?</string>
+    <string name="subject">Subject</string>
+    <string name="message">Message</string>
+    <string name="submit">Submit</string>
 
 
 </resources>

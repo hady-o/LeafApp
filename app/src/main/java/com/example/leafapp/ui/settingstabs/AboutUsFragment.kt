@@ -23,6 +23,10 @@ class AboutUsFragment : Fragment() {
             Navigation.findNavController(binding.root).navigate(AboutUsFragmentDirections.actionAboutUsFragmentToContactFragment())
         }
 
+        binding.backBtn.setOnClickListener {
+            Navigation.findNavController(binding.root).navigate(AboutUsFragmentDirections.actionAboutUsFragmentToHomeFragment(2))
+        }
+
         return binding.root
     }
 

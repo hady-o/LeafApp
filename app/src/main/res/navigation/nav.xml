@@ -200,6 +200,9 @@
         <action
             android:id="@+id/action_aboutUsFragment_to_contactFragment"
             app:destination="@id/contactFragment" />
+        <action
+            android:id="@+id/action_aboutUsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/diseaseFragment2"
@@ -216,7 +219,11 @@
         android:id="@+id/contactFragment"
         android:name="com.example.leafapp.ui.settingstabs.ContactFragment"
         android:label="fragment_contact"
-        tools:layout="@layout/fragment_contact" />
+        tools:layout="@layout/fragment_contact" >
+        <action
+            android:id="@+id/action_contactFragment_to_aboutUsFragment"
+            app:destination="@id/aboutUsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/helpFragment"
         android:name="com.example.leafapp.ui.settingstabs.HelpFragment"

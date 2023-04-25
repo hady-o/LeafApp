@@ -42,6 +42,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/profile"
+                    app:drawableStartCompat="@drawable/profile_icon_for_light"
+                    android:drawablePadding="@dimen/_5sdp"
                     android:textColor="@color/dark_yellow"
                     android:textSize="@dimen/_14ssp" />
 
@@ -66,6 +68,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/notifications"
+                    app:drawableStartCompat="@drawable/ic_team_members_24dp"
+                    android:drawablePadding="@dimen/_5sdp"
                     android:textColor="@color/dark_yellow"
                     android:textSize="@dimen/_14ssp" />
 
@@ -91,6 +95,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/help"
+                    app:drawableStartCompat="@drawable/ic_team_members_24dp"
+                    android:drawablePadding="@dimen/_5sdp"
                     android:textColor="@color/dark_yellow"
                     android:textSize="@dimen/_14ssp" />
 
@@ -118,6 +124,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/add_post"
+                    app:drawableStartCompat="@drawable/ic_twotone_add_box_24"
+                    android:drawablePadding="@dimen/_5sdp"
                     android:textColor="@color/dark_yellow"
                     android:textSize="@dimen/_14ssp" />
 
@@ -145,6 +153,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/about_us"
+                    app:drawableStartCompat="@drawable/ic_team_members_24dp"
+                    android:drawablePadding="@dimen/_5sdp"
                     android:textColor="@color/dark_yellow"
                     android:textSize="@dimen/_14ssp" />
 
