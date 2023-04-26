@@ -40,12 +40,11 @@ class SettingsFragment : Fragment(), View.OnClickListener {
     private fun setClickListeners() {
         binding.rbEnglish.setOnClickListener(this)
         binding.rbArabic.setOnClickListener(this)
-        binding.btnLogOut.setOnClickListener(this)
+        binding.signOut.setOnClickListener(this)
         binding.btnProfile.setOnClickListener(this)
         binding.btnAboutUs.setOnClickListener(this)
         binding.btnHelp.setOnClickListener(this)
         //binding.btnChat.setOnClickListener(this)
-        binding.postAddingBtn.setOnClickListener(this)
     }
 
     override fun onClick(view: View?) {
@@ -66,7 +65,7 @@ class SettingsFragment : Fragment(), View.OnClickListener {
                 }
                 SharedPref.language = tempLanguage
             }
-            binding.btnLogOut.id -> {
+            binding.signOut.id -> {
                 FirebaseAuth.getInstance().signOut()
                 AuthUI.getInstance().signOut(requireContext())
                 Navigation.findNavController(binding.root)
@@ -78,10 +77,8 @@ class SettingsFragment : Fragment(), View.OnClickListener {
                     .navigate(HomeFragmentDirections.actionHomeFragmentToProfileFragment())
             }
             binding.btnAboutUs.id -> {
-                /*Navigation.findNavController(binding.root)
-                    .navigate(HomeFragmentDirections.actionHomeFragmentToAboutUsFragment())*/
-               /*Navigation.findNavController(binding.root)
-                  .navigate(HomeFragmentDirections.actionHomeFragmentToAddPostFragment())*/
+                Navigation.findNavController(binding.root)
+                    .navigate(HomeFragmentDirections.actionHomeFragmentToAboutUsFragment())
             }
             binding.btnHelp.id -> {
                 Navigation.findNavController(binding.root)
@@ -90,11 +87,13 @@ class SettingsFragment : Fragment(), View.OnClickListener {
             /*binding.btnChat.id -> {
                 Navigation.findNavController(binding.root)
                     .navigate(HomeFragmentDirections.actionHomeFragmentToContactFragment())
-            }*/
-            binding.postAddingBtn.id -> {
-                Navigation.findNavController(binding.root)
-                    .navigate(HomeFragmentDirections.actionHomeFragmentToAboutUsFragment())
             }
+            binding.postAddingBtn.id -> {
+                /*Navigation.findNavController(binding.root)
+                    .navigate(HomeFragmentDirections.actionHomeFragmentToAboutUsFragment())*/
+                /*Navigation.findNavController(binding.root)
+                   .navigate(HomeFragmentDirections.actionHomeFragmentToAddPostFragment())*/
+            }*/
         }
     }
 

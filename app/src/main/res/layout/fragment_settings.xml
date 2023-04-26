@@ -14,7 +14,7 @@
         style="@style/text_style_w25"
         android:layout_margin="@dimen/_22sdp"
         android:text="@string/settings"
-        android:textColor="@color/dark_yellow"
+        android:textColor="@color/dark_green"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -42,9 +42,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/profile"
-                    app:drawableStartCompat="@drawable/profile_icon_for_light"
+                    app:drawableStartCompat="@drawable/profile_icon"
                     android:drawablePadding="@dimen/_5sdp"
-                    android:textColor="@color/dark_yellow"
+                    android:textColor="@color/dark_green"
                     android:textSize="@dimen/_14ssp" />
 
                 <ImageView
@@ -68,9 +68,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/notifications"
-                    app:drawableStartCompat="@drawable/ic_team_members_24dp"
+                    app:drawableStartCompat="@drawable/notification_icon"
                     android:drawablePadding="@dimen/_5sdp"
-                    android:textColor="@color/dark_yellow"
+                    android:textColor="@color/dark_green"
                     android:textSize="@dimen/_14ssp" />
 
                 <ImageView
@@ -89,15 +89,14 @@
                 android:layout_marginEnd="@dimen/_15sdp"
                 android:id="@+id/btnHelp"
                 android:paddingVertical="@dimen/_12sdp">
-
                 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/help"
-                    app:drawableStartCompat="@drawable/ic_team_members_24dp"
+                    app:drawableStartCompat="@drawable/help_icon"
                     android:drawablePadding="@dimen/_5sdp"
-                    android:textColor="@color/dark_yellow"
+                    android:textColor="@color/dark_green"
                     android:textSize="@dimen/_14ssp" />
 
                 <ImageView
@@ -108,7 +107,6 @@
                     android:src="@drawable/arrow_forward" />
 
             </RelativeLayout>
-
 
             <RelativeLayout
                 android:id="@+id/btnAboutUs"
@@ -123,10 +121,10 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/add_post"
-                    app:drawableStartCompat="@drawable/ic_twotone_add_box_24"
+                    android:text="@string/about_us"
+                    app:drawableStartCompat="@drawable/ic_team_members_24dp"
                     android:drawablePadding="@dimen/_5sdp"
-                    android:textColor="@color/dark_yellow"
+                    android:textColor="@color/dark_green"
                     android:textSize="@dimen/_14ssp" />
 
                 <ImageView
@@ -139,23 +137,21 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/postAdding_btn"
+                android:id="@+id/signOut"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_15sdp"
                 android:layout_marginEnd="@dimen/_15sdp"
-                android:layout_marginBottom="@dimen/_25sdp"
-                android:clickable="true"
-                android:focusable="true"
+                android:layout_marginBottom="@dimen/_20sdp"
                 android:paddingVertical="@dimen/_12sdp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/about_us"
-                    app:drawableStartCompat="@drawable/ic_team_members_24dp"
+                    android:text="@string/sign_out"
+                    app:drawableStartCompat="@drawable/sign_out_icon"
                     android:drawablePadding="@dimen/_5sdp"
-                    android:textColor="@color/dark_yellow"
+                    android:textColor="@color/dark_green"
                     android:textSize="@dimen/_14ssp" />
 
                 <ImageView
@@ -181,9 +177,9 @@
                     android:id="@+id/rbArabic"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:buttonTint="@color/dark_yellow"
+                    android:buttonTint="@color/dark_green"
                     android:text="@string/arabic"
-                    android:textColor="@color/dark_yellow"
+                    android:textColor="@color/dark_green"
                     android:textSize="@dimen/_13ssp" />
 
                 <RadioButton
@@ -191,26 +187,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_25sdp"
-                    android:buttonTint="@color/dark_yellow"
+                    android:buttonTint="@color/dark_green"
                     android:text="@string/english"
-                    android:textColor="@color/dark_yellow"
+                    android:textColor="@color/dark_green"
                     android:textSize="@dimen/_13ssp" />
             </RadioGroup>
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnLogOut"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/_15sdp"
-                android:layout_marginTop="@dimen/_15sdp"
-                android:layout_marginBottom="@dimen/_20sdp"
-                android:backgroundTint="@color/dark_yellow"
-                android:padding="@dimen/_12sdp"
-                android:text="@string/sign_out"
-                android:textAllCaps="false"
-                style="@style/primary_btn_style"
-                android:textColor="@color/white"
-                android:textSize="@dimen/_14ssp" />
         </androidx.appcompat.widget.LinearLayoutCompat>
     </ScrollView>
 
