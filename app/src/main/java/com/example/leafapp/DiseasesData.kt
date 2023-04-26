@@ -116,7 +116,7 @@ object DiseasesData {
                     cause = it[4],
                     howItStared = it[5],
                     tips = it[6],
-                    code = it[6]
+                    code = it[7]
                 )
                 lookUp[it[0]] = tmp
                 if(it[0].equals(Constants.ID,true).not())
