@@ -49,6 +49,7 @@ class ResultAndTips : Fragment() {
             "",
             "",
             "",
+            "",
             ""
         )
         val args = arguments?.let { ResultAndTipsArgs.fromBundle(it) }

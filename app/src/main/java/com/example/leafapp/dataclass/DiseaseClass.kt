@@ -7,6 +7,7 @@ data class DiseaseClass(
     var symptoms: String,
     var cause: String,
     var howItStared: String,
-    var tips: String
+    var tips: String,
+    var code: String
 
 )
