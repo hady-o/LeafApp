@@ -1,20 +1,27 @@
-id,Plants,Diseases,Contant,overview,code
-Alstonia Scholaris___Galls,Alstonia Scholaris,Galls,"## Overview 
- nan 
+id,Plants,Diseases,Content,overview,code
+Alstonia Scholaris___Galls,Alstonia Scholaris,Galls,"## Overview
+ Plant galls are abnormal outgrowths of plant tissues, similar to benign tumors or warts in animals. They can be caused by various parasites, from viruses, fungi and bacteria, to other plants, insects and mites.
 ## Symptoms 
- The symptoms of gall diseases on Alstonia scholaris can vary depending on the pathogen involved. However, some common symptoms include:
+ The symptoms of gall disease on Alstonia Scholaris can vary depending on the pathogen involved. However, some common symptoms include:
 * Abnormal growths or swellings on the leaves, stems, and/or roots of the plant
 * Discoloration of the affected areas, which may turn yellow, brown, or black.
 * Twisted or distorted growth of stems or leaves
 * Reduced growth or stunted growth of the plant
 * Premature leaves drop or defoliation.
-* Dieback of twigs or branches
+* Die back of twigs or branches
 * Formation of hard, woody galls on the plant, which may contain the pathogen responsible for the disease. 
 ## Cause 
- nan 
+ Various parasites, insects & mites
 ## Tips 
- nan 
-",,rady
+ * Select resistant cultivars when possible and purchase plants from a reputable nursery.
+ * Do not buy plants that shows signs of swelling or galling.
+ * When caring for susceptible plants, avoid injury or pruning wounds that may come in contact with the soil.
+ * Use Tree Wrap to protect against string trimmer damage and keep your garden tools clean.
+ * Provide winter protection with natural burlap so bark does not crack.
+ * In many cases, existing galls can be removed with a sharp pruning knife. Destroy the infected plant tissue and treat the wound with pruning sealer. If the plant does not recover, remove and destroy it.
+
+
+",Plant galls are abnormal outgrowths of plant tissues. ,rady
 Apple___Apple_scab,Apple,Apple scab,"## Overview 
  * Fungus overwinters on dead foliage on the ground.
 * Spores dispersed by wind.
@@ -42,7 +49,7 @@ Apple___Black_rot,Apple,Black rot,"## Overview
  * Purple flecks or circular lesions which are brown in the center and purple at the margin.
 * Red flecks, purple lesions and/or brown-black rings on fruit. 
 ## Cause 
- Fungus Botryosphaeria obtusa 
+ Fungus Botryosphaeria obtusa
 ## Tips 
  * Remove dead wood, mummified fruit, and cankers from trees to reduce the spread of disease.
 * Burn any pruning that has been made from the tree.
@@ -62,28 +69,34 @@ Apple___Cedar_apple_rust,Apple,Cedar apple rust,"## Overview
  * Plant disease-resistant varieties where possible.
 * Remove nearby red cedar.
 * If growing susceptible varieties in proximity to red cedar, follow a fungicide program. 
-","* Fungus needs two hosts to complete its lifecycle.
-* It forms a gall on Eastern red cedar.
-* The spores of the fungus are carried by the wind from the red cedar to the apple.
-* It is important to exercise caution when planting apple trees close to Eastern red cedar.",rady
+",It forms a gall on Eastern red cedar.,rady
 Arjun___Leaf Curl,Arjun,Leaf Curl,"## Overview 
- nan 
+ Leaf curl disease of Arjun plant is a viral disease that affects the leaves of the Arjun tree (Terminalia arjuna). The disease is transmitted by whiteflies (Bemisia tabaci) in a persistent manner.
 ## Symptoms 
- nan 
+ *	Curling and crinkling of leaves, which may also become thickened and have a leathery texture.
+ *	The leaves may also show discoloration, with yellow or white patches appearing on the upper surface of the leaves.
+ *	In severe cases, the leaves may become distorted and stunted, and the growth of the plant may be affected.
 ## Cause 
- nan 
+ Begomovirus
 ## Tips 
- nan 
-",,rady
+ *	The use of insecticides to control whiteflies, which are the vectors of the virus. However, it is important to use these chemicals judiciously and in a manner that minimizes harm to the environment.
+ *	Cultural practices such as removing infected leaves and destroying them can also help to reduce the spread of the disease.
+ *	Planting resistant varieties of Arjun tree is also recommended as a long-term solution for preventing the disease.
+
+",Leaf curl disease of Arjun plant is a viral disease that affects the leaves of the Arjun tree (Terminalia arjuna). ,rady
 Bael___leaf spot,Bael,leaf spot,"## Overview 
- nan 
+ Leaf spot disease of bael plant is a fungal disease that affects the leaves of the bael tree (Aegle marmelos).
 ## Symptoms 
- nan 
+ * The appearance of small, circular or irregularly shaped spots on the leaves. These spots may be brown or black in color, with a yellow halo surrounding them.
+ * As the disease progresses, the spots may merge and cause the leaves to turn yellow, wither, and eventually drop off.
 ## Cause 
- nan 
+ Fungi like Alternaria & Phyllosticta
 ## Tips 
- nan 
-",,rady
+ * The use of fungicides to control the spread of the fungus.
+ * Maintaining good sanitation practices, such as cleaning garden tools and avoiding overcrowding of plants, can also help to prevent the disease from spreading.
+ * Planting resistant cultivars of bael tree is also recommended as a long-term solution for preventing the disease.
+
+",Leaf spot disease of bael plant is a fungal disease that affects the leaves of the bael tree (Aegle marmelos). ,rady
 Cherry_(including_sour)___Powdery_mildew,Cherry_(including_sour),Powdery mildew,"## Overview 
  Infection of fruit is more likely if there are rainfalls close to harvest. 
 ## Symptoms 
@@ -97,14 +110,19 @@ Cherry_(including_sour)___Powdery_mildew,Cherry_(including_sour),Powdery mildew,
  Management of powdery mildew in cherry is reliant on the application of appropriate fungicides and cultural practices which promote good air circulation around tree canopies to lower humidity. 
 ",Infection of fruit is more likely if there are rainfalls close to harvest.,rady
 Chinar ___Black_rot,Chinar,Black rot,"## Overview 
- nan 
-## Symptoms 
- nan 
+ Spores can overwinter in twigs or fruit remaining on the tree and spread during rainfall.
+## Symptoms
+  *  Black or dark brown spots on the leaves that may spread and join together, causing the leaves to wilt and die.
+  *  The bark of the tree becomes cracked and dark, with sunken cankers that exude a sticky liquid.
+  *  The branches of the tree may become distorted and die back.
+  *  The tree may show signs of stunted growth, reduced vigor, and overall decline.
 ## Cause 
- nan 
+ Fungus Botryosphaeria obtusa
 ## Tips 
- nan 
-",,rady
+ * Remove dead wood, mummified fruit, and cankers from trees to reduce the spread of disease.
+ * Burn any pruning that has been made from the tree.
+ * Controlling the disease by applying fungicides on silver tips to harvest.
+",Spores can overwinter in twigs or fruit remaining on the tree and spread during rainfall.,rady
 coffee___Rust,Coffee,Rust,"## Overview 
  Coffee Rust disease does not affect rice plants, but coffee plants. However, to answer your question, coffee rust disease starts when spores of the fungal pathogen Hemileia vastatrix come into contact with a coffee plant. The spores can be spread by wind or rain, or they can be present in infected plant debris or soil. Once the spores land on a coffee plant, they germinate and penetrate the leaf tissue, where they form yellow-orange powdery spots on the upper surface of the leaves. 
 ## Symptoms 
@@ -284,14 +302,25 @@ Properly apply nitrogen and plant growth regulators to produce sufficient vegeta
 When considering fungicide applications, keep in mind that while two applications of fungicide have consistently reduced disease and defoliation due to target spot, yield responses have been variable in Tennessee. 
 ","The disease affects mainly older leaves of mature plants. Reddish lesions will appear on these leaves during the early stages of the infection. As the disease progresses, the lesions enlarge and turn white to light brown or gray in the center with a purple, dark brown or blackish margin. The lesions are circular or irregular in shape and vary in size depending on the time of infection. A concentric zonation of the spots occurs, alternating dark and light brown or red margins. Affected leaves eventually become pale in color and finally fall off. ",rady
 Guava___Die Back,Guava,Die Back,"## Overview 
- nan 
+ The plant begins to die backwards form the top of a branch.
 ## Symptoms 
- nan 
+ *	Die back phase: The plant begins to die backward from the top of a branch.
+ *	Young shoots, leaves, and fruits are readily attached, while they are still tender. The greenish color of the growing tip is changed to dark brown and later to black necrotic areas extending backward.
+ *	The fungus develops from the infected twigs and then petiole and young leaves which may drop down or fall leaving the dried twigs without leaves.
+ *	Fruit and leaf infection phase: Fruit and leaf infection is generally seen during rainy season crops. Pin-head spots are first seen on unripe fruits, which gradually enlarge.
+ *	Spots are dark brown in color, sunken, circular, and have minute black stromata in the center of the lesion, which produce creamy spore masses in moist weather.
+ *	Several spots coalesce to form bigger lesions.
+ *	The infected area on unripe fruits becomes corky and hardy and often develops cracks in case of severe infection.
+ *	Unopened buds and flowers are also affected which causes their shedding.
+ *	On leaves, the fungus causes necrotic lesions usually ashy grey, and bear fruiting bodies at the tip or on the margin.
+
 ## Cause 
  Fungus Botryosphaeriaceae 
 ## Tips 
- nan 
-",,rady
+ *	Mark diseased wood and remove branches or entire vines. 
+ *	Prune later in the dormant period to avoid the peak of spore production.
+ *	Extra irrigation may help manage symptom severity but avoid overhead irrigation.
+",The plant begins to die backwards form the top of a branch.,rady
 Grape___Black_rot,Grapes,Black rot,"## Overview 
  The disease favors rainy weather; spores may ooze out during rain. 
 ## Symptoms 
@@ -299,7 +328,7 @@ Grape___Black_rot,Grapes,Black rot,"## Overview
 grapes have light spots that eventually form pycnidia; 
 grapes harden and turn black, while still remaining on the vine. 
 ## Cause 
- Fungus 
+ Fungus Botryosphaeria obtusa
 ## Tips 
  Remove all mummified fruit from vines during dormant pruning;
 cultivate soil during bud break to bury mummies and reduce inoculant;
@@ -560,14 +589,17 @@ cracked brown lesions on fruit.
 ","Disease emergence favored by warm, wet conditions.
 The pathogen can enter a field on seed and transplants and can be spread within a field by wind-driven rain, clipping plants, and aerosols.",rady
 Pomegranate___Powdery_mildew,Pomegranate,Powdery mildew,"## Overview 
- nan 
-## Symptoms 
- nan 
-## Cause 
- nan 
-## Tips 
- Non-chemical control methods: 
-",,rady
+ Infection of fruit is more likely if there are rainfalls close to harvest.
+ ## Symptoms
+  * Light-colored circular lesions on leaves inside the tree canopy which develop a powdery appearance.
+ * Lesions may coalesce to cover the leaf.
+ * If the infection is severe, leaves may blister and infected shoots may be distorted and stunted.
+ * Infected fruits may have slightly depressed areas on the surface containing fungal hyphae (filamentous fungal structures).
+ ## Cause
+  Fungus Podosphaera clandestina
+ ## Tips
+  Management of powdery mildew in pomegranate is reliant on the application of appropriate fungicides and cultural practices which promote good air circulation around tree canopies to lower humidity.
+ ",Infection of fruit is more likely if there are rainfalls close to harvest.,rady
 PongamiaPinnata___mosaic_virus,Pongamia Pinnata,mosaic virus,"## Overview 
  nan 
 ## Symptoms 

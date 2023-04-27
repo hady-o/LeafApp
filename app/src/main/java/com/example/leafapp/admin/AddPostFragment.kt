@@ -123,7 +123,7 @@ class AddPostFragment : Fragment() {
             uri,
             cat,
             "",
-            binding.postContant.text.toString(),
+            binding.postContent.text.toString(),
             ""
         )
         return post
