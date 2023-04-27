@@ -194,51 +194,76 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         />
+
+                    <TextView
+                        android:id="@+id/res_makrdown_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="15dp"
+                        tools:text="TextView"
+                        android:textColor="@color/black"
+                         />
+
                     <TextView
                         style="@style/sub_hider_txt"
                         android:text="@string/overview"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/black"
+                        android:visibility="gone"/>
 
                     <TextView
                         android:id="@+id/overview"
                         style="@style/content_txt"
                         android:text="@{disease.howItStared}"
-                        tools:text="Text overview" />
+                        tools:text="Text overview"
+                        android:visibility="gone"
+                        />
 
                     <TextView
 
                         style="@style/sub_hider_txt"
                         android:text="@string/symptom"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/black"
+                        android:visibility="gone"
+                        />
 
                     <TextView
                         android:id="@+id/symptom"
                         style="@style/content_txt"
                         android:text="@{disease.symptoms}"
-                        tools:text="Text overview" />
+                        tools:text="Text overview"
+                        android:visibility="gone"
+                        />
 
                     <TextView
                         style="@style/sub_hider_txt"
                         android:text="@string/cause"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/black"
+                        android:visibility="gone"
+                        />
 
                     <TextView
                         android:id="@+id/Cause"
                         style="@style/content_txt"
                         android:text="@{disease.cause}"
-                        tools:text="Text overview" />
+                        tools:text="Text overview"
+                        android:visibility="gone"
+                        />
 
                     <TextView
 
                         style="@style/sub_hider_txt"
                         android:text="@string/treatment"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/black"
+                        android:visibility="gone"
+                        />
 
                     <TextView
                         android:id="@+id/treatment"
                         style="@style/content_txt"
                         android:text="@{disease.tips}"
-                        tools:text="Text overview" />
+                        tools:text="Text overview"
+                        android:visibility="gone"
+                        />
 
                 </LinearLayout>
 

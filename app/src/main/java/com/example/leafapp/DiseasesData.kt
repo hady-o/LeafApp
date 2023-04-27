@@ -98,9 +98,9 @@ object DiseasesData {
     fun loadData(asset: AssetManager) {
 
         inputStream = if(SharedPref.language.equals(Constants.ENGLISH,true))
-            InputStreamReader(asset.open("Data/DiseasesDescription.csv"))
+            InputStreamReader(asset.open("Data/newRes_DiseasesDescription.csv"))
         else
-            InputStreamReader(asset.open("Data/ArabicDiseasesDescription.csv"))
+            InputStreamReader(asset.open("Data/newRes_Ar_DiseasesDescription.csv"))
         val reader = BufferedReader(inputStream)
         val csvPars = CSVParser.parse(
             reader,
@@ -113,10 +113,10 @@ object DiseasesData {
                     plantName = it[1],
                     diseaseName = it[2],
                     symptoms = it[3],
-                    cause = it[4],
-                    howItStared = it[5],
-                    tips = it[6],
-                    code = it[7]
+                    "cause = it[4]",
+                    howItStared = it[4],
+                    "tips = it[6]",
+                    code = it[5]
                 )
                 lookUp[it[0]] = tmp
                 if(it[0].equals(Constants.ID,true).not())

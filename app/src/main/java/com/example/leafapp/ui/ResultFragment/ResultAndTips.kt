@@ -23,6 +23,10 @@ import com.example.leafapp.dataclass.DiseaseClass
 import com.example.leafapp.dataclass.PostClass
 import com.example.leafapp.ui.home.homemenus.DiseaseFragment
 import com.google.common.reflect.Reflection.getPackageName
+import io.noties.markwon.Markwon
+import io.noties.markwon.html.HtmlPlugin
+import io.noties.markwon.image.ImagesPlugin
+import io.noties.markwon.image.glide.GlideImagesPlugin
 
 class ResultAndTips : Fragment() {
 
@@ -39,6 +43,13 @@ class ResultAndTips : Fragment() {
     ): View? {
         binding = FragmentResultAndTipsBinding.inflate(layoutInflater)
         viewModel = ViewModelProvider(this)[ResultAndTipsViewModel::class.java]
+        val markwon: Markwon =
+            Markwon.builder(requireContext()) // automatically create Glide instance
+                .usePlugin(ImagesPlugin.create())
+                .usePlugin(GlideImagesPlugin.create(requireContext())) // use supplied Glide instance
+                .usePlugin(GlideImagesPlugin.create(Glide.with(requireContext())))
+                .usePlugin(HtmlPlugin.create())
+                .build()
         viewModel.context = requireContext()
         viewModel.resources = resources
         viewModel.activity = requireActivity()
@@ -91,6 +102,7 @@ class ResultAndTips : Fragment() {
             if (it != null) {
                 binding.disease = it
                 binding.fail.visibility = View.GONE
+                markwon.setMarkdown(binding.resMakrdownTxt,it.symptoms)
 
             } else {
                 binding.resLv.visibility = View.GONE
