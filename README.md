@@ -3,7 +3,8 @@
 # Plant Disease Detection Android App
 
 <p align="center">
-  <img src="![image](https://user-images.githubusercontent.com/76757642/236619322-5c1f6b47-cb20-43d8-9315-98467967117c.png)"  style="width: 200px; height: 200px;" />
+  <img src="![image](https://user-images.githubusercontent.com/76757642/236619490-b5e09b73-0ef9-49a0-a625-c5d42c2d97e5.png)"  
+       style="width: 200px; height: 200px;" />
 </p>
 
 
