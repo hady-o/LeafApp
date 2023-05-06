@@ -1,7 +1,6 @@
-  <p align="center">
-  ![image](https://user-images.githubusercontent.com/76757642/236619163-0c2df670-a18e-4e17-a887-669869647fdc.png)
-   alt="Image" style="width: 200px; height: 200px;" />
-
+ <p align="center">
+  <img src="https://example.com/image.png" alt="Image" style="width: 200px; height: 200px;" />
+</p>
 
 # Plant Disease Detection Android App
 
