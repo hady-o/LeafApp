@@ -1,15 +1,20 @@
 # Plant Disease Detection Android App
 
-This is an Android app for detecting plant diseases using MobileNet V2 model. The app is built using Kotlin programming language and follows MVVM design pattern with Repository Architecture and Coroutines. The app also integrates Firebase for backend, including 3 types of authentication and Firebase Cloud Messaging (FCM) for push notifications. Additionally, the app supports voice search in both Arabic and English languages.
+This is an Android app for detecting plant diseases using MobileNet V2 model and Our proposed model. The app is built using Kotlin programming language and follows MVVM design pattern with Repository pattern using Coroutines and Room Database. The app also integrates Firebase for backend, including 3 types of authentication and Firebase Cloud Messaging (FCM) for push notifications. Additionally, the app supports voice search in both Arabic and English languages.
 
 ## Features
 
-- Detects plant diseases using MobileNet V2 model
+- Detects plant diseases using MobileNet V2 model and Our proposed model
 - Provides tips for users based on the classification of the input image
 - Supports voice search in Arabic and English languages
-- Includes 3 types of authentication through Firebase (email/password, Google, and Facebook)
+- Includes 3 types of authentication through Firebase (email/password, Google, and phone)
 - Uses Firebase Cloud Messaging (FCM) for push notifications
-- Follows MVVM design pattern with Repository Architecture and Coroutines
+- Follows MVVM design pattern with Repository pattern using Coroutines and Room Database
+- Videos for diseases & tips (English & Arabic)
+- Language Support
+- Posts added by the admin
+- Sharing posts & classification results via other apps
+- Ofline classification
 
 ## Usage
 
@@ -18,23 +23,27 @@ Upon launching the app, users can either choose to capture an image of the plant
 ## Technologies Used
 
 - Kotlin programming language
-- MobileNet V2 model for plant detection
+- python
+- TF lite
 - Firebase for backend and authentication
 - Firebase Cloud Messaging (FCM) for push notifications
-- MVVM design pattern with Repository Architecture and Coroutines
-
-## Installation
-
-To use the app, simply download it from the Google Play Store. The app requires Android 7.0 or higher to run.
+- MVVM design pattern
+- Repository pattern 
+- Coroutines
+- Room Database
 
 ## Credits
 
-This app was developed by [Your Name] as a project for [Name of Course/Program]. The MobileNet V2 model used in this app was trained on the [Name of Dataset] dataset. The app also uses [Name of Library/Framework] for [Purpose of Library/Framework].
+# This app was developed by: 
+- Hady Atef
+- Hady Ahmed
+- Hady Ehab
+- Haithem Mahmoud
+- Hany mohamed
+# as a Graduation project. 
 
-## License
-
-This project is licensed under the [License Name] license. See the LICENSE file for more details.
+# Our proposed model used in this app was trained on the Kaggle, Dell and other dataset.
 
 ## Contact
 
-If you have any questions or suggestions regarding the app, please contact [Your Email Address].
+If you have any questions or suggestions regarding the app, please contact hadyatef70@gmail.com.
