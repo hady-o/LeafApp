@@ -1,6 +1,7 @@
-<p align="center">
-   ![image](https://user-images.githubusercontent.com/76757642/236619163-0c2df670-a18e-4e17-a887-669869647fdc.png)
-</p>
+  <p align="center">
+  ![image](https://user-images.githubusercontent.com/76757642/236619163-0c2df670-a18e-4e17-a887-669869647fdc.png)
+   alt="Image" style="width: 200px; height: 200px;" />
+
 
 # Plant Disease Detection Android App
 
@@ -54,7 +55,7 @@ Upon launching the app, users can either choose to capture an image of the plant
 - [Hany mohamed](https://github.com/HaniASU)
 ### as a Graduation project. 
 
-### Our proposed model used in this app was trained on the Kaggle, Dell and other dataset.
+### Our proposed model used in this app was trained on the Kaggle, Dell and other datasets.
 
 ## Contact
 
