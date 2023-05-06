@@ -1,5 +1,5 @@
 <p align="center">
-   [image](https://user-images.githubusercontent.com/76757642/236618771-1f2d7035-eb44-476e-9d64-503e4208855b.png)
+   ![image](https://user-images.githubusercontent.com/76757642/236619163-0c2df670-a18e-4e17-a887-669869647fdc.png)
 </p>
 
 # Plant Disease Detection Android App
@@ -42,7 +42,7 @@ Upon launching the app, users can either choose to capture an image of the plant
 
 ## Architecture
 
-![image](https://user-images.githubusercontent.com/76757642/236618392-272d8666-66fa-4e4b-8e8c-817b60aa331d.png)
+![image](https://user-images.githubusercontent.com/76757642/236619134-90d778e1-0ada-4b2b-8ac1-a52ea84f01c0.png)
 
 ## Credits
 
