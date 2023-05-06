@@ -1,5 +1,5 @@
  <p align="center">
-  <img src=![image](https://user-images.githubusercontent.com/76757642/236619322-5c1f6b47-cb20-43d8-9315-98467967117c.png) />
+  ![image](https://user-images.githubusercontent.com/76757642/236619322-5c1f6b47-cb20-43d8-9315-98467967117c.png)
 </p>
 
 # Plant Disease Detection Android App
