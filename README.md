@@ -34,15 +34,15 @@ Upon launching the app, users can either choose to capture an image of the plant
 
 ## Credits
 
-# This app was developed by: 
+### This app was developed by: 
 - Hady Atef
 - Hady Ahmed
 - Hady Ehab
 - Haithem Mahmoud
 - Hany mohamed
-# as a Graduation project. 
+### as a Graduation project. 
 
-# Our proposed model used in this app was trained on the Kaggle, Dell and other dataset.
+### Our proposed model used in this app was trained on the Kaggle, Dell and other dataset.
 
 ## Contact
 
