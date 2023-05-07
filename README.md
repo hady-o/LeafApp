@@ -11,6 +11,9 @@
 
 This is an Android app for detecting plant diseases using MobileNet V2 model and Our proposed model. The app is built using Kotlin programming language and follows MVVM design pattern with Repository pattern using Coroutines and Room Database. The app also integrates Firebase for backend, including 3 types of authentication and Firebase Cloud Messaging (FCM) for push notifications. Additionally, the app supports voice search in both Arabic and English languages.
 
+## Application Demo
+Check out this [De,o](https://youtu.be/sk_WSSBfKB8) to see the App in action!
+
 ## Features
 
 - Detects plant diseases using MobileNet V2 model and Our proposed model
