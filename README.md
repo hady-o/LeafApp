@@ -31,16 +31,27 @@ This is an Android app for detecting plant diseases using MobileNet V2 model and
 
 ## Some Screen Shots
 
-![image](https://user-images.githubusercontent.com/76757642/236683685-38d0f509-8c8d-4be3-a124-3f675ba5f14c.png)
-![image](https://user-images.githubusercontent.com/76757642/236683695-e780c47f-3454-4586-b4ff-004b12a56c99.png)
-![image](https://user-images.githubusercontent.com/76757642/236683710-167e3341-fe85-47f4-b6d5-8b2c9b10f448.png)
-![image](https://user-images.githubusercontent.com/76757642/236683747-f52e6255-8318-404b-8942-5abea4f2c8a3.png)
-![image](https://user-images.githubusercontent.com/76757642/236683759-31c2acf0-e420-4e52-86a8-0e1bf59ae7d7.png)
-![image](https://user-images.githubusercontent.com/76757642/236683769-7777f30d-edcb-4fef-99d2-40ec56225b03.png)
-![image](https://user-images.githubusercontent.com/76757642/236683784-183c8166-3f9c-43e0-a172-62cb3084643f.png)
-![image](https://user-images.githubusercontent.com/76757642/236683788-7079e8c1-4f57-481c-bdf1-55cfecece6eb.png)
+
+<p align="center">
 
 
+<img src=https://user-images.githubusercontent.com/76757642/236683685-38d0f509-8c8d-4be3-a124-3f675ba5f14c.png
+      style="width: 400px; height: 300px;" />
+<img src=https://user-images.githubusercontent.com/76757642/236683695-e780c47f-3454-4586-b4ff-004b12a56c99.png
+      style="width: 400px; height: 300px;" />
+<img src=https://user-images.githubusercontent.com/76757642/236683710-167e3341-fe85-47f4-b6d5-8b2c9b10f448.png
+      style="width: 400px; height: 300px;" />
+<img src=https://user-images.githubusercontent.com/76757642/236683747-f52e6255-8318-404b-8942-5abea4f2c8a3.png
+      style="width: 400px; height: 300px;" />
+<img src=https://user-images.githubusercontent.com/76757642/236683759-31c2acf0-e420-4e52-86a8-0e1bf59ae7d7.png
+      style="width: 400px; height: 300px;" />
+<img src=https://user-images.githubusercontent.com/76757642/236683769-7777f30d-edcb-4fef-99d2-40ec56225b03.png
+      style="width: 400px; height: 300px;" />
+<img src=https://user-images.githubusercontent.com/76757642/236683784-183c8166-3f9c-43e0-a172-62cb3084643f.png
+      style="width: 400px; height: 300px;" />
+<img src=https://user-images.githubusercontent.com/76757642/236683788-7079e8c1-4f57-481c-bdf1-55cfecece6eb.png
+       style="width: 400px; height: 300px;" />
+</p>
 ## Usage
 
 Upon launching the app, users can either choose to capture an image of the plant or select an existing image from their device's gallery. Once an image is selected, the app uses MobileNet V2 model to detect if the input image is a plant or not. If it is a plant, the app then uses our proposed model to classify the plant disease and provides tips for users based on the classification. The app also supports voice search, allowing users to search for plant diseases using voice commands in both Arabic and English languages.
