@@ -13,6 +13,8 @@ This is an Android app for detecting plant diseases using MobileNet V2 model and
 
 ## Application Demo
 <iframe width="560" height="315" src="https://www.youtube.com/embed/sk_WSSBfKB8" frameborder="0" allowfullscreen></iframe>
+
+
 ## Features
 
 - Detects plant diseases using MobileNet V2 model and Our proposed model
