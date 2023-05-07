@@ -52,6 +52,8 @@ This is an Android app for detecting plant diseases using MobileNet V2 model and
 <img src=https://user-images.githubusercontent.com/76757642/236683788-7079e8c1-4f57-481c-bdf1-55cfecece6eb.png
        style="width: 200px; height: 400px;" />
 </p>
+
+
 ## Usage
 
 Upon launching the app, users can either choose to capture an image of the plant or select an existing image from their device's gallery. Once an image is selected, the app uses MobileNet V2 model to detect if the input image is a plant or not. If it is a plant, the app then uses our proposed model to classify the plant disease and provides tips for users based on the classification. The app also supports voice search, allowing users to search for plant diseases using voice commands in both Arabic and English languages.
