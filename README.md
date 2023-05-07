@@ -36,7 +36,7 @@ This is an Android app for detecting plant diseases using MobileNet V2 model and
 
 
 
-<p align="center">
+<!-- <p align="center">
 
 
 <img src=https://user-images.githubusercontent.com/76757642/236683685-38d0f509-8c8d-4be3-a124-3f675ba5f14c.png
@@ -55,7 +55,7 @@ This is an Android app for detecting plant diseases using MobileNet V2 model and
       style="width: 200px; height: 400px;" />
 <img src=https://user-images.githubusercontent.com/76757642/236683788-7079e8c1-4f57-481c-bdf1-55cfecece6eb.png
        style="width: 200px; height: 400px;" />
-</p>
+</p> -->
 
 
 ## Usage
