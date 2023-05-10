@@ -28,7 +28,9 @@ This is an Android app for detecting plant diseases using MobileNet V2 model and
 - Posts added by the admin
 - Sharing posts & classification results via other apps
 - Ofline classification
-
+## Small Demo
+![image](https://github.com/hady-o/LeafApp/blob/main/otherWalls/dimo.gif) 
+### see the full demo from [here](https://youtu.be/sk_WSSBfKB8)
 ## Some Screen Shots
 
 ![image](https://user-images.githubusercontent.com/76757642/236684476-65d67a8f-b3b5-4d0b-992d-2432f6823959.png)
@@ -89,7 +91,6 @@ Upon launching the app, users can either choose to capture an image of the plant
 ### as a Graduation project. 
 
 ### Our proposed model used in this app was trained on the Kaggle, Dell and other datasets.
-
+### you can see Our Self Collected and preprossed DataSet from [here](https://kaggle.com/datasets/446e7d99d961700185fd38471afaf9c5de792b6c336ad0c30d210a88a8090486)
 ## Contact
-
 If you have any questions or suggestions regarding the app, please contact hadyatef70@gmail.com.
