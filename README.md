@@ -30,7 +30,7 @@ This is an Android app for detecting plant diseases using MobileNet V2 model and
 - Ofline classification
 ## Small Demo
 ![image](https://github.com/hady-o/LeafApp/blob/main/otherWalls/dimo.gif) 
-### see the full demo from [here](https://youtu.be/sk_WSSBfKB8)
+<!-- ### see the full demo from [here](https://youtu.be/sk_WSSBfKB8) -->
 ## Some Screen Shots
 
 ![image](https://user-images.githubusercontent.com/76757642/236684476-65d67a8f-b3b5-4d0b-992d-2432f6823959.png)
