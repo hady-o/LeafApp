@@ -89,7 +89,7 @@ dependencies {
     // LiveData
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.5.1")
     // tensorflow
-    implementation 'org.tensorflow:tensorflow-lite:2.3.0'
+    //implementation 'org.tensorflow:tensorflow-lite:2.4.0'
     // The GPU delegate library is optional. Depend on it as needed.
     implementation 'org.tensorflow:tensorflow-lite-gpu:0.0.0-nightly-SNAPSHOT'
     implementation 'org.tensorflow:tensorflow-lite-support:0.0.0-nightly-SNAPSHOT'
